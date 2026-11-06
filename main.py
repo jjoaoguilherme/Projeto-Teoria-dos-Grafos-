@@ -42,6 +42,13 @@ if len(matriz) == 0:
     print("Erro: o mapa está vazio!")
     encerrar()
 
+if len(matriz[0]) == 0:
+    print("Erro: o mapa não possui colunas!")
+    encerrar()
+
+quantidade_inicio = 0
+quantidade_fim = 0
+
 for i in range(len(matriz)):
     if len(matriz[i]) != len(matriz[0]):
         print("Erro: o mapa não é retangular!")
@@ -50,9 +57,23 @@ for i in range(len(matriz)):
     for j in range(len(matriz[i])):
         simbolo = matriz[i][j]
 
+        if simbolo == "S":
+            quantidade_inicio += 1
+
+        elif simbolo == "G":
+            quantidade_fim += 1 
+
         if simbolo not in caracteres:
             print(f"Erro: caractere '{simbolo}' inválido na posição ({i}, {j})!")
             encerrar()
+
+if quantidade_inicio != 1:
+    print(f"Erro: foram encontrados {quantidade_inicio} inícios. Deve existir exatamente um!")
+    encerrar()
+
+if quantidade_fim != 1:
+    print(f"Erro: foram encontradas {quantidade_fim} saídas. Deve existir exatamente uma!")
+    encerrar()
 
 # IDENTIFICAÇÃO DAS POSIÇÕES E EXIBIÇÃO DO MAPA
 
@@ -68,6 +89,15 @@ for i in range(len(matriz)):
 
         print(caracteres[simbolo], end=" ")
     print()
+
+# DIREÇÕES NORTE SUL LESTE OESTE
+
+i, j = inicio
+
+norte = (i-1, j)
+leste = (i, j+1)
+sul = (i+1, j)
+oeste = (i, j-1)
 
 print("\nPosição inicial:", inicio)
 print("Posição final:", fim)
