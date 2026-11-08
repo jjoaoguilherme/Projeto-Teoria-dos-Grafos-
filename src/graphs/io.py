@@ -106,10 +106,20 @@ def exibir_mapa(matriz):
 
 # EXECUÇÃO
 
+# EXECUÇÃO
+
 if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
 
-    matriz, inicio, fim = ler_mapa("mapas/m02_uma_chave.txt")
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Erro: informe o nome do mapa!")
+        print("Exemplo: python src/graphs/io.py m02_uma_chave")
+        encerrar()
+
+    nome_mapa = sys.argv[1]
+    matriz, inicio, fim = ler_mapa(f"mapas/{nome_mapa}.txt")
 
     exibir_mapa(matriz)
 
