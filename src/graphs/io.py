@@ -125,3 +125,40 @@ if __name__ == "__main__":
 
     print("\nPosição inicial:", inicio)
     print("Posição final:", fim)
+    
+    
+#identificação dos vizinhos
+    
+i, j = inicio
+
+norte = (i-1, j)
+leste = (i, j+1)
+sul = (i+1, j)
+oeste = (i, j-1)
+
+print("\nNorte:", norte)
+print("Leste:", leste)
+print("Sul:", sul)
+print("Oeste:", oeste)
+
+# VERIFICAÇÃO DOS MOVIMENTOS
+
+# NORTE
+if 0 <= norte[0] < len(matriz) and 0 <= norte[1] < len(matriz[0]):
+        if matriz[norte[0]][norte[1]] != "#":
+            print("Norte permitido!")
+
+# LESTE
+if 0 <= leste[0] < len(matriz) and 0 <= leste[1] < len(matriz[0]):
+    if matriz[leste[0]][leste[1]] != "#":
+        print("Leste permitido!")
+
+# SUL
+if 0 <= sul[0] < len(matriz) and 0 <= sul[1] < len(matriz[0]):
+    if matriz[sul[0]][sul[1]] != "#":
+        print("Sul permitido!")
+
+# OESTE
+if 0 <= oeste[0] < len(matriz) and 0 <= oeste[1] < len(matriz[0]):
+    if matriz[oeste[0]][oeste[1]] != "#":
+        print("Oeste permitido!")
