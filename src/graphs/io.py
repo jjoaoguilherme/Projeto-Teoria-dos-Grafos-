@@ -1,9 +1,9 @@
 import os
-os.system("cls")
 
 def encerrar():
     print("\n- Programa encerrado -")
     exit()
+
 
 caracteres = {
     "#": None,
@@ -28,76 +28,90 @@ caracteres = {
     "*": -2
 }
 
-# LEITURA DO MAPA
 
-with open("mapas/m02_uma_chave.txt", "r", encoding="utf-8") as arquivo:
-    conteudo = arquivo.read()
+# LEITURA E VALIDAÇÃO DO MAPA
 
-linhas = conteudo.splitlines()
-matriz = [list(linha) for linha in linhas]
+def ler_mapa(caminho):
+    try:
+        with open(caminho, "r", encoding="utf-8") as arquivo:
+            conteudo = arquivo.read()
 
-# VALIDAÇÂO DO MAPA
-    
-if len(matriz) == 0:
-    print("Erro: o mapa está vazio!")
-    encerrar()
-
-if len(matriz[0]) == 0:
-    print("Erro: o mapa não possui colunas!")
-    encerrar()
-
-quantidade_inicio = 0
-quantidade_fim = 0
-
-for i in range(len(matriz)):
-    if len(matriz[i]) != len(matriz[0]):
-        print("Erro: o mapa não é retangular!")
+    except FileNotFoundError:
+        print(f"Erro: arquivo '{caminho}' não encontrado!")
         encerrar()
 
-    for j in range(len(matriz[i])):
-        simbolo = matriz[i][j]
+    linhas = conteudo.splitlines()
+    matriz = [list(linha) for linha in linhas]
 
-        if simbolo == "S":
-            quantidade_inicio += 1
+    # VALIDAÇÃO DO MAPA
 
-        elif simbolo == "G":
-            quantidade_fim += 1 
+    if len(matriz) == 0:
+        print("Erro: o mapa está vazio!")
+        encerrar()
 
-        if simbolo not in caracteres:
-            print(f"Erro: caractere '{simbolo}' inválido na posição ({i}, {j})!")
+    if len(matriz[0]) == 0:
+        print("Erro: o mapa não possui colunas!")
+        encerrar()
+
+    quantidade_inicio = 0
+    quantidade_fim = 0
+
+    inicio = None
+    fim = None
+
+    for i in range(len(matriz)):
+
+        if len(matriz[i]) == 0:
+            print(f"Erro: a linha {i} está vazia!")
             encerrar()
 
-if quantidade_inicio != 1:
-    print(f"Erro: foram encontrados {quantidade_inicio} inícios. Deve existir exatamente um!")
-    encerrar()
+        if len(matriz[i]) != len(matriz[0]):
+            print("Erro: o mapa não é retangular!")
+            encerrar()
 
-if quantidade_fim != 1:
-    print(f"Erro: foram encontradas {quantidade_fim} saídas. Deve existir exatamente uma!")
-    encerrar()
+        for j in range(len(matriz[i])):
+            simbolo = matriz[i][j]
 
-# IDENTIFICAÇÃO DAS POSIÇÕES E EXIBIÇÃO DO MAPA
+            if simbolo == "S":
+                quantidade_inicio += 1
+                inicio = (i, j)
 
-for i in range(len(matriz)):
-    for j in range(len(matriz[i])):
-        simbolo = matriz[i][j]
+            elif simbolo == "G":
+                quantidade_fim += 1
+                fim = (i, j)
 
-        if simbolo == "S":
-            inicio = (i, j)
+            if simbolo not in caracteres:
+                print(f"Erro: caractere '{simbolo}' inválido na posição ({i}, {j})!")
+                encerrar()
 
-        elif simbolo == "G":
-            fim = (i, j)
+    if quantidade_inicio != 1:
+        print(f"Erro: foram encontrados {quantidade_inicio} inícios. Deve existir exatamente um!")
+        encerrar()
 
-        print(caracteres[simbolo], end=" ")
-    print()
+    if quantidade_fim != 1:
+        print(f"Erro: foram encontradas {quantidade_fim} saídas. Deve existir exatamente uma!")
+        encerrar()
 
-# DIREÇÕES NORTE SUL LESTE OESTE
+    return matriz, inicio, fim
 
-i, j = inicio
 
-norte = (i-1, j)
-leste = (i, j+1)
-sul = (i+1, j)
-oeste = (i, j-1)
+# EXIBIÇÃO DO MAPA
 
-print("\nPosição inicial:", inicio)
-print("Posição final:", fim)
+def exibir_mapa(matriz):
+    for linha in matriz:
+        for simbolo in linha:
+            print(caracteres[simbolo], end=" ")
+        print()
+
+
+# EXECUÇÃO
+
+if __name__ == "__main__":
+    os.system("cls" if os.name == "nt" else "clear")
+
+    matriz, inicio, fim = ler_mapa("mapas/m02_uma_chave.txt")
+
+    exibir_mapa(matriz)
+
+    print("\nPosição inicial:", inicio)
+    print("Posição final:", fim)
