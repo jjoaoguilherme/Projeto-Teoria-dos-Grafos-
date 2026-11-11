@@ -25,6 +25,16 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Conferência e compreensão por integrante do grupo: pendente.
 - Atenção à classificação: o documento oficial inclui geração de `io.py` nos usos proibidos; o registro não altera essa classificação nem autoriza sua entrega acadêmica.
 
+## Conclusão do Bellman-Ford em 11/11/2026
+
+- Ferramenta: Codex.
+- Pedido: completar o algoritmo mantendo a lógica inicial de lista de arestas e relaxamento.
+- Produzido: função reutilizável em `src/graphs/algorithms.py`, predecessores, reconstrução de caminhos, detecção e reconstrução de ciclo negativo e identificação dos destinos afetados.
+- Preservado o grafo de exemplo do usuário para execução direta; corrigida a posição do laço de repetições.
+- Verificação: sete testes aprovados em `tests/test_bellman_ford.py`; exemplo retorna A=0, B=1, C=3 e D=6.
+- Código apoiado por IA identificado com `# [IA]`. Estudo e conferência pelo integrante: pendentes.
+- Integração com os mapas depende da construção do grafo de estados, ainda não implementada.
+
 ## Antes da entrega
 
 - Preencher o modelo oficial ou registrar links completos conforme permitido.
