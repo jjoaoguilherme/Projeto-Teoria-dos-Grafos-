@@ -2,7 +2,8 @@ from collections import deque
 
 # IDENTIFICAÇÃO DOS VIZINHOS
 
-def verificar_vizinhos(matriz, posicao):
+def verificar_vizinhos(matriz, estado_atual):
+    posicao, chaves, bonus_consumidos = estado_atual
     i, j = posicao
 
     vizinhos = []
@@ -17,22 +18,40 @@ def verificar_vizinhos(matriz, posicao):
     # NORTE
     if 0 <= cima[0] < len(matriz) and 0 <= cima[1] < len(matriz[0]):
         if matriz[cima[0]][cima[1]] != "#":
-            vizinhos.append(cima)
+
+            if matriz[cima[0]][cima[1]] in "ABCD" and matriz[cima[0]][cima[1]].lower() not in chaves:
+                pass  # Porta bloqueada
+            else:
+                vizinhos.append(cima)
 
     # LESTE
     if 0 <= direita[0] < len(matriz) and 0 <= direita[1] < len(matriz[0]):
         if matriz[direita[0]][direita[1]] != "#":
-            vizinhos.append(direita)
+
+            if matriz[direita[0]][direita[1]] in "ABCD" and matriz[direita[0]][direita[1]].lower() not in chaves:
+                pass  # Porta bloqueada
+            else:
+                vizinhos.append(direita)
 
     # SUL
     if 0 <= baixo[0] < len(matriz) and 0 <= baixo[1] < len(matriz[0]):
         if matriz[baixo[0]][baixo[1]] != "#":
-            vizinhos.append(baixo)
+
+            if matriz[baixo[0]][baixo[1]] in "ABCD" and matriz[baixo[0]][baixo[1]].lower() not in chaves:
+                pass  # Porta bloqueada
+            else:
+                vizinhos.append(baixo)
 
     # OESTE
     if 0 <= esquerda[0] < len(matriz) and 0 <= esquerda[1] < len(matriz[0]):
         if matriz[esquerda[0]][esquerda[1]] != "#":
-            vizinhos.append(esquerda)
+
+            if matriz[esquerda[0]][esquerda[1]] in "ABCD" and matriz[esquerda[0]][esquerda[1]].lower() not in chaves:
+                pass  # Porta bloqueada
+            else:
+                vizinhos.append(esquerda)
+        
+
 
     return vizinhos
 
@@ -55,3 +74,26 @@ def explorar_mapa(matriz, inicio, fim):
                 fila.append(vizinho)
 
     return False  # Caminho não encontrado'
+
+def criar_estado(posicao, chaves, bonus_consumidos):
+    estado = (posicao, chaves, bonus_consumidos)
+    return estado
+
+def proximo_estado(estado_atual, nova_posicao, matriz):    
+    i, j = nova_posicao
+    simbolo = matriz[i][j]
+
+    posicao, chaves, bonus_consumidos = estado_atual
+
+    novos_bonus = bonus_consumidos
+
+    novas_chaves = chaves
+
+    if simbolo in "abcd":
+        novas_chaves = chaves | {simbolo}
+
+    if simbolo == "+" :
+        novos_bonus = bonus_consumidos | {nova_posicao}
+
+    novo_estado = (nova_posicao, novas_chaves, novos_bonus)
+    return novo_estado
