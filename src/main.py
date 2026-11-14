@@ -29,7 +29,7 @@ def main():
     print("\nPosição inicial:", inicio)
     print("Posição final:", fim)
 
-    vizinhos = verificar_vizinhos(matriz, inicio)
+    vizinhos = verificar_vizinhos(matriz, (inicio, frozenset(), frozenset()))
 
     print("\nVizinhos válidos:", vizinhos)
 

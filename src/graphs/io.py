@@ -27,7 +27,7 @@ caracteres = {
 
 def ler_mapa(caminho):
     try:
-        with open(caminho, "r", encoding="utf-8") as arquivo:
+        with open(caminho, "r", encoding="utf-8-sig") as arquivo:
             conteudo = arquivo.read()
 
     except FileNotFoundError:
@@ -35,7 +35,8 @@ def ler_mapa(caminho):
             f"Erro: arquivo '{caminho}' não encontrado!"
         )
 
-    linhas = conteudo.splitlines()
+    # [IA] Codex – comentários previstos no formato dos mapas.
+    linhas = [linha for linha in conteudo.splitlines() if not linha.startswith(";")]
     matriz = [list(linha) for linha in linhas]
 
     # VALIDAÇÃO DO MAPA
@@ -83,10 +84,10 @@ def ler_mapa(caminho):
             "Deve existir exatamente um!"
         )
 
-    if quantidade_fim != 1:
+    if quantidade_fim < 1:
         raise ValueError(
             f"Erro: foram encontradas {quantidade_fim} saídas. "
-            "Deve existir exatamente uma!"
+            "Deve existir pelo menos uma!"
         )
 
     return matriz, inicio, fim
