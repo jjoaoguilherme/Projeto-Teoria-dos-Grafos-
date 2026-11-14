@@ -35,6 +35,14 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Código apoiado por IA identificado com `# [IA]`. Estudo e conferência pelo integrante: pendentes.
 - Integração com os mapas depende da construção do grafo de estados, ainda não implementada.
 
+## Integração do Bellman-Ford em 14/11/2026
+
+- Pedido: adaptar o algoritmo para funcionar com os mapas do projeto.
+- Ferramenta: Codex. Mantida a orientação atualizada informada pelo usuário na conversa, sem novo documento da professora.
+- Produzido: exploração de estados alcançáveis, rótulos, pesos consumíveis, ALVO, integração em `solve.py` e CLI para BELLMAN_FORD, exportações e documentação em `docs/BELLMAN_FORD.md`.
+- Ajustadas as funções existentes para esteiras, saídas terminais e estados imutáveis; leitor aceita comentários, BOM e múltiplas saídas, preservando seu retorno legado (a última saída no terceiro item; a integração identifica todas na grade).
+- Verificação: 13 testes unitários/de integração aprovados; execução dos oito mapas fornecidos, incluindo m08. m06 detecta ciclo negativo e m07 informa ausência de solução.
+
 ## Antes da entrega
 
 - Preencher o modelo oficial ou registrar links completos conforme permitido.
