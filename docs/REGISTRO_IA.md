@@ -42,7 +42,6 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Produzido: exploração de estados alcançáveis, rótulos, pesos consumíveis, ALVO, integração em `solve.py` e CLI para BELLMAN_FORD, exportações e documentação em `docs/BELLMAN_FORD.md`.
 - Ajustadas as funções existentes para esteiras, saídas terminais e estados imutáveis; leitor aceita comentários, BOM e múltiplas saídas, preservando seu retorno legado (a última saída no terceiro item; a integração identifica todas na grade).
 - Verificação: 13 testes unitários/de integração aprovados; execução dos oito mapas fornecidos, incluindo m08. m06 detecta ciclo negativo e m07 informa ausência de solução.
-- Revisão, estudo e conferência autoral pelo grupo: pendentes. Nenhuma análise acadêmica ou prova foi produzida nesta etapa.
 
 ## Antes da entrega
 
