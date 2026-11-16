@@ -36,13 +36,15 @@ Concluída quando: testes verificam leitura válida e todos os quatro erros mín
 
 Arquivo: `src/graphs/graph.py`.
 
-- [ ] Definir lista de adjacência dirigida, nós e pesos.
-- [ ] Preservar nós sem saída e ordem de vizinhos.
-- [ ] Definir interface comum para os quatro algoritmos, independente do labirinto.
+- [x] Definir lista de adjacência dirigida, nós e pesos.
+- [x] Preservar nós sem saída e ordem de vizinhos.
+- [x] Definir interface comum para os quatro algoritmos, independente do labirinto.
 - [ ] Definir formato dos resultados: distâncias, predecessores, caminhos, classificações e ciclos, conforme o algoritmo.
-- [ ] Prever transposto para busca de estados-armadilha.
+- [x] Prever transposto para busca de estados-armadilha.
 
 Concluída quando: o grupo consegue representar e conferir à mão um grafo dirigido pequeno; os algoritmos das duas partes podem receber a mesma estrutura.
+
+Implementação da estrutura e integração em 16/11/2026. Contrato de entrada em `docs/GRAFO.md`; o formato dos resultados dos algoritmos permanece pendente.
 
 ## Etapa 3 — Primeiro algoritmo: BFS em grafo pequeno
 
@@ -87,7 +89,7 @@ Concluída quando: testes mínimos dos quatro algoritmos passam, inclusive recus
 
 ## Etapa 6 — CLI e execução básica da Parte 1
 
-Arquivos: `src/cli.py`, `src/solve.py`.
+Arquivos: `src/cli.py`, `src/main.py`.
 
 - [ ] Conectar mapa -> IO -> modelagem -> algoritmo -> resultado.
 - [ ] Receber opções dos exemplos de execução do enunciado.
@@ -99,7 +101,7 @@ Concluída quando: comandos documentados executam de verdade e tratam os casos d
 
 ## Etapa 7 — Métricas, comparações e casos especiais
 
-Coordenação: `src/solve.py`; usar módulos auxiliares se necessário para manter responsabilidades claras.
+Coordenação: `src/main.py`; usar módulos auxiliares se necessário para manter responsabilidades claras.
 
 - [ ] Por mapa: ordem, tamanho e densidade dirigida de G_pos e G_est; excluir ALVO das métricas da Seção 3.
 - [ ] Teto = casas livres × 2^(número de chaves) × 2^(número de bônus); ocupação = estados / teto.

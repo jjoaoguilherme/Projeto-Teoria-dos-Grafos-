@@ -22,7 +22,7 @@ Não é necessário ativar o ambiente virtual para usar os comandos acima. No VS
 ## Organização
 
 - `src/cli.py`: entrada por linha de comando.
-- `src/solve.py`: coordenação das tarefas das duas partes.
+- `src/main.py`: entrada, coordenação da resolução e exportação dos resultados.
 - `src/graphs/io.py`: leitura e validação dos mapas e do dataset.
 - `src/graphs/graph.py`: grafo dirigido em lista de adjacência.
 - `src/graphs/estados.py`: grafos de posições e de estados dos labirintos.
