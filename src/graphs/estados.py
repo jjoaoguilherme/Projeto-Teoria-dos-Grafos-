@@ -1,4 +1,5 @@
 from collections import deque
+from .graph import Grafo
 
 # IDENTIFICAÇÃO DOS VIZINHOS
 
@@ -6,7 +7,6 @@ def verificar_vizinhos(matriz, estado_atual):
     posicao, chaves, bonus_consumidos = estado_atual
     i, j = posicao
 
-    # [IA] Codex – saída terminal e restrição de saída das esteiras.
     if matriz[i][j] == "G":
         return []
     setas = {">": (0, 1), "<": (0, -1), "^": (-1, 0), "v": (1, 0)}
@@ -70,7 +70,6 @@ def verificar_vizinhos(matriz, estado_atual):
     return vizinhos
 
 def explorar_mapa(matriz, inicio, fim):
-    # [IA] Codex – compatibilidade com os estados usados por verificar_vizinhos.
     grafo = construir_grafo_estados(matriz, inicio)
     return any(estado[0] == fim for estado in grafo["estados"].values())
 
@@ -98,7 +97,6 @@ def proximo_estado(estado_atual, nova_posicao, matriz):
     return novo_estado
 
 
-# [IA] Codex – integração da modelagem existente com o Bellman-Ford.
 def construir_grafo_estados(matriz, inicio, fonte_consumivel=False):
     """Explora somente estados alcançáveis; exporta rótulos e arcos dirigidos.
 
@@ -153,5 +151,7 @@ def construir_grafo_estados(matriz, inicio, fonte_consumivel=False):
             arestas.append((origem, alvo, peso))
             registros.append((origem, alvo, direcoes[(ni-i, nj-j)], simbolo, peso))
     vertices.append("ALVO")
-    return {"vertices": vertices, "arestas": arestas, "registros": registros,
+    grafo = Grafo(vertices, arestas)
+    return {"grafo": grafo, "vertices": grafo.vertices,
+            "arestas": grafo.arestas, "registros": registros,
             "inicio": rotulo(inicial), "estados": estados}
