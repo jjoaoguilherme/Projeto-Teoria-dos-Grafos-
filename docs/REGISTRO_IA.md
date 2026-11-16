@@ -49,3 +49,14 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Marcar os trechos de código feitos com apoio de IA com `# [IA] ferramenta – finalidade`.
 - Escrever a reflexão autoral de 10 a 15 linhas.
 - Obter assinatura de todos e exportar para `docs/DECLARACAO_IA.pdf`.
+
+
+## Testes da estrutura de grafo e do grafo de posições em 16/11/2026
+
+- Ferramenta utilizada: Codex.
+- Finalidade: criação de testes automatizados para conferir os contratos dos grafos.
+- `tests/test_graph.py`: 10 testes escritos com apoio de IA, cobrindo direção e ordem dos arcos, nós sem saída, laços, arcos paralelos, graus, transposto, proteção das consultas, pesos inválidos e compatibilidade com Bellman-Ford e mapas.
+- `tests/test_grafo_posicoes.py`: 12 testes escritos com apoio de IA, cobrindo os modos de portas como chão/parede, casas inalcançáveis, custos de destino, bônus fixos, ordem N/L/S/O, esteiras, saídas terminais e preservação da matriz. Inclui os oito mapas fornecidos nos dois modos.
+- Verificação automatizada: `python -m unittest discover -s tests -v`; 35 testes aprovados na suíte completa, incluindo os 22 testes acima e os 13 testes anteriores de Bellman-Ford e integração.
+- Revisão e conferência pelo grupo: pendentes; não se presume que a execução automatizada substitua a verificação humana.
+- Esta entrada registra somente a autoria dos testes; o preenchimento referente aos demais arquivos fica sob responsabilidade do usuário.

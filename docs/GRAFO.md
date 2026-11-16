@@ -58,3 +58,23 @@ Os resultados próprios de BFS/DFS/Dijkstra ainda devem ser combinados com o col
 
 Executar na raiz: `python -m unittest discover -s tests -v`.
 Os testes cobrem direção, ordem, nós isolados, transposto, graus, cópias, pesos inválidos, compatibilidade com Bellman-Ford e integração com os oito mapas e a fonte consumível.
+
+## Grafo de posições
+
+`construir_grafo_posicoes(matriz, portas="chao")`, em `src/graphs/estados.py`, recebe a grade validada por `ler_mapa` e retorna um objeto `Grafo`.
+
+```python
+from src.graphs.io import ler_mapa
+from src.graphs.estados import construir_grafo_posicoes
+
+matriz, inicio, _ = ler_mapa("data/mapas/m02_uma_chave.txt")
+g_pos = construir_grafo_posicoes(matriz)
+g_pos_sem_portas = construir_grafo_posicoes(matriz, portas="parede")
+vizinhos = g_pos.vizinhos(inicio)
+```
+
+Cada nó é uma posição `(linha, coluna)`, com índices começando em zero. Inclui todas as casas transitáveis, mesmo as inalcançáveis. No modo padrão, portas são chão; no modo parede, não são nós e não podem ser atravessadas. Ambos preservam esteiras, vizinhos em N, L, S, O e custo da casa de destino. Chaves custam 1; bônus + sempre custam -4; fontes * sempre custam -2. Não há memória de coleta ou consumo.
+
+G é terminal. Este grafo de posições não contém ALVO: comparações de caminhos deverão usar as posições das saídas como destinos, ou um adaptador temporário para ALVO, sem incluí-lo nas métricas. O grafo de estados continua com seu nó virtual e sem alterações.
+
+A construção está pronta; as métricas e a execução das comparações ainda serão implementadas. Testes: `python -m unittest discover -s tests -v`. A suíte possui 35 testes, sendo 12 novos para posições, incluindo os oito mapas nos dois modos.

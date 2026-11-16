@@ -155,3 +155,38 @@ def construir_grafo_estados(matriz, inicio, fonte_consumivel=False):
     return {"grafo": grafo, "vertices": grafo.vertices,
             "arestas": grafo.arestas, "registros": registros,
             "inicio": rotulo(inicial), "estados": estados}
+
+
+
+def construir_grafo_posicoes(matriz, portas="chao"):
+    """Cria G_pos de uma matriz já validada, com nós (linha, coluna).
+
+    Inclui casas inalcançáveis e preserva a ordem N, L, S, O dos vizinhos.
+    Portas são transitáveis no modo chao e excluídas no modo parede.
+    Chaves custam 1; bônus + sempre custam -4; fontes * sempre custam -2.
+    Esteiras restringem a saída. G é terminal e não há nó virtual ALVO.
+    """
+    from .io import caracteres
+
+    if portas not in ("chao", "parede"):
+        raise ValueError("O modo de portas deve ser 'chao' ou 'parede'.")
+
+    grafo = Grafo()
+    for i, linha in enumerate(matriz):
+        for j, simbolo in enumerate(linha):
+            if simbolo == "#":
+                continue
+            if portas == "parede" and simbolo in "ABCD":
+                continue
+            grafo.adicionar_vertice((i, j))
+
+    # Inventário fixo apenas para reutilizar a geometria dos movimentos:
+    # todas as portas liberadas no modo chão, nenhuma no modo parede.
+    chaves = frozenset("abcd") if portas == "chao" else frozenset()
+    for posicao in grafo.vertices:
+        estado_geometrico = (posicao, chaves, frozenset())
+        for destino in verificar_vizinhos(matriz, estado_geometrico):
+            i, j = destino
+            grafo.adicionar_arco(posicao, destino, caracteres[matriz[i][j]])
+
+    return grafo

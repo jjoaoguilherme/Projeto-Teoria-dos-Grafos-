@@ -62,7 +62,7 @@ Arquivos: `src/graphs/estados.py`, `tests/test_estados.py`.
 
 - [ ] Desenhar à mão o grafo de estados do m02, como recomendado no enunciado.
 - [ ] Definir estado com posição, chaves e bônus consumidos; bitmask é uma escolha, não exigência.
-- [ ] Construir G_pos com geometria e esteiras; prever variantes de portas para comparação.
+- [x] Construir G_pos com geometria e esteiras; prever variantes de portas para comparação.
 - [ ] Construir G_est explorando apenas estados alcançáveis a partir de S.
 - [ ] Gerar movimentos em N, L, S, O; custo sempre da casa de destino.
 - [ ] Respeitar portas, chaves permanentes e esteiras (restrição de saída).
