@@ -35,7 +35,6 @@ def ler_mapa(caminho):
             f"Erro: arquivo '{caminho}' não encontrado!"
         )
 
-    # [IA] Codex – comentários previstos no formato dos mapas.
     linhas = [linha for linha in conteudo.splitlines() if not linha.startswith(";")]
     matriz = [list(linha) for linha in linhas]
 

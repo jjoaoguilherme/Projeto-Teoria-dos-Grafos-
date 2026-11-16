@@ -3,7 +3,6 @@
 from collections import deque
 
 
-# [IA] Codex – Bellman-Ford baseado no relaxamento escrito pelo usuário.
 def bellman_ford(vertices, arestas, inicio):
     """Recebe arestas (origem, destino, peso) e retorna um dicionário.
 

@@ -1,11 +1,11 @@
-﻿"""[IA] Codex – testes de integração das regras do mapa com Bellman-Ford."""
+﻿"""testes de integração das regras do mapa com Bellman-Ford."""
 import csv
 import json
 from pathlib import Path
 import tempfile
 import unittest
 from src.graphs.estados import construir_grafo_estados, criar_estado, verificar_vizinhos
-from src.solve import resolver_mapa, exportar_resultado
+from src.main import resolver_mapa, exportar_resultado
 
 RAIZ = Path(__file__).resolve().parents[1]
 

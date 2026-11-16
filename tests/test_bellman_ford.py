@@ -1,4 +1,4 @@
-﻿"""[IA] Codex – testes do Bellman-Ford e reconstrução de caminhos."""
+﻿"""testes do Bellman-Ford e reconstrução de caminhos."""
 import unittest
 from src.graphs.algorithms import bellman_ford, reconstruir_caminho
 
