@@ -115,6 +115,43 @@ def reconstruir_caminho(resultado, destino):
     caminho.reverse()
     return caminho
 
+#Implentação de BFS(Breadth-First Search)
+def BFS(vertices, arestas, inicio):
+    #Irá trabalhar  com arestas de origem e destino e retornará um dicionario com as distâncias e predecessores    
+    vertices = list(dict.fromkeys(vertices))
+    arestas = list(arestas)
+    conjunto_vertices = set(vertices)
+
+    if inicio not in conjunto_vertices:
+        raise ValueError("O vértice inicial não pertence ao grafo.")
+    
+    adjacencia = {v: [] for v in vertices}
+
+    for origem, destinho, peso in arestas:
+        if origem not in conjunto_vertices or destinho not in conjunto_vertices:
+            raise ValueError("Aresta com vértice que não pertence ao grafo.")
+        adjacencia[origem].append((destinho))
+
+    distancias = {v: float('inf') for v in vertices}
+    predecessores = {v: None for v in vertices}
+    distancias[inicio] = 0
+
+    fila = deque([inicio])
+
+    while fila:
+        atual = fila.popleft()
+
+        for vizinho in adjacencia[atual]:
+            if distancias[vizinho] == float('inf'):
+                distancias[vizinho] = distancias[atual] + 1
+                predecessores[vizinho] = atual
+                fila.append(vizinho)
+    return {
+        'inicio': inicio,
+        'distancias': distancias,
+        'predecessores': predecessores
+        
+    }
 
 if __name__ == '__main__':
     # Exemplo original do usuário; não executa ao importar o módulo.
@@ -126,7 +163,18 @@ if __name__ == '__main__':
         ('B', 'D', 5),
         ('C', 'D', 6),
     ]
+
+    #Teste do Belman-Ford
     resultado = bellman_ford(vertices, arestas, 'A')
+    print("---Bellman-Ford---")
     print('Distâncias:', resultado['distancias'])
     print('Caminho até D:', reconstruir_caminho(resultado, 'D'))
     print('Ciclo negativo:', resultado['ciclo_negativo'])
+
+    #Teste do BFS
+    resultado_bfs = BFS(vertices, arestas, 'A')
+    print("---BFS---")
+    print('Distâncias:', resultado_bfs['distancias'])
+    print('Predecessores:', resultado_bfs['predecessores'])
+    print("Caminho até D:", reconstruir_caminho(resultado_bfs, 'D'))
+
