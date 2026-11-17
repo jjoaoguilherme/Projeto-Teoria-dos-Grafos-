@@ -153,6 +153,96 @@ def BFS(vertices, arestas, inicio):
         
     }
 
+def DFS(vertices, arestas, inicio):
+    #Receberá arestas
+    #Explora vizinhos na ordem em que aparecem na lista das arestas  
+    vertices = list(dict.fromkeys(vertices))
+    arestas = list(arestas)
+    conjunto_vertices = set(vertices)
+
+    if inicio not in conjunto_vertices:
+        raise ValueError("O vértice inicial não pertence ao grafo.")
+    
+    adjacencia = {v: [] for v in vertices}
+
+    for origem, destinho, peso in arestas:
+        if origem not in conjunto_vertices or destinho not in conjunto_vertices:
+            raise ValueError("Aresta com vértice que não pertence ao grafo.")
+        adjacencia[origem].append((destinho))
+
+    #Branco: Sem visita
+    #Cinza: Explorando
+    #Preto: Exploração completa
+
+    cores = {v: 'branco' for v in vertices}
+
+    distancias = {v: float('inf') for v in vertices}
+    predecessores = {v: None for v in vertices}
+    descoberta = {v: None for v in vertices}
+    finalizacao = {v: None for v in vertices}
+
+    ordem_visita = []
+    classificacao_arestas = []
+    tem_ciclo = False
+    tempo = 0
+
+    #Start vertice de partida
+    cores[inicio] = 'cinza'
+    distancias[inicio] = 0
+    tempo +=1
+    descoberta[inicio] = tempo
+    ordem_visita.append(inicio)
+
+    pilha = [(inicio, iter(adjacencia[inicio]))]
+
+    while pilha:
+        atual, vizinhos = pilha[-1]
+
+        try:
+            vizinho = next(vizinhos)
+
+        except StopIteration:
+            cores[atual] = "preto"
+            tempo += 1
+            finalizacao[atual] = tempo
+            pilha.pop()
+            continue
+        if cores[vizinho] == "branco":
+            classificacao_arestas.append((atual,vizinho,"árvore"))
+
+            predecessores[vizinho] = atual
+            distancias[vizinho] = distancias[atual] + 1
+
+            cores[vizinho] = "cinza"
+            tempo += 1
+            descoberta[vizinho] = tempo
+            ordem_visita.append(vizinho)
+
+            pilha.append((vizinho, iter(adjacencia[vizinho])))
+
+        elif cores[vizinho] == "cinza":
+            classificacao_arestas.append((atual,vizinho,"retorno"))
+            tem_ciclo = True
+
+        else:
+            if descoberta[atual] < descoberta[vizinho]:
+                tipo = "avanco"
+            else:
+                tipo = "cruzamento"
+
+            classificacao_arestas.append((atual,vizinho,tipo))   
+
+    return{
+        "inicio": inicio,
+        'distancias': distancias,
+        'predecessores': predecessores,
+        'ordem_visita': ordem_visita,
+        'descoberta': descoberta,
+        'finalizacao': finalizacao,
+        'classificacao_arestas': classificacao_arestas,
+        'tem_ciclo': tem_ciclo,} 
+   
+
 if __name__ == '__main__':
     # Exemplo original do usuário; não executa ao importar o módulo.
     vertices = ['A', 'B', 'C', 'D']
@@ -177,4 +267,16 @@ if __name__ == '__main__':
     print('Distâncias:', resultado_bfs['distancias'])
     print('Predecessores:', resultado_bfs['predecessores'])
     print("Caminho até D:", reconstruir_caminho(resultado_bfs, 'D'))
+
+    #Teste do DFS
+    resultado_dfs = DFS(vertices, arestas, 'A')
+    print("---DFS---")
+    print('Distâncias:', resultado_dfs['distancias'])
+    print('Predecessores:', resultado_dfs['predecessores'])
+    print('Ordem de visita:', resultado_dfs['ordem_visita'])
+    print('Descoberta:', resultado_dfs['descoberta'])
+    print('Finalização:', resultado_dfs['finalizacao'])
+    print('Classificação das arestas:', resultado_dfs['classificacao_arestas'])
+    print('Tem ciclo:', resultado_dfs['tem_ciclo'])
+    
 
