@@ -241,7 +241,73 @@ def DFS(vertices, arestas, inicio):
         'finalizacao': finalizacao,
         'classificacao_arestas': classificacao_arestas,
         'tem_ciclo': tem_ciclo,} 
-   
+
+
+def dijkstra(vertices, arestas, inicio):
+    vertices = list(dict.fromkeys(vertices))
+    arestas = list(arestas)
+    conjunto_vertices = set(vertices)
+
+    if inicio not in conjunto_vertices:
+        raise ValueError("O vértice inicial não pertence ao grafo.")
+
+    adjacencia = {v: [] for v in vertices}
+
+    for origem, destino, peso in arestas:
+        if origem not in conjunto_vertices or destino not in conjunto_vertices:
+            raise ValueError("Aresta com vértice que não pertence ao grafo.")
+
+        if not float('-inf') < peso < float('inf'):
+            raise ValueError("Os pesos devem ser números finitos.")
+
+        if peso < 0:
+            raise ValueError("Dijkstra não aceita pesos negativos.")
+
+        adjacencia[origem].append((destino, peso))
+
+    distancias = {v: float('inf') for v in vertices}
+    predecessores = {v: None for v in vertices}
+    distancias[inicio] = 0
+
+    visitados = set()
+    ordem_visita = []
+
+    while len(visitados) < len(vertices):
+
+        atual = None
+        menor_distancia = float('inf')
+
+        # Seleciona o vértice não visitado com menor distância.
+        for v in vertices:
+            if v not in visitados:
+                if distancias[v] < menor_distancia:
+                    menor_distancia = distancias[v]
+                    atual = v
+
+        # Encerra caso não existam mais vértices alcançáveis.
+        if atual is None:
+            break
+
+        visitados.add(atual)
+        ordem_visita.append(atual)
+
+        # Relaxamento das arestas.
+        for vizinho, peso in adjacencia[atual]:
+            if vizinho not in visitados:
+
+                novo_custo = distancias[atual] + peso
+
+                if novo_custo < distancias[vizinho]:
+                    distancias[vizinho] = novo_custo
+                    predecessores[vizinho] = atual
+
+    return {
+        'inicio': inicio,
+        'distancias': distancias,
+        'predecessores': predecessores,
+        'ordem_visita': ordem_visita,
+    }
+
 
 if __name__ == '__main__':
     # Exemplo original do usuário; não executa ao importar o módulo.
@@ -263,7 +329,7 @@ if __name__ == '__main__':
 
     #Teste do BFS
     resultado_bfs = BFS(vertices, arestas, 'A')
-    print("---BFS---")
+    print("\n---BFS---")
     print('Distâncias:', resultado_bfs['distancias'])
     print('Predecessores:', resultado_bfs['predecessores'])
     print("Caminho até D:", reconstruir_caminho(resultado_bfs, 'D'))
@@ -273,10 +339,28 @@ if __name__ == '__main__':
     print("---DFS---")
     print('Distâncias:', resultado_dfs['distancias'])
     print('Predecessores:', resultado_dfs['predecessores'])
+    print('Caminho até D:', reconstruir_caminho(resultado_dfs, 'D'))
     print('Ordem de visita:', resultado_dfs['ordem_visita'])
     print('Descoberta:', resultado_dfs['descoberta'])
     print('Finalização:', resultado_dfs['finalizacao'])
     print('Classificação das arestas:', resultado_dfs['classificacao_arestas'])
     print('Tem ciclo:', resultado_dfs['tem_ciclo'])
+
+    #Teste do Dijkstra
+    arestas_dijkstra = [
+        ('A', 'B', 4),
+        ('A', 'C', 3),
+        ('C', 'B', 2),
+        ('B', 'D', 5),
+        ('C', 'D', 6),
+    ]
+
+    resultado_dijkstra = dijkstra(vertices, arestas_dijkstra, 'A')
+
+    print("---Dijkstra---")
+    print('Distâncias:', resultado_dijkstra['distancias'])
+    print('Predecessores:', resultado_dijkstra['predecessores'])
+    print('Ordem de visita:', resultado_dijkstra['ordem_visita'])
+    print('Caminho até D:', reconstruir_caminho(resultado_dijkstra, 'D'))
     
 
