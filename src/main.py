@@ -17,6 +17,7 @@ from src.graphs.algorithms import (
     bellman_ford,
     BFS,
     DFS,
+    Djikstra,
     reconstruir_caminho,
 )
 
@@ -31,6 +32,7 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         'BELLMAN_FORD': bellman_ford,
         'BFS': BFS,
         'DFS': DFS,
+        'DIJKSTRA': Djikstra,
     }
 
     if algoritmo not in algoritmos:
@@ -277,7 +279,7 @@ def main():
 
     parser.add_argument(
         '--alg',
-        choices=['BELLMAN_FORD', 'BFS', 'DFS'],
+        choices=['BELLMAN_FORD', 'BFS', 'DFS', 'DIJKSTRA'],
         default='BELLMAN_FORD'
     )
 
