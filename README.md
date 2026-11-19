@@ -10,3 +10,5 @@ python -m src.cli --metricas --out out/parte1
 ```
 
 Para um único mapa, acrescentar `--mapa data/mapas/m02_uma_chave.txt`. O comando grava `out/parte1/metricas_global.json`, sem executar caminhos mínimos e sem apagar as métricas dos outros mapas. Convenções e modo fonte consumível em [docs/METRICAS.md](docs/METRICAS.md).
+
+Os resultados de uma resolução também incluem as métricas globais e os indicadores do percurso, calculados em `src/graphs/metricas.py`. O HTML lê esses indicadores e permite importar `metricas_global.json`; não repete as fórmulas.

@@ -50,3 +50,16 @@ python -m unittest discover -s tests -v
 ```
 
 Os testes de métricas conferem contas manuais de grafos pequenos, limites da densidade, exclusão de ALVO, inventário, casas inalcançáveis, exportação incremental e execução da CLI. Camadas, graus por estado, rankings, multiplicidade e armadilhas serão implementados separadamente.
+
+
+## Origem única dos indicadores
+
+- `calcular_metricas_labirinto` calcula as métricas usando o grafo de estados já construído. A quantidade de casas livres vem da ordem de G_pos, sem uma segunda contagem da grade.
+- `calcular_metricas_mapa` é a entrada de conveniência para o comando `--metricas`: lê o arquivo, constrói os estados e delega ao mesmo cálculo.
+- `calcular_metricas_percurso` fornece passos, custo final, custo médio por movimento e casas distintas. O custo acumulado do caminho é calculado na resolução e apenas consultado aqui.
+- A resolução normal inclui `metricas_globais` e `metricas_percurso` em `resultado_*.json`. Na exportação, o mesmo objeto de métricas globais atualiza `metricas_global.json`.
+- Os campos antigos `passos`, `custo` e `estados_alcancaveis` são mantidos por compatibilidade e copiam os indicadores centrais; não têm fórmulas próprias.
+
+O HTML mostra os valores exportados: não calcula média, quantidade de estados, densidade, teto ou ocupação. Somente o progresso da animação é calculado na apresentação, pois depende do passo atual. O conjunto de casas visitadas usado para desenhar o rastro é visual; não recalcula o indicador de casas distintas do percurso completo.
+
+É possível importar `metricas_global.json` diretamente no HTML, inclusive sem um percurso carregado. Resultados antigos continuam permitindo animação e exibição dos campos existentes; médias e casas distintas ficam indisponíveis até regenerar o relatório. A conversão de densidade e ocupação para texto ou porcentagem é somente formatação.
