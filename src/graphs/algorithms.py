@@ -208,7 +208,7 @@ def DFS(vertices, arestas, inicio):
             pilha.pop()
             continue
         if cores[vizinho] == "branco":
-            classificacao_arestas.append((atual,vizinho,"árvore"))
+            classificacao_arestas.append((atual,vizinho,"arvore"))
 
             predecessores[vizinho] = atual
             distancias[vizinho] = distancias[atual] + 1
