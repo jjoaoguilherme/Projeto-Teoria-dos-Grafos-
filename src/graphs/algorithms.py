@@ -1,4 +1,4 @@
-﻿"""Algoritmos de grafos. BFS, DFS e Dijkstra ainda serão implementados."""
+﻿"""Algoritmos de grafos."""
 
 from collections import deque
 
