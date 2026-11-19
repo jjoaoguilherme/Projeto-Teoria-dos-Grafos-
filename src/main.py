@@ -11,6 +11,7 @@ import sys
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from src.graphs.metricas import calcular_metricas_mapa, exportar_metricas_globais
 from src.graphs.io import ler_mapa, exibir_mapa
 from src.graphs.estados import construir_grafo_estados, verificar_vizinhos
 from src.graphs.algorithms import (
@@ -349,7 +350,13 @@ def main():
 
     parser.add_argument('--mapa')
 
-    parser.add_argument(
+    execucao = parser.add_mutually_exclusive_group()
+    execucao.add_argument(
+        '--metricas',
+        action='store_true',
+        help='Calcula métricas de --mapa ou de todos os mapas das pastas data.'
+    )
+    execucao.add_argument(
         '--alg',
         choices=['BELLMAN_FORD', 'BFS', 'DFS', 'DIJKSTRA'],
         default='BELLMAN_FORD'
@@ -366,6 +373,28 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if args.metricas:
+        if args.nome_mapa:
+            parser.error('Com --metricas, informe o caminho usando --mapa.')
+        raiz = Path(__file__).resolve().parent.parent
+        caminhos = ([Path(args.mapa)] if args.mapa else
+                    sorted((raiz / 'data/mapas').glob('*.txt')) +
+                    sorted((raiz / 'data/mapas_grupo').glob('*.txt')))
+        if not caminhos:
+            parser.error('Nenhum mapa encontrado para calcular as métricas.')
+        if len({p.stem for p in caminhos}) != len(caminhos):
+            parser.error('Os mapas devem ter nomes distintos para a exportação.')
+        try:
+            metricas = [calcular_metricas_mapa(p, args.fonte_consumivel)
+                        for p in caminhos]
+            arquivo = exportar_metricas_globais(metricas, args.out)
+        except (OSError, ValueError) as erro:
+            parser.exit(1, f'Erro: {erro}\n')
+        print(json.dumps({'mapas_processados': len(metricas),
+                          'arquivo': str(arquivo)}, ensure_ascii=False, indent=2))
+        return
+
 
     if args.nome_mapa:
         if args.mapa:

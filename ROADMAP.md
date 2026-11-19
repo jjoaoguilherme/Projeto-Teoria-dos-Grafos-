@@ -103,8 +103,8 @@ Concluída quando: comandos documentados executam de verdade e tratam os casos d
 
 Coordenação: `src/main.py`; usar módulos auxiliares se necessário para manter responsabilidades claras.
 
-- [ ] Por mapa: ordem, tamanho e densidade dirigida de G_pos e G_est; excluir ALVO das métricas da Seção 3.
-- [ ] Teto = casas livres × 2^(número de chaves) × 2^(número de bônus); ocupação = estados / teto.
+- [x] Por mapa: ordem, tamanho e densidade dirigida de G_pos e G_est; excluir ALVO das métricas da Seção 3.
+- [x] Teto = casas livres × 2^(número de chaves) × 2^(número de bônus); ocupação = estados / teto.
 - [ ] Camadas por conjunto de chaves: métricas dos subgrafos induzidos.
 - [ ] Contar arcos entre camadas e identificar casas que os geram.
 - [ ] Graus de entrada/saída; maiores graus com desempate pela ordem de leitura do rótulo.
@@ -182,7 +182,7 @@ Concluída quando: experimentos são reproduzíveis, resultados têm interpreta�
 ## Checklist de saídas da Parte 1
 
 - [ ] `out/parte1/arestas_<mapa>.csv` para todos os mapas, incluindo m08 e mapas próprios: origem,destino,movimento,casa_destino,peso.
-- [ ] `out/parte1/metricas_global.json` para todos os mapas.
+- [x] `out/parte1/metricas_global.json` para todos os mapas.
 - [ ] `out/parte1/camadas.json` com métricas por camada e arcos entre camadas.
 - [ ] `out/parte1/graus_<mapa>.csv`: estado,grau_entrada,grau_saida.
 - [ ] `out/parte1/comparacao_modelagem.csv`: mapa,abordagem,passos,caminho_valido,observacao.

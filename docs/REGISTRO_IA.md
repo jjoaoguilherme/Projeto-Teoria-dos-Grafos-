@@ -60,3 +60,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Verificação automatizada: `python -m unittest discover -s tests -v`; 35 testes aprovados na suíte completa, incluindo os 22 testes acima e os 13 testes anteriores de Bellman-Ford e integração.
 - Revisão e conferência pelo grupo: pendentes; não se presume que a execução automatizada substitua a verificação humana.
 - Esta entrada registra somente a autoria dos testes; o preenchimento referente aos demais arquivos fica sob responsabilidade do usuário.
+
+
+## Testes de métricas globais em 19/11/2026
+
+- Ferramenta: Codex.
+- Arquivo: `tests/test_metricas.py`, com 17 testes escritos com apoio de IA.
+- Finalidade: conferir ordem, tamanho e densidade em exemplos calculados à mão; exclusão de ALVO e seus arcos; teto e ocupação com chaves, bônus e fonte consumível; casas inalcançáveis; preservação dos grafos; exportação incremental e opções da CLI.
+- Verificação automatizada: `python -m unittest discover -s tests -q`; 52 testes aprovados no total, incluindo os 17 novos. A captura dos subprocessos usa UTF-8 explicitamente para compatibilidade com Windows.
+- Revisão humana pelo grupo: pendente. Esta entrada registra somente os testes; o registro referente ao restante do código fica com o usuário.

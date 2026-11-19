@@ -1,0 +1,235 @@
+{
+  "m01_terreno": {
+    "G_est": {
+      "densidade": 0.08333333333333333,
+      "ordem": 24,
+      "tamanho": 46
+    },
+    "G_pos": {
+      "densidade": 0.08333333333333333,
+      "ordem": 24,
+      "tamanho": 46
+    },
+    "casas_livres": 24,
+    "chaves": [],
+    "fonte_consumivel": false,
+    "mapa": "m01_terreno",
+    "numero_bonus": 0,
+    "numero_chaves": 0,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 1.0,
+    "teto_teorico": 24
+  },
+  "m02_uma_chave": {
+    "G_est": {
+      "densidade": 0.04993252361673414,
+      "ordem": 39,
+      "tamanho": 74
+    },
+    "G_pos": {
+      "densidade": 0.08498023715415019,
+      "ordem": 23,
+      "tamanho": 43
+    },
+    "casas_livres": 23,
+    "chaves": [
+      "a"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m02_uma_chave",
+    "numero_bonus": 0,
+    "numero_chaves": 1,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.8478260869565217,
+    "teto_teorico": 46
+  },
+  "m03_tres_chaves": {
+    "G_est": {
+      "densidade": 0.010319780317122863,
+      "ordem": 213,
+      "tamanho": 466
+    },
+    "G_pos": {
+      "densidade": 0.029298245614035087,
+      "ordem": 76,
+      "tamanho": 167
+    },
+    "casas_livres": 76,
+    "chaves": [
+      "a",
+      "b",
+      "c"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m03_tres_chaves",
+    "numero_bonus": 0,
+    "numero_chaves": 3,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.3503289473684211,
+    "teto_teorico": 608
+  },
+  "m04_esteiras": {
+    "G_est": {
+      "densidade": 0.04954954954954955,
+      "ordem": 37,
+      "tamanho": 66
+    },
+    "G_pos": {
+      "densidade": 0.07065217391304347,
+      "ordem": 24,
+      "tamanho": 39
+    },
+    "casas_livres": 24,
+    "chaves": [
+      "a"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m04_esteiras",
+    "numero_bonus": 0,
+    "numero_chaves": 1,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.7708333333333334,
+    "teto_teorico": 48
+  },
+  "m05_bonus": {
+    "G_est": {
+      "densidade": 0.009519669637035428,
+      "ordem": 215,
+      "tamanho": 438
+    },
+    "G_pos": {
+      "densidade": 0.04756871035940803,
+      "ordem": 44,
+      "tamanho": 90
+    },
+    "casas_livres": 44,
+    "chaves": [],
+    "fonte_consumivel": false,
+    "mapa": "m05_bonus",
+    "numero_bonus": 3,
+    "numero_chaves": 0,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.6107954545454546,
+    "teto_teorico": 352
+  },
+  "m06_fonte": {
+    "G_est": {
+      "densidade": 0.08333333333333333,
+      "ordem": 24,
+      "tamanho": 46
+    },
+    "G_pos": {
+      "densidade": 0.08333333333333333,
+      "ordem": 24,
+      "tamanho": 46
+    },
+    "casas_livres": 24,
+    "chaves": [],
+    "fonte_consumivel": false,
+    "mapa": "m06_fonte",
+    "numero_bonus": 0,
+    "numero_chaves": 0,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 1.0,
+    "teto_teorico": 24
+  },
+  "m07_impossivel": {
+    "G_est": {
+      "densidade": 0.15833333333333333,
+      "ordem": 16,
+      "tamanho": 38
+    },
+    "G_pos": {
+      "densidade": 0.07419354838709677,
+      "ordem": 31,
+      "tamanho": 69
+    },
+    "casas_livres": 31,
+    "chaves": [
+      "a"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m07_impossivel",
+    "numero_bonus": 0,
+    "numero_chaves": 1,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.25806451612903225,
+    "teto_teorico": 62
+  },
+  "m08_grande": {
+    "G_est": {
+      "densidade": 0.0007471551398849588,
+      "ordem": 2919,
+      "tamanho": 6364
+    },
+    "G_pos": {
+      "densidade": 0.001885172902726836,
+      "ordem": 1169,
+      "tamanho": 2574
+    },
+    "casas_livres": 1169,
+    "chaves": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m08_grande",
+    "numero_bonus": 0,
+    "numero_chaves": 4,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.156062874251497,
+    "teto_teorico": 18704
+  },
+  "mapa1": {
+    "G_est": {
+      "densidade": 0.01503902531886541,
+      "ordem": 103,
+      "tamanho": 158
+    },
+    "G_pos": {
+      "densidade": 0.05952380952380952,
+      "ordem": 28,
+      "tamanho": 45
+    },
+    "casas_livres": 28,
+    "chaves": [
+      "a",
+      "b",
+      "c"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "mapa1",
+    "numero_bonus": 1,
+    "numero_chaves": 3,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.22991071428571427,
+    "teto_teorico": 448
+  },
+  "mapa2": {
+    "G_est": {
+      "densidade": 0.019331243469174503,
+      "ordem": 88,
+      "tamanho": 148
+    },
+    "G_pos": {
+      "densidade": 0.0584045584045584,
+      "ordem": 27,
+      "tamanho": 41
+    },
+    "casas_livres": 27,
+    "chaves": [
+      "a",
+      "b",
+      "c"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "mapa2",
+    "numero_bonus": 1,
+    "numero_chaves": 3,
+    "numero_fontes_consumiveis": 0,
+    "taxa_ocupacao": 0.2037037037037037,
+    "teto_teorico": 432
+  }
+}
