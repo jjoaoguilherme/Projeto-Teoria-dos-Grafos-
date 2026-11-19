@@ -125,6 +125,8 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         ),
         'caminho': caminho_estados,
         'percurso': percurso,
+        'classificacao_arestas': resultado.get('classificacao_arestas', []),
+        'tem_ciclo': resultado.get('tem_ciclo', False),
         'estados_alcancaveis': len(grafo['estados']),
         'arcos_com_alvo': len(grafo['arestas']),
         'ciclo_negativo': resultado.get('ciclo_negativo', []),
@@ -201,6 +203,56 @@ def exportar_resultado(relatorio, grafo, pasta):
             'peso'
         ])
         escritor.writerows(grafo['registros'])
+
+   
+    if relatorio['algoritmo'] == 'DFS':
+
+        classificacoes = {
+            'arvore': 0,'retorno': 0,'avanco': 0,'cruzamento': 0
+        }
+
+        for origem, destino, tipo in relatorio['classificacao_arestas']:
+            classificacoes[tipo] += 1
+
+        arquivo_dfs = pasta / 'dfs_classificacao.csv'
+
+        campos_dfs = [
+            'mapa',
+            'arvore',
+            'retorno',
+            'avanco',
+            'cruzamento']
+
+        linhas_dfs = []
+
+        if arquivo_dfs.exists():
+            with arquivo_dfs.open(
+                'r', encoding='utf-8', newline=''
+            ) as arquivo:
+
+                linhas_dfs = [
+                    linha
+                    for linha in csv.DictReader(arquivo)
+                    if linha['mapa'] != nome
+                ]
+
+        linhas_dfs.append({
+            'mapa': nome,
+            'arvore': classificacoes['arvore'],
+            'retorno': classificacoes['retorno'],
+            'avanco': classificacoes['avanco'],
+            'cruzamento': classificacoes['cruzamento']})
+
+        with arquivo_dfs.open('w', encoding='utf-8', newline=''
+        ) as arquivo:
+
+            escritor = csv.DictWriter(
+                arquivo,
+                fieldnames=campos_dfs)
+
+            escritor.writeheader()
+            escritor.writerows(linhas_dfs)
+
 
     # Preserva os resultados dos outros algoritmos.
     arquivo_solucoes = pasta / 'solucoes.csv'
