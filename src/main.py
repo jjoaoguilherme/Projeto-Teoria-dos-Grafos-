@@ -38,16 +38,34 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
     if algoritmo not in algoritmos:
         raise ValueError(f'Algoritmo desconhecido: {algoritmo}')
 
-    resultado = algoritmos[algoritmo](
-        estrutura.vertices,
-        estrutura.arestas,
-        grafo['inicio']
+    motivo_recusa = None
+
+    try:
+        resultado = algoritmos[algoritmo](
+            estrutura.vertices,
+            estrutura.arestas,
+            grafo['inicio']
+        )
+
+    except ValueError as erro:
+        if (
+            algoritmo == 'DIJKSTRA'
+            and str(erro) == "Dijkstra não aceita pesos negativos."
+        ):
+            motivo_recusa = str(erro)
+            resultado = {}
+        else:
+            raise
+
+    distancia = (
+        None if motivo_recusa
+        else resultado['distancias']['ALVO']
     )
 
-    distancia = resultado['distancias']['ALVO']
     ciclo_negativo = resultado.get('tem_ciclo_negativo', False)
 
     status = (
+        'RECUSA' if motivo_recusa else
         'CICLO_NEGATIVO' if ciclo_negativo else
         'SEM_SOLUCAO' if distancia == float('inf') else
         'OK'
@@ -55,7 +73,8 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
 
     caminho_estados = (
         reconstruir_caminho(resultado, 'ALVO')
-        if distancia not in (float('inf'), float('-inf'))
+        if not motivo_recusa
+        and distancia not in (float('inf'), float('-inf'))
         else []
     )
 
@@ -97,6 +116,7 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         'algoritmo': algoritmo,
         'fonte_consumivel': fonte_consumivel,
         'status': status,
+        'motivo_recusa': motivo_recusa,
         'custo': custo,
         'custo_sem_limite': distancia == float('-inf'),
         'passos': len(percurso) - 1 if percurso else None,
@@ -331,6 +351,7 @@ def main():
             'mapa',
             'algoritmo',
             'status',
+            'motivo_recusa',
             'passos',
             'custo',
             'estados_alcancaveis',
