@@ -69,3 +69,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Finalidade: conferir ordem, tamanho e densidade em exemplos calculados à mão; exclusão de ALVO e seus arcos; teto e ocupação com chaves, bônus e fonte consumível; casas inalcançáveis; preservação dos grafos; exportação incremental e opções da CLI.
 - Verificação automatizada: `python -m unittest discover -s tests -q`; 52 testes aprovados no total, incluindo os 17 novos. A captura dos subprocessos usa UTF-8 explicitamente para compatibilidade com Windows.
 - Revisão humana pelo grupo: pendente. Esta entrada registra somente os testes; o registro referente ao restante do código fica com o usuário.
+
+
+## Testes de centralização das métricas em 19/11/2026
+
+- Ferramenta: Codex.
+- Arquivo: `tests/test_metricas.py`, com 8 testes adicionais escritos com apoio de IA, totalizando 25 testes nesse arquivo.
+- Finalidade: conferir percurso vazio, percurso sem movimentos, posições repetidas e custo negativo; garantir que a resolução não reconstrói os estados; comparar campos legados com os indicadores centrais; verificar consistência entre as exportações e situações de recusa, ciclo negativo e ausência de solução.
+- Verificação: suíte completa com 60 testes aprovados. Também foi executada uma verificação temporária no Edge sem janela para importação de JSON, compatibilidade com relatórios antigos, animação e ausência de erros JavaScript; o painel foi inspecionado em tamanhos desktop e celular.
+- Esta entrada registra somente os testes e verificações; os registros dos demais arquivos ficam com o usuário. Revisão humana do grupo: pendente.

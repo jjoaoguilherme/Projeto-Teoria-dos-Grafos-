@@ -417,5 +417,36 @@
   "ciclo_negativo": [],
   "arestas_ciclo": [],
   "custo_ciclo": null,
-  "ciclo_afeta_alvo": false
+  "ciclo_afeta_alvo": false,
+  "metricas_globais": {
+    "mapa": "mapa2",
+    "fonte_consumivel": false,
+    "casas_livres": 27,
+    "chaves": [
+      "a",
+      "b",
+      "c"
+    ],
+    "numero_chaves": 3,
+    "numero_bonus": 1,
+    "numero_fontes_consumiveis": 0,
+    "G_pos": {
+      "ordem": 27,
+      "tamanho": 41,
+      "densidade": 0.0584045584045584
+    },
+    "G_est": {
+      "ordem": 88,
+      "tamanho": 148,
+      "densidade": 0.019331243469174503
+    },
+    "teto_teorico": 432,
+    "taxa_ocupacao": 0.2037037037037037
+  },
+  "metricas_percurso": {
+    "passos": 24,
+    "custo": 19,
+    "custo_medio_por_movimento": 0.7916666666666666,
+    "casas_distintas": 17
+  }
 }

@@ -60,6 +60,25 @@ def calcular_metricas_labirinto(matriz, dados_estados, nome_mapa,
 
 
 
+def calcular_metricas_percurso(percurso):
+    """Indicadores do percurso completo; sem percurso, valores indisponíveis.
+
+    O custo acumulado já foi calculado ao reconstruir o caminho. Aqui ele é
+    apenas lido, sem somar pesos novamente. A fonte não contém o nó ALVO.
+    """
+    if not percurso:
+        return {'passos': None, 'custo': None,
+                'custo_medio_por_movimento': None, 'casas_distintas': None}
+    passos = len(percurso) - 1
+    custo = percurso[-1]['custo_acumulado']
+    return {
+        'passos': passos,
+        'custo': custo,
+        'custo_medio_por_movimento': custo / passos if passos else None,
+        'casas_distintas': len({tuple(p['posicao']) for p in percurso}),
+    }
+
+
 def exportar_metricas_globais(metricas, pasta):
     """Atualiza os mapas informados sem apagar entradas de outros mapas/modos.
 

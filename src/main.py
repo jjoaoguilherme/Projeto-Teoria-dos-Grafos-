@@ -11,7 +11,10 @@ import sys
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.graphs.metricas import calcular_metricas_mapa, exportar_metricas_globais
+from src.graphs.metricas import (
+    calcular_metricas_mapa, calcular_metricas_labirinto,
+    calcular_metricas_percurso, exportar_metricas_globais,
+)
 from src.graphs.io import ler_mapa, exibir_mapa
 from src.graphs.estados import construir_grafo_estados, verificar_vizinhos
 from src.graphs.algorithms import (
@@ -28,6 +31,9 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
     matriz, inicio, _ = ler_mapa(caminho)
     grafo = construir_grafo_estados(matriz, inicio, fonte_consumivel)
     estrutura = grafo['grafo']
+    metricas_globais = calcular_metricas_labirinto(
+        matriz, grafo, Path(caminho).stem, fonte_consumivel
+    )
 
     algoritmos = {
         'BELLMAN_FORD': bellman_ford,
@@ -107,10 +113,7 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
             'custo_acumulado': acumulado,
         })
 
-    custo = acumulado if percurso else None
-
-    if algoritmo == 'BELLMAN_FORD' and distancia == float('-inf'):
-        custo = None
+    metricas_percurso = calcular_metricas_percurso(percurso)
 
     relatorio = {
         'mapa': Path(caminho).stem,
@@ -118,9 +121,9 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         'fonte_consumivel': fonte_consumivel,
         'status': status,
         'motivo_recusa': motivo_recusa,
-        'custo': custo,
+        'custo': metricas_percurso['custo'],
         'custo_sem_limite': distancia == float('-inf'),
-        'passos': len(percurso) - 1 if percurso else None,
+        'passos': metricas_percurso['passos'],
         'arestas_ate_alvo': (
             len(caminho_estados) - 1 if caminho_estados else None
         ),
@@ -128,7 +131,10 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         'percurso': percurso,
         'classificacao_arestas': resultado.get('classificacao_arestas', []),
         'tem_ciclo': resultado.get('tem_ciclo', False),
-        'estados_alcancaveis': len(grafo['estados']),
+        'metricas_globais': metricas_globais,
+        'metricas_percurso': metricas_percurso,
+        # Campos mantidos para os consumidores anteriores do relatório.
+        'estados_alcancaveis': metricas_globais['G_est']['ordem'],
         'arcos_com_alvo': len(grafo['arestas']),
         'ciclo_negativo': resultado.get('ciclo_negativo', []),
         'arestas_ciclo': resultado.get('arestas_ciclo', []),
@@ -175,6 +181,7 @@ def exportar_resultado(relatorio, grafo, pasta):
         )
 
     salvar_json(f'resultado_{nome}{sufixo}.json', relatorio)
+    exportar_metricas_globais([relatorio['metricas_globais']], pasta)
 
     if relatorio['ciclo_negativo']:
         salvar_json(
@@ -394,7 +401,6 @@ def main():
         print(json.dumps({'mapas_processados': len(metricas),
                           'arquivo': str(arquivo)}, ensure_ascii=False, indent=2))
         return
-
 
     if args.nome_mapa:
         if args.mapa:
