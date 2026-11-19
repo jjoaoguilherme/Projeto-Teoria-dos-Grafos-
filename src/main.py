@@ -17,7 +17,7 @@ from src.graphs.algorithms import (
     bellman_ford,
     BFS,
     DFS,
-    Djikstra,
+    djikstra,
     reconstruir_caminho,
 )
 
@@ -32,7 +32,7 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
         'BELLMAN_FORD': bellman_ford,
         'BFS': BFS,
         'DFS': DFS,
-        'DIJKSTRA': Djikstra,
+        'DIJKSTRA': djikstra,
     }
 
     if algoritmo not in algoritmos:

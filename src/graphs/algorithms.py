@@ -243,7 +243,7 @@ def DFS(vertices, arestas, inicio):
         'tem_ciclo': tem_ciclo,} 
 
 
-def dijkstra(vertices, arestas, inicio):
+def djikstra(vertices, arestas, inicio):
     vertices = list(dict.fromkeys(vertices))
     arestas = list(arestas)
     conjunto_vertices = set(vertices)
@@ -355,12 +355,12 @@ if __name__ == '__main__':
         ('C', 'D', 6),
     ]
 
-    resultado_dijkstra = dijkstra(vertices, arestas_dijkstra, 'A')
+    resultado_djikstra = djikstra(vertices, arestas_dijkstra, 'A')
 
-    print("---Dijkstra---")
-    print('Distâncias:', resultado_dijkstra['distancias'])
-    print('Predecessores:', resultado_dijkstra['predecessores'])
-    print('Ordem de visita:', resultado_dijkstra['ordem_visita'])
-    print('Caminho até D:', reconstruir_caminho(resultado_dijkstra, 'D'))
+    print("---Djikstra---")
+    print('Distâncias:', resultado_djikstra['distancias'])
+    print('Predecessores:', resultado_djikstra['predecessores'])
+    print('Ordem de visita:', resultado_djikstra['ordem_visita'])
+    print('Caminho até D:', reconstruir_caminho(resultado_djikstra, 'D'))
     
 
