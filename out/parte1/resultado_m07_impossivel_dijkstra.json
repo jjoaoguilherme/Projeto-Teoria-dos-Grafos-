@@ -1,0 +1,21 @@
+{
+  "mapa": "m07_impossivel",
+  "algoritmo": "DIJKSTRA",
+  "fonte_consumivel": false,
+  "status": "SEM_SOLUCAO",
+  "motivo_recusa": null,
+  "custo": null,
+  "custo_sem_limite": false,
+  "passos": null,
+  "arestas_ate_alvo": null,
+  "caminho": [],
+  "percurso": [],
+  "classificacao_arestas": [],
+  "tem_ciclo": false,
+  "estados_alcancaveis": 16,
+  "arcos_com_alvo": 38,
+  "ciclo_negativo": [],
+  "arestas_ciclo": [],
+  "custo_ciclo": null,
+  "ciclo_afeta_alvo": false
+}

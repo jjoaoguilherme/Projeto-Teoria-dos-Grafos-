@@ -6,3 +6,5 @@ __pycache__/
 htmlcov/
 tmp/
 # out/ deve ser versionado: contém entregas obrigatórias.
+
+data/dataset_parte2/*.tsv

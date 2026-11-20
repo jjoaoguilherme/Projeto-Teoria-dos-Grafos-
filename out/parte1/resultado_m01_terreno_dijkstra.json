@@ -1,0 +1,189 @@
+{
+  "mapa": "m01_terreno",
+  "algoritmo": "DIJKSTRA",
+  "fonte_consumivel": false,
+  "status": "OK",
+  "motivo_recusa": null,
+  "custo": 20,
+  "custo_sem_limite": false,
+  "passos": 14,
+  "arestas_ate_alvo": 15,
+  "caminho": [
+    "(1,1)|-|{}",
+    "(2,1)|-|{}",
+    "(3,1)|-|{}",
+    "(3,2)|-|{}",
+    "(3,3)|-|{}",
+    "(3,4)|-|{}",
+    "(3,5)|-|{}",
+    "(3,6)|-|{}",
+    "(3,7)|-|{}",
+    "(3,8)|-|{}",
+    "(3,9)|-|{}",
+    "(3,10)|-|{}",
+    "(3,11)|-|{}",
+    "(2,11)|-|{}",
+    "(1,11)|-|{}",
+    "ALVO"
+  ],
+  "percurso": [
+    {
+      "estado": "(1,1)|-|{}",
+      "posicao": [
+        1,
+        1
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 0
+    },
+    {
+      "estado": "(2,1)|-|{}",
+      "posicao": [
+        2,
+        1
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 1
+    },
+    {
+      "estado": "(3,1)|-|{}",
+      "posicao": [
+        3,
+        1
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 2
+    },
+    {
+      "estado": "(3,2)|-|{}",
+      "posicao": [
+        3,
+        2
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 5
+    },
+    {
+      "estado": "(3,3)|-|{}",
+      "posicao": [
+        3,
+        3
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 8
+    },
+    {
+      "estado": "(3,4)|-|{}",
+      "posicao": [
+        3,
+        4
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 11
+    },
+    {
+      "estado": "(3,5)|-|{}",
+      "posicao": [
+        3,
+        5
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 12
+    },
+    {
+      "estado": "(3,6)|-|{}",
+      "posicao": [
+        3,
+        6
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 13
+    },
+    {
+      "estado": "(3,7)|-|{}",
+      "posicao": [
+        3,
+        7
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 14
+    },
+    {
+      "estado": "(3,8)|-|{}",
+      "posicao": [
+        3,
+        8
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 15
+    },
+    {
+      "estado": "(3,9)|-|{}",
+      "posicao": [
+        3,
+        9
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 16
+    },
+    {
+      "estado": "(3,10)|-|{}",
+      "posicao": [
+        3,
+        10
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 17
+    },
+    {
+      "estado": "(3,11)|-|{}",
+      "posicao": [
+        3,
+        11
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 18
+    },
+    {
+      "estado": "(2,11)|-|{}",
+      "posicao": [
+        2,
+        11
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 19
+    },
+    {
+      "estado": "(1,11)|-|{}",
+      "posicao": [
+        1,
+        11
+      ],
+      "chaves": [],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 20
+    }
+  ],
+  "classificacao_arestas": [],
+  "tem_ciclo": false,
+  "estados_alcancaveis": 24,
+  "arcos_com_alvo": 47,
+  "ciclo_negativo": [],
+  "arestas_ciclo": [],
+  "custo_ciclo": null,
+  "ciclo_afeta_alvo": false
+}
