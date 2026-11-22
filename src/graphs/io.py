@@ -36,6 +36,8 @@ def ler_mapa(caminho):
         )
 
     linhas = [linha for linha in conteudo.splitlines() if not linha.startswith(";")]
+    while linhas and linhas[-1] == '':
+        linhas.pop()
     matriz = [list(linha) for linha in linhas]
 
     # VALIDAÇÃO DO MAPA

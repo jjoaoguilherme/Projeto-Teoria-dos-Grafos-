@@ -4,70 +4,22 @@ from .graph import Grafo
 # IDENTIFICAÇÃO DOS VIZINHOS
 
 def verificar_vizinhos(matriz, estado_atual):
-    posicao, chaves, bonus_consumidos = estado_atual
+    posicao, chaves, _ = estado_atual
     i, j = posicao
-
-    if matriz[i][j] == "G":
+    if matriz[i][j] == 'G':
         return []
-    setas = {">": (0, 1), "<": (0, -1), "^": (-1, 0), "v": (1, 0)}
-    if matriz[i][j] in setas:
-        di, dj = setas[matriz[i][j]]
+    direcoes = {'^': [(-1, 0)], '>': [(0, 1)], 'v': [(1, 0)], '<': [(0, -1)]}
+    movimentos = direcoes.get(matriz[i][j], [(-1, 0), (0, 1), (1, 0), (0, -1)])
+    vizinhos = []
+    for di, dj in movimentos:
         ni, nj = i + di, j + dj
         if not (0 <= ni < len(matriz) and 0 <= nj < len(matriz[0])):
-            return []
+            continue
         simbolo = matriz[ni][nj]
-        if simbolo == "#" or (simbolo in "ABCD" and simbolo.lower() not in chaves):
-            return []
-        return [(ni, nj)]
-
-    vizinhos = []
-
-    cima = (i - 1, j)
-    direita = (i, j + 1)
-    baixo = (i + 1, j)
-    esquerda = (i, j - 1)
-
-    # VERIFICAÇÃO DOS MOVIMENTOS
-
-    # NORTE
-    if 0 <= cima[0] < len(matriz) and 0 <= cima[1] < len(matriz[0]):
-        if matriz[cima[0]][cima[1]] != "#":
-
-            if matriz[cima[0]][cima[1]] in "ABCD" and matriz[cima[0]][cima[1]].lower() not in chaves:
-                pass  # Porta bloqueada
-            else:
-                vizinhos.append(cima)
-
-    # LESTE
-    if 0 <= direita[0] < len(matriz) and 0 <= direita[1] < len(matriz[0]):
-        if matriz[direita[0]][direita[1]] != "#":
-
-            if matriz[direita[0]][direita[1]] in "ABCD" and matriz[direita[0]][direita[1]].lower() not in chaves:
-                pass  # Porta bloqueada
-            else:
-                vizinhos.append(direita)
-
-    # SUL
-    if 0 <= baixo[0] < len(matriz) and 0 <= baixo[1] < len(matriz[0]):
-        if matriz[baixo[0]][baixo[1]] != "#":
-
-            if matriz[baixo[0]][baixo[1]] in "ABCD" and matriz[baixo[0]][baixo[1]].lower() not in chaves:
-                pass  # Porta bloqueada
-            else:
-                vizinhos.append(baixo)
-
-    # OESTE
-    if 0 <= esquerda[0] < len(matriz) and 0 <= esquerda[1] < len(matriz[0]):
-        if matriz[esquerda[0]][esquerda[1]] != "#":
-
-            if matriz[esquerda[0]][esquerda[1]] in "ABCD" and matriz[esquerda[0]][esquerda[1]].lower() not in chaves:
-                pass  # Porta bloqueada
-            else:
-                vizinhos.append(esquerda)
-        
-
-
+        if simbolo != '#' and not (simbolo in 'ABCD' and simbolo.lower() not in chaves):
+            vizinhos.append((ni, nj))
     return vizinhos
+
 
 def explorar_mapa(matriz, inicio, fim):
     grafo = construir_grafo_estados(matriz, inicio)
