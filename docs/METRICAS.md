@@ -49,7 +49,7 @@ python -m unittest discover -s tests -p test_metricas.py -v
 python -m unittest discover -s tests -v
 ```
 
-Os testes de métricas conferem contas manuais de grafos pequenos, limites da densidade, exclusão de ALVO, inventário, casas inalcançáveis, exportação incremental e execução da CLI. Camadas, graus por estado, rankings, multiplicidade e armadilhas serão implementados separadamente.
+Os testes de métricas conferem contas manuais de grafos pequenos, limites da densidade, exclusão de ALVO, inventário, casas inalcançáveis, exportação incremental e execução da CLI. Camadas, graus por estado, rankings e multiplicidade estão descritos abaixo. A análise completa de armadilhas continua pendente.
 
 
 ## Origem única dos indicadores
@@ -63,3 +63,22 @@ Os testes de métricas conferem contas manuais de grafos pequenos, limites da de
 O HTML mostra os valores exportados: não calcula média, quantidade de estados, densidade, teto ou ocupação. Somente o progresso da animação é calculado na apresentação, pois depende do passo atual. O conjunto de casas visitadas usado para desenhar o rastro é visual; não recalcula o indicador de casas distintas do percurso completo.
 
 É possível importar `metricas_global.json` diretamente no HTML, inclusive sem um percurso carregado. Resultados antigos continuam permitindo animação e exibição dos campos existentes; médias e casas distintas ficam indisponíveis até regenerar o relatório. A conversão de densidade e ocupação para texto ou porcentagem é somente formatação.
+
+
+## Graus, rankings, becos, multiplicidade e camadas
+
+O comando `--metricas` agora gera o bloco completo para todos os mapas:
+
+- `metricas_global.json`: resumo global anterior, rankings de entrada/saída, becos e multiplicidade.
+- `graus_<mapa>.csv`: uma linha por estado real, com estado, grau_entrada e grau_saida. Exclui ALVO e todos os arcos incidentes nele; G tem saída zero.
+- `camadas.json`: subgrafos induzidos por conjunto de chaves e resumo dos arcos entre camadas. Estados com diferentes bônus consumidos podem estar na mesma camada.
+
+`calcular_detalhes_estados` percorre uma vez os arcos reais para contar graus e ligações internas/entre camadas. O ranking informa o estado vencedor e seu grau; empates são resolvidos em ordem lexicográfica do rótulo completo, sem converter as coordenadas para números. A saída é determinística e não depende da ordem de exploração.
+
+Becos são estados com saída zero fora de G. Não são a análise completa de estados-armadilha, que continua pendente. A multiplicidade contém cada casa não parede, com zero para casas sem estados alcançáveis, além do máximo, quantidade de casas que o atingem e suas posições. Isso fornece os dados para o heatmap de m08; a figura e sua interpretação no relatório continuam pendentes.
+
+Em `camadas.json`, a camada sem chaves se chama `-`. Cada camada informa ordem, tamanho e densidade, considerando apenas arcos com as duas pontas na camada. `arcos_entre_camadas` informa o total, contagens por par de camadas e as posições e chaves das casas de destino responsáveis pela transição. ALVO não pertence a nenhuma camada. A fórmula de densidade é compartilhada com as métricas globais.
+
+`calcular_pacote_metricas` reúne os cálculos reutilizando os estados existentes; `calcular_pacote_mapa` lê e constrói os estados quando a entrada é um arquivo. A resolução comum reutiliza esse pacote nas exportações. CSVs e camadas são gravados separadamente para não duplicar os graus dentro dos relatórios globais. A variante de fonte consumível mantém o sufixo `_fonte_consumivel` nos três arquivos, sem apagar a execução normal.
+
+A geração pode ser repetida para um mapa sem apagar os dados dos demais. Os resultados detalhados ficam nos arquivos exportados; os indicadores já existentes do HTML continuam lendo o mesmo resumo global.

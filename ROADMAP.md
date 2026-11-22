@@ -105,11 +105,12 @@ Coordenação: `src/main.py`; usar módulos auxiliares se necessário para mante
 
 - [x] Por mapa: ordem, tamanho e densidade dirigida de G_pos e G_est; excluir ALVO das métricas da Seção 3.
 - [x] Teto = casas livres × 2^(número de chaves) × 2^(número de bônus); ocupação = estados / teto.
-- [ ] Camadas por conjunto de chaves: métricas dos subgrafos induzidos.
-- [ ] Contar arcos entre camadas e identificar casas que os geram.
-- [ ] Graus de entrada/saída; maiores graus com desempate pela ordem de leitura do rótulo.
-- [ ] Multiplicidade por casa; máximo no m08, quantidade de casas que o atingem e explicação autoral.
-- [ ] Becos: estados sem saída fora de G.
+- [x] Camadas por conjunto de chaves: métricas dos subgrafos induzidos.
+- [x] Contar arcos entre camadas e identificar casas que os geram.
+- [x] Graus de entrada/saída; maiores graus com desempate pela ordem de leitura do rótulo.
+- [x] Multiplicidade por casa; máximo no m08 e quantidade de casas que o atingem.
+- [ ] Explicação autoral da multiplicidade máxima do m08 no relatório.
+- [x] Becos: estados sem saída fora de G.
 - [ ] Comparar portas como chão, como parede e G_est com BFS em m02/m03/m04.
 - [ ] Comparar m05 em G_pos (+ sempre -4) e G_est; prova autoral de ausência de ciclo negativo em G_est.
 - [ ] Busca no transposto a partir de ALVO para armadilhas de m04 e m07.
@@ -183,8 +184,8 @@ Concluída quando: experimentos são reproduzíveis, resultados têm interpreta�
 
 - [ ] `out/parte1/arestas_<mapa>.csv` para todos os mapas, incluindo m08 e mapas próprios: origem,destino,movimento,casa_destino,peso.
 - [x] `out/parte1/metricas_global.json` para todos os mapas.
-- [ ] `out/parte1/camadas.json` com métricas por camada e arcos entre camadas.
-- [ ] `out/parte1/graus_<mapa>.csv`: estado,grau_entrada,grau_saida.
+- [x] `out/parte1/camadas.json` com métricas por camada e arcos entre camadas.
+- [x] `out/parte1/graus_<mapa>.csv`: estado,grau_entrada,grau_saida.
 - [ ] `out/parte1/comparacao_modelagem.csv`: mapa,abordagem,passos,caminho_valido,observacao.
 - [ ] `out/parte1/solucoes.csv`: mapa,algoritmo,passos,custo,status,caminho.
 - [ ] `out/parte1/percurso_m03.json` de menor custo, estado a estado.

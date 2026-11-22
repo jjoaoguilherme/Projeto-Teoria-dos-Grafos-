@@ -12,8 +12,8 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.graphs.metricas import (
-    calcular_metricas_mapa, calcular_metricas_labirinto,
-    calcular_metricas_percurso, exportar_metricas_globais,
+    calcular_pacote_mapa, calcular_pacote_metricas,
+    calcular_metricas_percurso, exportar_pacotes_metricas,
 )
 from src.graphs.io import ler_mapa, exibir_mapa
 from src.graphs.estados import construir_grafo_estados, verificar_vizinhos
@@ -31,9 +31,11 @@ def resolver_mapa(caminho, fonte_consumivel=False, algoritmo='BELLMAN_FORD'):
     matriz, inicio, _ = ler_mapa(caminho)
     grafo = construir_grafo_estados(matriz, inicio, fonte_consumivel)
     estrutura = grafo['grafo']
-    metricas_globais = calcular_metricas_labirinto(
+    pacote_metricas = calcular_pacote_metricas(
         matriz, grafo, Path(caminho).stem, fonte_consumivel
     )
+    grafo['metricas'] = pacote_metricas
+    metricas_globais = pacote_metricas['globais']
 
     algoritmos = {
         'BELLMAN_FORD': bellman_ford,
@@ -181,7 +183,7 @@ def exportar_resultado(relatorio, grafo, pasta):
         )
 
     salvar_json(f'resultado_{nome}{sufixo}.json', relatorio)
-    exportar_metricas_globais([relatorio['metricas_globais']], pasta)
+    exportar_pacotes_metricas([grafo['metricas']], pasta)
 
     if relatorio['ciclo_negativo']:
         salvar_json(
@@ -393,9 +395,9 @@ def main():
         if len({p.stem for p in caminhos}) != len(caminhos):
             parser.error('Os mapas devem ter nomes distintos para a exportação.')
         try:
-            metricas = [calcular_metricas_mapa(p, args.fonte_consumivel)
+            metricas = [calcular_pacote_mapa(p, args.fonte_consumivel)
                         for p in caminhos]
-            arquivo = exportar_metricas_globais(metricas, args.out)
+            arquivo = exportar_pacotes_metricas(metricas, args.out)
         except (OSError, ValueError) as erro:
             parser.exit(1, f'Erro: {erro}\n')
         print(json.dumps({'mapas_processados': len(metricas),

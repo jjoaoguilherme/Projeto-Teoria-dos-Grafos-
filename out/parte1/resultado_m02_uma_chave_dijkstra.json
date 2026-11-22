@@ -451,5 +451,275 @@
   "ciclo_negativo": [],
   "arestas_ciclo": [],
   "custo_ciclo": null,
-  "ciclo_afeta_alvo": false
+  "ciclo_afeta_alvo": false,
+  "metricas_globais": {
+    "G_est": {
+      "densidade": 0.04993252361673414,
+      "ordem": 39,
+      "tamanho": 74
+    },
+    "G_pos": {
+      "densidade": 0.08498023715415019,
+      "ordem": 23,
+      "tamanho": 43
+    },
+    "becos": {
+      "estados": [],
+      "quantidade": 0
+    },
+    "casas_livres": 23,
+    "chaves": [
+      "a"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m02_uma_chave",
+    "multiplicidade": {
+      "casas_maximas": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "maxima": 2,
+      "por_casa": [
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            2
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            8
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            10
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            1,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            2,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            2
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            8
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            10
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            3,
+            11
+          ]
+        }
+      ],
+      "quantidade_casas_maximas": 16
+    },
+    "numero_bonus": 0,
+    "numero_chaves": 1,
+    "numero_fontes_consumiveis": 0,
+    "rankings": {
+      "maior_grau_entrada": {
+        "estado": "(1,1)|-|{}",
+        "grau": 2
+      },
+      "maior_grau_saida": {
+        "estado": "(1,1)|-|{}",
+        "grau": 2
+      }
+    },
+    "taxa_ocupacao": 0.8478260869565217,
+    "teto_teorico": 46
+  }
 }

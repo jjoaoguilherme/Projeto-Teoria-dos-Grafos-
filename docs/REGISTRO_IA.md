@@ -78,3 +78,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Finalidade: conferir percurso vazio, percurso sem movimentos, posições repetidas e custo negativo; garantir que a resolução não reconstrói os estados; comparar campos legados com os indicadores centrais; verificar consistência entre as exportações e situações de recusa, ciclo negativo e ausência de solução.
 - Verificação: suíte completa com 60 testes aprovados. Também foi executada uma verificação temporária no Edge sem janela para importação de JSON, compatibilidade com relatórios antigos, animação e ausência de erros JavaScript; o painel foi inspecionado em tamanhos desktop e celular.
 - Esta entrada registra somente os testes e verificações; os registros dos demais arquivos ficam com o usuário. Revisão humana do grupo: pendente.
+
+
+## Testes das métricas detalhadas em 22/11/2026
+
+- Ferramenta: Codex.
+- Arquivo criado: `tests/test_metricas_detalhadas.py`, com 9 testes de apoio à validação de graus, rankings, becos, multiplicidade e camadas.
+- Casos: contas manuais em SaG, bônus sem mudança de camada, esteira contra parede, múltiplas saídas, empate lexicográfico, exportação incremental e variante consumível, proteção de camadas.json inválido e invariantes dos dez mapas mais m06 consumível.
+- Ajustado o teste de exportação em `tests/test_metricas.py` para exigir também camadas.json e o CSV de graus.
+- Verificação: 69 testes aprovados; CSVs dos dez mapas conferidos quanto à quantidade de estados e soma dos graus. O restante do registro de implementação fica com o usuário. Revisão humana do grupo: pendente.

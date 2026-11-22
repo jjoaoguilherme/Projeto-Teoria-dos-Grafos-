@@ -138,7 +138,8 @@ class TestMetricas(unittest.TestCase):
             dados = json.loads((Path(pasta) / 'metricas_global.json').read_text(encoding='utf-8'))
             self.assertEqual(set(dados), {'m02_uma_chave'})
             self.assertEqual(dados['m02_uma_chave']['G_est']['ordem'], 39)
-            self.assertEqual([p.name for p in Path(pasta).iterdir()], ['metricas_global.json'])
+            self.assertEqual({p.name for p in Path(pasta).iterdir()},
+                             {'metricas_global.json', 'camadas.json', 'graus_m02_uma_chave.csv'})
 
     def test_cli_todos_os_mapas(self):
         esperados = {p.stem for pasta in ['mapas', 'mapas_grupo']

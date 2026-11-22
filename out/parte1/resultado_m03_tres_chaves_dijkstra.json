@@ -1293,5 +1293,632 @@
   "ciclo_negativo": [],
   "arestas_ciclo": [],
   "custo_ciclo": null,
-  "ciclo_afeta_alvo": false
+  "ciclo_afeta_alvo": false,
+  "metricas_globais": {
+    "G_est": {
+      "densidade": 0.010319780317122863,
+      "ordem": 213,
+      "tamanho": 466
+    },
+    "G_pos": {
+      "densidade": 0.029298245614035087,
+      "ordem": 76,
+      "tamanho": 167
+    },
+    "becos": {
+      "estados": [],
+      "quantidade": 0
+    },
+    "casas_livres": 76,
+    "chaves": [
+      "a",
+      "b",
+      "c"
+    ],
+    "fonte_consumivel": false,
+    "mapa": "m03_tres_chaves",
+    "multiplicidade": {
+      "casas_maximas": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "maxima": 4,
+      "por_casa": [
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            2
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            1,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            1,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            1,
+            8
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            1,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            1,
+            10
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            1,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            12
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            14
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            1,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            2,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            3,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            3,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            12
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            14
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            3,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            4,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            4,
+            8
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            12
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            14
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            4,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            5,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            5,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            5,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            5,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            5,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            6,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            6,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            6,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 2,
+          "posicao": [
+            6,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            6,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            6,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            6,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            6,
+            10
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            6,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            6,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            6,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 4,
+          "posicao": [
+            7,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            7,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 1,
+          "posicao": [
+            7,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            7,
+            15
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            1
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            2
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            3
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            4
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            5
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            6
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            7
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            8
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            9
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            10
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            11
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            12
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            13
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            14
+          ]
+        },
+        {
+          "multiplicidade": 3,
+          "posicao": [
+            8,
+            15
+          ]
+        }
+      ],
+      "quantidade_casas_maximas": 12
+    },
+    "numero_bonus": 0,
+    "numero_chaves": 3,
+    "numero_fontes_consumiveis": 0,
+    "rankings": {
+      "maior_grau_entrada": {
+        "estado": "(1,12)|ab|{}",
+        "grau": 3
+      },
+      "maior_grau_saida": {
+        "estado": "(3,12)|abc|{}",
+        "grau": 3
+      }
+    },
+    "taxa_ocupacao": 0.3503289473684211,
+    "teto_teorico": 608
+  }
 }
