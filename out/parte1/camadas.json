@@ -179,6 +179,20 @@
       }
     }
   },
+  "m06_fonte_fonte_consumivel": {
+    "arcos_entre_camadas": {
+      "por_casa": [],
+      "quantidade": 0,
+      "transicoes": []
+    },
+    "camadas": {
+      "-": {
+        "densidade": 0.04871794871794872,
+        "ordem": 40,
+        "tamanho": 76
+      }
+    }
+  },
   "m07_impossivel": {
     "arcos_entre_camadas": {
       "por_casa": [],
@@ -288,7 +302,7 @@
           "chave": "a",
           "posicao": [
             1,
-            2
+            3
           ],
           "quantidade": 1
         },
@@ -296,7 +310,7 @@
           "chave": "b",
           "posicao": [
             1,
-            4
+            6
           ],
           "quantidade": 1
         },
@@ -304,7 +318,7 @@
           "chave": "c",
           "posicao": [
             1,
-            6
+            9
           ],
           "quantidade": 1
         }
@@ -330,24 +344,24 @@
     },
     "camadas": {
       "-": {
-        "densidade": 0.10606060606060606,
-        "ordem": 12,
-        "tamanho": 14
+        "densidade": 1.0,
+        "ordem": 2,
+        "tamanho": 2
       },
       "a": {
-        "densidade": 0.09166666666666666,
-        "ordem": 16,
-        "tamanho": 22
+        "densidade": 0.35,
+        "ordem": 5,
+        "tamanho": 7
       },
       "ab": {
-        "densidade": 0.07894736842105263,
-        "ordem": 20,
-        "tamanho": 30
+        "densidade": 0.2619047619047619,
+        "ordem": 7,
+        "tamanho": 11
       },
       "abc": {
-        "densidade": 0.029966329966329967,
-        "ordem": 55,
-        "tamanho": 89
+        "densidade": 0.2619047619047619,
+        "ordem": 7,
+        "tamanho": 11
       }
     }
   },

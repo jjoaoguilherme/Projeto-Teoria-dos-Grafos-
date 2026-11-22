@@ -224,3 +224,22 @@ Concluída quando: experimentos são reproduzíveis, resultados têm interpreta�
 - Apresentações: 26/11 turma A, 01/12 turma B, 03/12 remanescentes e quem cursa só AVD.
 
 Próximo passo de desenvolvimento: Etapa 2, estrutura do grafo e contratos. Etapa 1 verificada em 08/11/2026: 25 testes aprovados.
+
+
+## Conferência técnica da Parte 1 em 22/11/2026
+
+Implementação e arquivos gerados pelo comando `python -m src.cli --parte1-completa --out out/parte1`:
+
+- [x] Leitura, grafos de posições/estados, quatro algoritmos e métricas.
+- [x] Comparações m02/m03/m04 e bônus do m05.
+- [x] Armadilhas m04/m07, classificação DFS, ciclo m06 e fonte consumível.
+- [x] Dois mapas próprios com testes de requisitos e gabaritos numéricos.
+- [x] Figuras de percursos, camadas, árvore BFS e heatmap.
+- [x] Interface com seleção, animação, velocidade, camadas e destaque de armadilhas.
+- [x] CSVs/JSONs dos dez mapas e manual técnico PDF.
+- [x] Testes obrigatórios; revisão da geometria compartilhada e da coleta pytest.
+- [ ] Revisão pelo grupo do relatório, mapas e respostas para a apresentação.
+- [ ] Preencher identificação e matriz de contribuição efetiva no relatório final.
+- [ ] Preencher, assinar e entregar a declaração oficial por todos os integrantes.
+
+As listas anteriores são o histórico do planejamento; este quadro descreve a conferência atual da Parte 1. A Parte 2 continua separada e pendente.

@@ -1,0 +1,82 @@
+{
+  "m01_terreno": {
+    "estados": 24,
+    "arcos": 46,
+    "passos_bfs": 10,
+    "custo": 20,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "m02_uma_chave": {
+    "estados": 39,
+    "arcos": 74,
+    "passos_bfs": 34,
+    "custo": 46,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "m03_tres_chaves": {
+    "estados": 213,
+    "arcos": 466,
+    "passos_bfs": 87,
+    "custo": 99,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "m04_esteiras": {
+    "estados": 37,
+    "arcos": 66,
+    "passos_bfs": 20,
+    "custo": 36,
+    "armadilhas": 4,
+    "taxa_armadilhas": 0.10810810810810811
+  },
+  "m05_bonus": {
+    "estados": 215,
+    "arcos": 438,
+    "passos_bfs": 12,
+    "custo": 5,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "m06_fonte": {
+    "estados": 24,
+    "arcos": 46,
+    "passos_bfs": 10,
+    "custo": null,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "m07_impossivel": {
+    "estados": 16,
+    "arcos": 38,
+    "passos_bfs": null,
+    "custo": null,
+    "armadilhas": 16,
+    "taxa_armadilhas": 1.0
+  },
+  "m08_grande": {
+    "estados": 2919,
+    "arcos": 6364,
+    "passos_bfs": 392,
+    "custo": 482,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "mapa1": {
+    "estados": 21,
+    "arcos": 34,
+    "passos_bfs": 10,
+    "custo": 5,
+    "armadilhas": 0,
+    "taxa_armadilhas": 0.0
+  },
+  "mapa2": {
+    "estados": 88,
+    "arcos": 148,
+    "passos_bfs": 20,
+    "custo": 19,
+    "armadilhas": 20,
+    "taxa_armadilhas": 0.22727272727272727
+  }
+}

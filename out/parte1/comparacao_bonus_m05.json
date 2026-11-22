@@ -1,0 +1,23 @@
+{
+  "G_pos": {
+    "ciclo_negativo": [
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "custo_ciclo": -3
+  },
+  "G_est": {
+    "tem_ciclo_negativo": false,
+    "custo": 5
+  }
+}

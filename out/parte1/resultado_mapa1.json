@@ -3,57 +3,26 @@
   "algoritmo": "BELLMAN_FORD",
   "fonte_consumivel": false,
   "status": "OK",
-  "custo": 22,
+  "motivo_recusa": null,
+  "custo": 5,
   "custo_sem_limite": false,
-  "passos": 22,
-  "arestas_ate_alvo": 23,
+  "passos": 10,
+  "arestas_ate_alvo": 11,
   "caminho": [
-    "(3,1)|-|{}",
-    "(2,1)|-|{}",
     "(1,1)|-|{}",
-    "(1,2)|a|{}",
+    "(1,2)|-|{}",
     "(1,3)|a|{}",
-    "(1,4)|ab|{}",
-    "(1,5)|ab|{}",
-    "(1,6)|abc|{}",
-    "(1,5)|abc|{}",
-    "(1,4)|abc|{}",
-    "(1,3)|abc|{}",
-    "(1,2)|abc|{}",
-    "(1,1)|abc|{}",
-    "(2,1)|abc|{}",
-    "(3,1)|abc|{}",
-    "(3,2)|abc|{}",
-    "(3,3)|abc|{}",
-    "(3,4)|abc|{}",
-    "(3,5)|abc|{}",
-    "(3,6)|abc|{}",
-    "(3,7)|abc|{}",
-    "(3,8)|abc|{}",
-    "(3,9)|abc|{}",
+    "(1,4)|a|{}",
+    "(1,5)|a|{}",
+    "(1,6)|ab|{}",
+    "(1,7)|ab|{}",
+    "(1,8)|ab|{0}",
+    "(1,9)|abc|{0}",
+    "(1,10)|abc|{0}",
+    "(1,11)|abc|{0}",
     "ALVO"
   ],
   "percurso": [
-    {
-      "estado": "(3,1)|-|{}",
-      "posicao": [
-        3,
-        1
-      ],
-      "chaves": [],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 0
-    },
-    {
-      "estado": "(2,1)|-|{}",
-      "posicao": [
-        2,
-        1
-      ],
-      "chaves": [],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 1
-    },
     {
       "estado": "(1,1)|-|{}",
       "posicao": [
@@ -62,19 +31,17 @@
       ],
       "chaves": [],
       "consumidos_posicoes": [],
-      "custo_acumulado": 2
+      "custo_acumulado": 0
     },
     {
-      "estado": "(1,2)|a|{}",
+      "estado": "(1,2)|-|{}",
       "posicao": [
         1,
         2
       ],
-      "chaves": [
-        "a"
-      ],
+      "chaves": [],
       "consumidos_posicoes": [],
-      "custo_acumulado": 3
+      "custo_acumulado": 1
     },
     {
       "estado": "(1,3)|a|{}",
@@ -86,13 +53,37 @@
         "a"
       ],
       "consumidos_posicoes": [],
-      "custo_acumulado": 4
+      "custo_acumulado": 2
     },
     {
-      "estado": "(1,4)|ab|{}",
+      "estado": "(1,4)|a|{}",
       "posicao": [
         1,
         4
+      ],
+      "chaves": [
+        "a"
+      ],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 3
+    },
+    {
+      "estado": "(1,5)|a|{}",
+      "posicao": [
+        1,
+        5
+      ],
+      "chaves": [
+        "a"
+      ],
+      "consumidos_posicoes": [],
+      "custo_acumulado": 4
+    },
+    {
+      "estado": "(1,6)|ab|{}",
+      "posicao": [
+        1,
+        6
       ],
       "chaves": [
         "a",
@@ -102,10 +93,10 @@
       "custo_acumulado": 5
     },
     {
-      "estado": "(1,5)|ab|{}",
+      "estado": "(1,7)|ab|{}",
       "posicao": [
         1,
-        5
+        7
       ],
       "chaves": [
         "a",
@@ -115,219 +106,27 @@
       "custo_acumulado": 6
     },
     {
-      "estado": "(1,6)|abc|{}",
+      "estado": "(1,8)|ab|{0}",
       "posicao": [
         1,
-        6
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 7
-    },
-    {
-      "estado": "(1,5)|abc|{}",
-      "posicao": [
-        1,
-        5
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 8
-    },
-    {
-      "estado": "(1,4)|abc|{}",
-      "posicao": [
-        1,
-        4
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 9
-    },
-    {
-      "estado": "(1,3)|abc|{}",
-      "posicao": [
-        1,
-        3
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 10
-    },
-    {
-      "estado": "(1,2)|abc|{}",
-      "posicao": [
-        1,
-        2
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 11
-    },
-    {
-      "estado": "(1,1)|abc|{}",
-      "posicao": [
-        1,
-        1
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 12
-    },
-    {
-      "estado": "(2,1)|abc|{}",
-      "posicao": [
-        2,
-        1
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 13
-    },
-    {
-      "estado": "(3,1)|abc|{}",
-      "posicao": [
-        3,
-        1
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 14
-    },
-    {
-      "estado": "(3,2)|abc|{}",
-      "posicao": [
-        3,
-        2
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 15
-    },
-    {
-      "estado": "(3,3)|abc|{}",
-      "posicao": [
-        3,
-        3
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 16
-    },
-    {
-      "estado": "(3,4)|abc|{}",
-      "posicao": [
-        3,
-        4
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 17
-    },
-    {
-      "estado": "(3,5)|abc|{}",
-      "posicao": [
-        3,
-        5
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 18
-    },
-    {
-      "estado": "(3,6)|abc|{}",
-      "posicao": [
-        3,
-        6
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 19
-    },
-    {
-      "estado": "(3,7)|abc|{}",
-      "posicao": [
-        3,
-        7
-      ],
-      "chaves": [
-        "a",
-        "b",
-        "c"
-      ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 20
-    },
-    {
-      "estado": "(3,8)|abc|{}",
-      "posicao": [
-        3,
         8
       ],
       "chaves": [
         "a",
-        "b",
-        "c"
+        "b"
       ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 21
+      "consumidos_posicoes": [
+        [
+          1,
+          8
+        ]
+      ],
+      "custo_acumulado": 2
     },
     {
-      "estado": "(3,9)|abc|{}",
+      "estado": "(1,9)|abc|{0}",
       "posicao": [
-        3,
+        1,
         9
       ],
       "chaves": [
@@ -335,317 +134,193 @@
         "b",
         "c"
       ],
-      "consumidos_posicoes": [],
-      "custo_acumulado": 22
+      "consumidos_posicoes": [
+        [
+          1,
+          8
+        ]
+      ],
+      "custo_acumulado": 3
+    },
+    {
+      "estado": "(1,10)|abc|{0}",
+      "posicao": [
+        1,
+        10
+      ],
+      "chaves": [
+        "a",
+        "b",
+        "c"
+      ],
+      "consumidos_posicoes": [
+        [
+          1,
+          8
+        ]
+      ],
+      "custo_acumulado": 4
+    },
+    {
+      "estado": "(1,11)|abc|{0}",
+      "posicao": [
+        1,
+        11
+      ],
+      "chaves": [
+        "a",
+        "b",
+        "c"
+      ],
+      "consumidos_posicoes": [
+        [
+          1,
+          8
+        ]
+      ],
+      "custo_acumulado": 5
     }
   ],
-  "estados_alcancaveis": 103,
-  "arcos_com_alvo": 160,
-  "ciclo_negativo": [],
-  "arestas_ciclo": [],
-  "custo_ciclo": null,
-  "ciclo_afeta_alvo": false,
+  "classificacao_arestas": [],
+  "tem_ciclo": false,
   "metricas_globais": {
-    "G_est": {
-      "densidade": 0.01503902531886541,
-      "ordem": 103,
-      "tamanho": 158
-    },
-    "G_pos": {
-      "densidade": 0.05952380952380952,
-      "ordem": 28,
-      "tamanho": 45
-    },
-    "becos": {
-      "estados": [
-        "(5,7)|-|{}",
-        "(5,7)|abc|{0}",
-        "(5,7)|abc|{}",
-        "(5,7)|ab|{}",
-        "(5,7)|a|{}"
-      ],
-      "quantidade": 5
-    },
-    "casas_livres": 28,
+    "mapa": "mapa1",
+    "fonte_consumivel": false,
+    "casas_livres": 11,
     "chaves": [
       "a",
       "b",
       "c"
     ],
-    "fonte_consumivel": false,
-    "mapa": "mapa1",
-    "multiplicidade": {
-      "casas_maximas": [
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          3,
-          2
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          5,
-          2
-        ],
-        [
-          5,
-          3
-        ],
-        [
-          5,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          5,
-          6
-        ],
-        [
-          5,
-          7
-        ]
-      ],
-      "maxima": 5,
-      "por_casa": [
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            1,
-            1
-          ]
-        },
-        {
-          "multiplicidade": 4,
-          "posicao": [
-            1,
-            2
-          ]
-        },
-        {
-          "multiplicidade": 4,
-          "posicao": [
-            1,
-            3
-          ]
-        },
-        {
-          "multiplicidade": 3,
-          "posicao": [
-            1,
-            4
-          ]
-        },
-        {
-          "multiplicidade": 3,
-          "posicao": [
-            1,
-            5
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            1,
-            6
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            1,
-            7
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            1,
-            8
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            1,
-            9
-          ]
-        },
-        {
-          "multiplicidade": 1,
-          "posicao": [
-            1,
-            10
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            2,
-            1
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            3,
-            1
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            3,
-            2
-          ]
-        },
-        {
-          "multiplicidade": 4,
-          "posicao": [
-            3,
-            3
-          ]
-        },
-        {
-          "multiplicidade": 4,
-          "posicao": [
-            3,
-            4
-          ]
-        },
-        {
-          "multiplicidade": 3,
-          "posicao": [
-            3,
-            5
-          ]
-        },
-        {
-          "multiplicidade": 3,
-          "posicao": [
-            3,
-            6
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            3,
-            7
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            3,
-            8
-          ]
-        },
-        {
-          "multiplicidade": 2,
-          "posicao": [
-            3,
-            9
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            4,
-            1
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            1
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            2
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            3
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            4
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            5
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            6
-          ]
-        },
-        {
-          "multiplicidade": 5,
-          "posicao": [
-            5,
-            7
-          ]
-        }
-      ],
-      "quantidade_casas_maximas": 12
-    },
-    "numero_bonus": 1,
     "numero_chaves": 3,
+    "numero_bonus": 1,
     "numero_fontes_consumiveis": 0,
+    "G_pos": {
+      "ordem": 11,
+      "tamanho": 18,
+      "densidade": 0.16363636363636364
+    },
+    "G_est": {
+      "ordem": 21,
+      "tamanho": 34,
+      "densidade": 0.08095238095238096
+    },
+    "teto_teorico": 176,
+    "taxa_ocupacao": 0.11931818181818182,
     "rankings": {
       "maior_grau_entrada": {
-        "estado": "(1,2)|a|{}",
+        "estado": "(1,3)|a|{}",
         "grau": 3
       },
       "maior_grau_saida": {
-        "estado": "(3,1)|-|{}",
-        "grau": 3
+        "estado": "(1,10)|abc|{0}",
+        "grau": 2
       }
     },
-    "taxa_ocupacao": 0.22991071428571427,
-    "teto_teorico": 448
+    "becos": {
+      "quantidade": 0,
+      "estados": []
+    },
+    "multiplicidade": {
+      "maxima": 4,
+      "quantidade_casas_maximas": 1,
+      "casas_maximas": [
+        [
+          1,
+          5
+        ]
+      ],
+      "por_casa": [
+        {
+          "posicao": [
+            1,
+            1
+          ],
+          "multiplicidade": 2
+        },
+        {
+          "posicao": [
+            1,
+            2
+          ],
+          "multiplicidade": 2
+        },
+        {
+          "posicao": [
+            1,
+            3
+          ],
+          "multiplicidade": 1
+        },
+        {
+          "posicao": [
+            1,
+            4
+          ],
+          "multiplicidade": 1
+        },
+        {
+          "posicao": [
+            1,
+            5
+          ],
+          "multiplicidade": 4
+        },
+        {
+          "posicao": [
+            1,
+            6
+          ],
+          "multiplicidade": 3
+        },
+        {
+          "posicao": [
+            1,
+            7
+          ],
+          "multiplicidade": 3
+        },
+        {
+          "posicao": [
+            1,
+            8
+          ],
+          "multiplicidade": 2
+        },
+        {
+          "posicao": [
+            1,
+            9
+          ],
+          "multiplicidade": 1
+        },
+        {
+          "posicao": [
+            1,
+            10
+          ],
+          "multiplicidade": 1
+        },
+        {
+          "posicao": [
+            1,
+            11
+          ],
+          "multiplicidade": 1
+        }
+      ]
+    }
   },
   "metricas_percurso": {
-    "passos": 22,
-    "custo": 22,
-    "custo_medio_por_movimento": 1.0,
-    "casas_distintas": 16
-  }
+    "passos": 10,
+    "custo": 5,
+    "custo_medio_por_movimento": 0.5,
+    "casas_distintas": 11
+  },
+  "estados_alcancaveis": 21,
+  "arcos_com_alvo": 35,
+  "ciclo_negativo": [],
+  "arestas_ciclo": [],
+  "custo_ciclo": null,
+  "ciclo_afeta_alvo": false
 }

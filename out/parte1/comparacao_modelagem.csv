@@ -1,0 +1,10 @@
+mapa,abordagem,passos,caminho_valido,observacao
+m02_uma_chave,G_pos_portas_chao,10,False,Atravessa porta sem chave
+m02_uma_chave,G_pos_portas_parede,,False,Validação pelas regras de chaves; sem caminho
+m02_uma_chave,G_est,34,True,Modelo com inventário
+m03_tres_chaves,G_pos_portas_chao,21,False,Atravessa porta sem chave
+m03_tres_chaves,G_pos_portas_parede,,False,Validação pelas regras de chaves; sem caminho
+m03_tres_chaves,G_est,87,True,Modelo com inventário
+m04_esteiras,G_pos_portas_chao,14,False,Atravessa porta sem chave
+m04_esteiras,G_pos_portas_parede,,False,Validação pelas regras de chaves; sem caminho
+m04_esteiras,G_est,20,True,Modelo com inventário

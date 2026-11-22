@@ -87,3 +87,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Casos: contas manuais em SaG, bônus sem mudança de camada, esteira contra parede, múltiplas saídas, empate lexicográfico, exportação incremental e variante consumível, proteção de camadas.json inválido e invariantes dos dez mapas mais m06 consumível.
 - Ajustado o teste de exportação em `tests/test_metricas.py` para exigir também camadas.json e o CSV de graus.
 - Verificação: 69 testes aprovados; CSVs dos dez mapas conferidos quanto à quantidade de estados e soma dos graus. O restante do registro de implementação fica com o usuário. Revisão humana do grupo: pendente.
+
+
+## Testes da conclusão técnica da Parte 1 em 22/11/2026
+
+- Ferramenta: Codex. Registro limitado aos testes, conforme autorizado pelo usuário.
+- Arquivos: tests/test_bfs.py, test_dfs.py, test_dijkstra.py, test_io.py, test_estados.py e test_entrega_parte1.py.
+- Finalidade: níveis/caminhos BFS; quatro tipos de arco e ciclos DFS; Dijkstra com peso zero e recusa de negativo inalcançável; mapas inválidos, comentários e múltiplas saídas; mapa mínimo SaG contado à mão; armadilhas; comparação de portas; requisitos dos mapas próprios e presença das entregas.
+- Verificação: 84 testes aprovados e 67 subtestes. O registro dos demais trechos e a revisão humana ficam com o usuário.

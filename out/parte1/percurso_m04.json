@@ -1,0 +1,230 @@
+[
+  {
+    "estado": "(1,1)|-|{}",
+    "posicao": [
+      1,
+      1
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 0
+  },
+  {
+    "estado": "(2,1)|-|{}",
+    "posicao": [
+      2,
+      1
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 1
+  },
+  {
+    "estado": "(3,1)|-|{}",
+    "posicao": [
+      3,
+      1
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 2
+  },
+  {
+    "estado": "(3,2)|-|{}",
+    "posicao": [
+      3,
+      2
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 3
+  },
+  {
+    "estado": "(3,3)|-|{}",
+    "posicao": [
+      3,
+      3
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 4
+  },
+  {
+    "estado": "(3,4)|-|{}",
+    "posicao": [
+      3,
+      4
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 5
+  },
+  {
+    "estado": "(3,5)|-|{}",
+    "posicao": [
+      3,
+      5
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 6
+  },
+  {
+    "estado": "(3,6)|-|{}",
+    "posicao": [
+      3,
+      6
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 11
+  },
+  {
+    "estado": "(3,7)|-|{}",
+    "posicao": [
+      3,
+      7
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 16
+  },
+  {
+    "estado": "(3,8)|-|{}",
+    "posicao": [
+      3,
+      8
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 17
+  },
+  {
+    "estado": "(3,9)|-|{}",
+    "posicao": [
+      3,
+      9
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 20
+  },
+  {
+    "estado": "(3,10)|-|{}",
+    "posicao": [
+      3,
+      10
+    ],
+    "chaves": [],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 23
+  },
+  {
+    "estado": "(3,11)|a|{}",
+    "posicao": [
+      3,
+      11
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 24
+  },
+  {
+    "estado": "(3,10)|a|{}",
+    "posicao": [
+      3,
+      10
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 27
+  },
+  {
+    "estado": "(3,9)|a|{}",
+    "posicao": [
+      3,
+      9
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 30
+  },
+  {
+    "estado": "(3,8)|a|{}",
+    "posicao": [
+      3,
+      8
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 31
+  },
+  {
+    "estado": "(2,8)|a|{}",
+    "posicao": [
+      2,
+      8
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 32
+  },
+  {
+    "estado": "(1,8)|a|{}",
+    "posicao": [
+      1,
+      8
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 33
+  },
+  {
+    "estado": "(1,9)|a|{}",
+    "posicao": [
+      1,
+      9
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 34
+  },
+  {
+    "estado": "(1,10)|a|{}",
+    "posicao": [
+      1,
+      10
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 35
+  },
+  {
+    "estado": "(1,11)|a|{}",
+    "posicao": [
+      1,
+      11
+    ],
+    "chaves": [
+      "a"
+    ],
+    "consumidos_posicoes": [],
+    "custo_acumulado": 36
+  }
+]
