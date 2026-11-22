@@ -3,3 +3,5 @@ pytest>=8.0
 matplotlib>=3.8
 # pandas, plotly, pyvis e streamlit são opcionais; adicionar quando necessários.
 # Não adicionar bibliotecas de algoritmos de grafos à implementação.
+
+reportlab>=4.0

@@ -276,7 +276,7 @@ def exportar_resultado(relatorio, grafo, pasta):
         'caminho'
     ]
 
-    identificador = nome + sufixo
+    identificador = nome + sufixo_fonte
     linhas = []
 
     if arquivo_solucoes.exists():
@@ -359,7 +359,10 @@ def main():
 
     parser.add_argument('--mapa')
 
+    parser.add_argument('--armadilhas', action='store_true')
+    parser.add_argument('--interactive', action='store_true')
     execucao = parser.add_mutually_exclusive_group()
+    execucao.add_argument('--parte1-completa', action='store_true')
     execucao.add_argument(
         '--metricas',
         action='store_true',
@@ -382,6 +385,11 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if args.parte1_completa:
+        from src.solve import gerar_parte1
+        print(json.dumps(gerar_parte1(args.out), ensure_ascii=False, indent=2))
+        return
 
     if args.metricas:
         if args.nome_mapa:
@@ -430,6 +438,12 @@ def main():
             grafo,
             args.out
         )
+        if args.armadilhas:
+            from src.graphs.analises import exportar_armadilhas
+            exportar_armadilhas(grafo, relatorio['mapa'], args.out)
+        if args.interactive:
+            from src.solve import gerar_parte1
+            gerar_parte1(args.out, mapa_extra=args.mapa)
 
     except (OSError, ValueError) as erro:
         parser.exit(1, f'Erro: {erro}\n')
