@@ -95,3 +95,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: tests/test_bfs.py, test_dfs.py, test_dijkstra.py, test_io.py, test_estados.py e test_entrega_parte1.py.
 - Finalidade: níveis/caminhos BFS; quatro tipos de arco e ciclos DFS; Dijkstra com peso zero e recusa de negativo inalcançável; mapas inválidos, comentários e múltiplas saídas; mapa mínimo SaG contado à mão; armadilhas; comparação de portas; requisitos dos mapas próprios e presença das entregas.
 - Verificação: 84 testes aprovados e 67 subtestes. O registro dos demais trechos e a revisão humana ficam com o usuário.
+
+
+## Testes do leitor de dataset da Parte 2
+
+- Ferramenta: Codex. Registro restrito aos testes, conforme autorizado.
+- Arquivo: tests/test_dataset_parte2.py; nove casos executados, incluindo parametrização de registros inválidos.
+- Conferências: direção, pesos, preservação de atributos, arcos paralelos e laços, campos ausentes/extras, política estrita e registro de rejeições, cabeçalhos inválidos, arquivo inexistente, dataset vazio, exportação e uso dos algoritmos existentes.
+- Suíte: 93 testes aprovados e 67 subtestes. O TSV real não estava disponível; os testes usam apenas entradas pequenas temporárias. Revisão do grupo: pendente.

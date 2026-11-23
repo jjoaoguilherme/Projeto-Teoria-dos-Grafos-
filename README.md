@@ -47,7 +47,7 @@ O manual técnico fica em `docs/manual_tecnico_parte1.pdf`, gerado a partir dos 
 
 ## Parte 2
 
-Iniciada em `src/parte2/dados.py`, com verificação de TSV. Experimentos, dataset reproduzível, análises e figuras da Parte 2 ainda estão pendentes. A conclusão da Parte 1 não implica conclusão do projeto interdisciplinar.
+Leitura e construção do grafo do TSV implementadas em `src/parte2/dados.py`. Uso e contrato para os algoritmos em [docs/DATASET_PARTE2.md](docs/DATASET_PARTE2.md). O dataset real não está disponível nesta cópia; experimentos, obtenção reproduzível dos dados, análises e figuras continuam pendentes. A conclusão da Parte 1 não implica conclusão do projeto interdisciplinar.
 
 ## Conferência antes da entrega
 
