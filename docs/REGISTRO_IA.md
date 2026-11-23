@@ -103,3 +103,21 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivo: tests/test_dataset_parte2.py; nove casos executados, incluindo parametrização de registros inválidos.
 - Conferências: direção, pesos, preservação de atributos, arcos paralelos e laços, campos ausentes/extras, política estrita e registro de rejeições, cabeçalhos inválidos, arquivo inexistente, dataset vazio, exportação e uso dos algoritmos existentes.
 - Suíte: 93 testes aprovados e 67 subtestes. O TSV real não estava disponível; os testes usam apenas entradas pequenas temporárias. Revisão do grupo: pendente.
+
+## Infraestrutura de experimentos da Parte 2 em 23/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da infraestrutura de medição e dos testes pelo Codex, seguindo o passo a passo discutido e os critérios confirmados pelo usuário.
+- Arquivos: `src/parte2/experimentos.py` e `tests/test_experimentos.py`.
+- Etapas: preparar a entrada fora da medição; medir chamadas com `time.perf_counter`; repetir pelo menos cinco vezes; guardar tempos individuais e média; registrar ambiente e exportar JSON. As validações internas dos algoritmos estão incluídas no tempo da chamada.
+- Verificação: 66 testes aprovados na suíte completa, incluindo seis novos testes da infraestrutura; demonstração pela CLI executou os quatro algoritmos cinco vezes cada e exportou JSON válido em pasta temporária.
+- Demonstração disponível com `python -m src.parte2.experimentos --demonstracao`; usa grafo pequeno e salva `out/parte2/demonstracao_report.json`. Não constitui os experimentos finais do dataset nem resultados de escalabilidade.
+- Pendências: integração com o grafo preparado e casos dos demais integrantes, amostragem, execuções finais, gráficos e interpretação autoral. O relatório final pode ser gravado por `exportar_relatorio` em `out/parte2/parte2_report.json`.
+
+## Amostragem para escalabilidade em 23/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da infraestrutura de amostragem e seus testes para a atividade de desempenho e escalabilidade.
+- Arquivos: `src/parte2/amostragem.py`, `tests/test_amostragem.py` e instruções no README.
+- Etapas: selecionar proporções de vértices com semente local fixa; construir amostras aninhadas por subgrafos induzidos; preservar direção e pesos; permitir fontes/destinos obrigatórios; registrar método, arredondamento, vértices selecionados e tamanhos reais.
+- Verificação: 73 testes aprovados na suíte completa, incluindo sete novos testes de reprodução, preservação dos arcos, cópia independente, gerador aleatório, parâmetros, arredondamento e integração com o medidor.
