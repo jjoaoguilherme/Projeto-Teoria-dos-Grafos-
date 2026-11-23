@@ -97,3 +97,28 @@ def exportar_relatorio(experimentos, caminho='out/parte2/parte2_report.json',
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(texto, encoding='utf-8')
     return destino
+
+
+def main():
+    """Exemplo pequeno, explicitamente separado dos experimentos finais."""
+    import argparse
+    parser = argparse.ArgumentParser(description='Demonstrar infraestrutura de medição.')
+    parser.add_argument('--demonstracao', action='store_true', required=True)
+    parser.add_argument('--repeticoes', type=int, default=5)
+    parser.add_argument('--out', default='out/parte2/demonstracao_report.json')
+    args = parser.parse_args()
+    vertices = ['A', 'B', 'C', 'D']
+    arestas = [('A', 'B', 4), ('A', 'C', 3), ('C', 'B', 2), ('B', 'D', 5), ('C', 'D', 6)]
+    ambiente = registrar_ambiente()
+    try:
+        experimentos = [medir_algoritmo(nome, vertices, arestas, 'A', args.repeticoes,
+                                       identificacao={'grafo': 'exemplo pequeno; não é o dataset'})
+                        for nome in ALGORITMOS]
+        destino = exportar_relatorio(experimentos, args.out, ambiente, demonstracao=True)
+    except (ValueError, OSError) as erro:
+        parser.exit(1, f'Erro: {erro}\n')
+    print(f'Demonstração salva em {destino}')
+
+
+if __name__ == '__main__':
+    main()

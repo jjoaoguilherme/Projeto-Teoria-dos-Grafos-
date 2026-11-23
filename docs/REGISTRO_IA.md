@@ -78,3 +78,13 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Finalidade: conferir percurso vazio, percurso sem movimentos, posições repetidas e custo negativo; garantir que a resolução não reconstrói os estados; comparar campos legados com os indicadores centrais; verificar consistência entre as exportações e situações de recusa, ciclo negativo e ausência de solução.
 - Verificação: suíte completa com 60 testes aprovados. Também foi executada uma verificação temporária no Edge sem janela para importação de JSON, compatibilidade com relatórios antigos, animação e ausência de erros JavaScript; o painel foi inspecionado em tamanhos desktop e celular.
 - Esta entrada registra somente os testes e verificações; os registros dos demais arquivos ficam com o usuário. Revisão humana do grupo: pendente.
+
+## Infraestrutura de experimentos da Parte 2 em 23/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da infraestrutura de medição e dos testes pelo Codex, seguindo o passo a passo discutido e os critérios confirmados pelo usuário.
+- Arquivos: `src/parte2/experimentos.py` e `tests/test_experimentos.py`.
+- Etapas: preparar a entrada fora da medição; medir chamadas com `time.perf_counter`; repetir pelo menos cinco vezes; guardar tempos individuais e média; registrar ambiente e exportar JSON. As validações internas dos algoritmos estão incluídas no tempo da chamada.
+- Verificação: 66 testes aprovados na suíte completa, incluindo seis novos testes da infraestrutura; demonstração pela CLI executou os quatro algoritmos cinco vezes cada e exportou JSON válido em pasta temporária.
+- Demonstração disponível com `python -m src.parte2.experimentos --demonstracao`; usa grafo pequeno e salva `out/parte2/demonstracao_report.json`. Não constitui os experimentos finais do dataset nem resultados de escalabilidade.
+- Pendências: integração com o grafo preparado e casos dos demais integrantes, amostragem, execuções finais, gráficos e interpretação autoral. O relatório final pode ser gravado por `exportar_relatorio` em `out/parte2/parte2_report.json`.
