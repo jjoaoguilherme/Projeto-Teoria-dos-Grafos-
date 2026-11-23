@@ -88,3 +88,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Verificação: 66 testes aprovados na suíte completa, incluindo seis novos testes da infraestrutura; demonstração pela CLI executou os quatro algoritmos cinco vezes cada e exportou JSON válido em pasta temporária.
 - Demonstração disponível com `python -m src.parte2.experimentos --demonstracao`; usa grafo pequeno e salva `out/parte2/demonstracao_report.json`. Não constitui os experimentos finais do dataset nem resultados de escalabilidade.
 - Pendências: integração com o grafo preparado e casos dos demais integrantes, amostragem, execuções finais, gráficos e interpretação autoral. O relatório final pode ser gravado por `exportar_relatorio` em `out/parte2/parte2_report.json`.
+
+## Amostragem para escalabilidade em 23/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da infraestrutura de amostragem e seus testes para a atividade de desempenho e escalabilidade.
+- Arquivos: `src/parte2/amostragem.py`, `tests/test_amostragem.py` e instruções no README.
+- Etapas: selecionar proporções de vértices com semente local fixa; construir amostras aninhadas por subgrafos induzidos; preservar direção e pesos; permitir fontes/destinos obrigatórios; registrar método, arredondamento, vértices selecionados e tamanhos reais.
+- Verificação: 73 testes aprovados na suíte completa, incluindo sete novos testes de reprodução, preservação dos arcos, cópia independente, gerador aleatório, parâmetros, arredondamento e integração com o medidor.
