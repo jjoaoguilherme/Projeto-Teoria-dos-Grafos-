@@ -145,3 +145,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: `src/parte2/escalabilidade.py`, `tests/test_escalabilidade.py` e README.
 - Etapas: carregar o CSV preparado; receber origem, proporções, semente e limite opcional; construir amostras; medir quatro algoritmos com pelo menos cinco repetições; registrar hash da entrada e transformação dos pesos de Dijkstra; exportar relatório separado.
 - Verificação: cinco novos testes aprovados, incluindo execução pela CLI com CSV temporário, 12 medições, transformação dos pesos e preservação da entrada; suíte completa com 127 testes e 89 subtestes aprovados.
+
+## Geração de gráficos de escalabilidade em 24/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação do gerador de gráficos para os relatórios de escalabilidade.
+- Arquivos: `src/parte2/graficos_escalabilidade.py`, `tests/test_graficos_escalabilidade.py` e README.
+- Etapas: validar três tamanhos por algoritmo e consistência das amostras; ordenar as séries; desenhar quatro painéis com médias, desvio-padrão e tamanhos dos grafos; exportar PNG e SVG.
+- Verificação: três novos testes e seis subcasos aprovados; prévia inspecionada com dados simulados em pasta temporária; suíte completa com 130 testes e 95 subtestes aprovados.

@@ -73,6 +73,13 @@ Atualize ambas as páginas a partir das saídas existentes com `python -m src.en
 
 ## Gráficos de desempenho da Parte 2
 
+Para desenhar os gráficos de escalabilidade depois de gerar as medições:
+`python -m src.parte2.graficos_escalabilidade --arquivo out/parte2/escalabilidade_report.json`.
+O comando exige pelo menos três tamanhos por algoritmo, com origem, base,
+limite, semente e amostras consistentes. Exporta `escalabilidade.png` e
+`escalabilidade.svg` em `out/parte2/graficos/`, com um painel por algoritmo,
+médias, desvio-padrão e quantidade de arcos por amostra.
+
 Os gráficos dos tempos já exportados podem ser gerados com
 `python -m src.parte2.visualizações --arquivo out/parte2/parte2_report.json`.
 As figuras PNG e SVG ficam em `out/parte2/graficos/`, separadas por quantidade
