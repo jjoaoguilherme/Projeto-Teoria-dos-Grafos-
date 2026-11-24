@@ -97,3 +97,19 @@ def gerar_graficos(arquivo='out/parte2/parte2_report.json', pasta='out/parte2/gr
                 saidas.append(destino)
             plt.close(figura)
     return saidas
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--arquivo', default='out/parte2/parte2_report.json')
+    parser.add_argument('--out', default='out/parte2/graficos')
+    args = parser.parse_args()
+    try:
+        for arquivo in gerar_graficos(args.arquivo, args.out):
+            print(arquivo)
+    except (ValueError, OSError) as erro:
+        parser.exit(1, f'Erro: {erro}\n')
+
+
+if __name__ == '__main__':
+    main()

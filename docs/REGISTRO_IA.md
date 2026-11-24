@@ -129,3 +129,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: `src/parte2/verificar_experimentos.py`, `tests/test_verificar_experimentos.py` e `out/parte2/verificacao_experimentos.json`.
 - Etapas: conferir pelo menos cinco repetições, tempos finitos não negativos, média, unidade, tamanhos e status; comparar o consolidado com os relatórios BFS/DFS, Dijkstra e Bellman-Ford, incluindo a multiplicidade dos registros.
 - Verificação: cinco novos testes aprovados; 13 experimentos conferidos e consolidação consistente. A execução da suíte completa encontrou quatro erros de importação pela ausência de pytest no interpretador disponível.
+
+## Gráficos de desempenho em 24/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da geração de figuras a partir das medições JSON existentes.
+- Arquivos: `src/parte2/visualizações.py`, `tests/test_graficos_desempenho.py`, README e figuras em `out/parte2/graficos/`.
+- Etapas: validar as medições, separar tarefas por quantidades de vértices/arcos e exportar PNG/SVG com médias, tempos individuais e desvio-padrão amostral, mantendo rótulos, unidades e fonte.
+- Verificação: três figuras geradas nos dois formatos e inspecionadas visualmente; suíte executada com pytest no ambiente virtual, com 122 testes e 89 subtestes aprovados.

@@ -71,6 +71,16 @@ Abra `out/parte1/entregas_parte1.html` ou `out/parte2/entregas_parte2.html` no n
 
 Atualize ambas as páginas a partir das saídas existentes com `python -m src.entregas`. Para atualizar somente a Parte 2, use `python -m src.entregas --parte 2`. Estilos e tabelas são compartilhados em `src/templates/` e incorporados ao HTML final, que funciona sem servidor. Preserve as pastas do projeto para manter os links dos arquivos e das figuras.
 
+## Gráficos de desempenho da Parte 2
+
+Os gráficos dos tempos já exportados podem ser gerados com
+`python -m src.parte2.visualizações --arquivo out/parte2/parte2_report.json`.
+As figuras PNG e SVG ficam em `out/parte2/graficos/`, separadas por quantidade
+de vértices e arcos. Cada barra representa a média de uma tarefa; os pontos
+mostram execuções individuais e as hastes indicam um desvio-padrão amostral.
+As escalas são independentes entre figuras. O comando usa Matplotlib e não
+executa novamente os algoritmos nem produz interpretação dos resultados.
+
 ## Amostragem para escalabilidade da Parte 2
 
 `src/parte2/amostragem.py` prepara subgrafos induzidos por 10%, 50% e 100% dos vértices, com semente configurável (42 por padrão). As amostras são aninhadas, preservam direção, pesos, laços, arcos paralelos e a ordem original de inserção. As quantidades são arredondadas para cima; proporções que resultem no mesmo tamanho são recusadas. Não há alteração do grafo original.
