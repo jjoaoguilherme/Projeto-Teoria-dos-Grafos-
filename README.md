@@ -90,6 +90,26 @@ executa novamente os algoritmos nem produz interpretação dos resultados.
 
 ## Amostragem para escalabilidade da Parte 2
 
+### Execução registrada em 24/11/2026
+
+Foi utilizado recorte induzido de 2.000 vértices da base preparada, com origem
+`subredditdrama` e semente 42. Os tamanhos de 10%, 50% e 100% desse recorte
+são 200, 1.000 e 2.000 vértices, com 34, 403 e 1.762 arcos. As quantidades
+alcançáveis desde a origem são 8, 40 e 108; esses valores constam no relatório.
+A escolha limita o custo das cinco execuções de Bellman-Ford com ciclo negativo
+na base original de 54.075 vértices e 571.927 arcos. Os percentuais são do recorte.
+
+As 60 execuções foram salvas em `out/parte2/escalabilidade_report.json`; figuras
+PNG/SVG em `out/parte2/graficos/escalabilidade.*`. O consolidado preserva as
+sessões e inclui os 25 experimentos em `out/parte2/parte2_report.json`.
+`python -m src.parte2.consolidar` recompõe esse arquivo a partir das sessões.
+
+`python -m src.parte2.tabela_complexidades` gera
+`out/parte2/comparacao_complexidades.csv`, com tempos, desvios, razões e fatores
+de referência V+E, V+E+E·log₂(E+1) e V·E+V+E. São funções de referência
+assintóticas das implementações, não contagens de operações nem previsões de
+segundos. A tabela fornece números para a comparação escrita pelo grupo.
+
 O executor `src/parte2/escalabilidade.py` conecta as amostras ao medidor dos
 quatro algoritmos. Recebe o CSV preparado `origem,destino,peso`, a origem e
 pelo menos três proporções explícitas. Exemplo de sintaxe:

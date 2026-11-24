@@ -153,3 +153,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: `src/parte2/graficos_escalabilidade.py`, `tests/test_graficos_escalabilidade.py` e README.
 - Etapas: validar três tamanhos por algoritmo e consistência das amostras; ordenar as séries; desenhar quatro painéis com médias, desvio-padrão e tamanhos dos grafos; exportar PNG e SVG.
 - Verificação: três novos testes e seis subcasos aprovados; prévia inspecionada com dados simulados em pasta temporária; suíte completa com 130 testes e 95 subtestes aprovados.
+
+## Execução de escalabilidade com recorte em 24/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: execução dos experimentos no recorte autorizado, consolidação, figuras e tabela numérica de apoio.
+- Arquivos: relatórios e figuras em `out/parte2/`, `src/parte2/consolidar.py`, `src/parte2/tabela_complexidades.py`, verificador, testes e README.
+- Etapas: piloto; recorte de 2.000 vértices, semente 42 e origem subredditdrama; amostras de 200, 1.000 e 2.000 vértices; cinco execuções dos quatro algoritmos; registro de hashes, ambiente, arcos e alcance; consolidação de 25 experimentos e exportação de gráficos e tabela.
+- Ajuste técnico: deduplicação da fila de propagação dos ciclos negativos em Bellman-Ford; medições refeitas após o ajuste. Conferência paralela por agentes de verificação e complexidades.
+- Verificação: 60 execuções de escalabilidade concluídas, relatórios consistentes e gráficos inspecionados; suíte com 135 testes e 95 subtestes aprovados.
