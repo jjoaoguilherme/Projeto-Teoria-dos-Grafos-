@@ -17,9 +17,14 @@
       "experimentos": 2,
       "erros": []
     },
+    "escalabilidade_report.json": {
+      "valido": true,
+      "experimentos": 12,
+      "erros": []
+    },
     "parte2_report.json": {
       "valido": true,
-      "experimentos": 13,
+      "experimentos": 25,
       "erros": []
     }
   }
