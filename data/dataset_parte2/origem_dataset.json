@@ -1,0 +1,23 @@
+{
+  "obtido_em_utc": "2026-11-24T12:07:53.606153+00:00",
+  "dataset": "Reddit Hyperlink Network — links nos títulos",
+  "arquivo": "soc-redditHyperlinks-title.tsv",
+  "fonte": "https://snap.stanford.edu/data/soc-RedditHyperlinks.html",
+  "url_download": "https://snap.stanford.edu/data/soc-redditHyperlinks-title.tsv",
+  "sha256": "b6ea49dcbc83f948b177b341cace8c37fb8f12fc1b0e18bbfd1ba4630b699893",
+  "tamanho_bytes": 368581209,
+  "colunas": [
+    "SOURCE_SUBREDDIT",
+    "TARGET_SUBREDDIT",
+    "POST_ID",
+    "TIMESTAMP",
+    "LINK_SENTIMENT",
+    "PROPERTIES"
+  ],
+  "aprovacao": {
+    "confirmada_pelo_usuario": true,
+    "confirmado_por": "João",
+    "data": "2026-11-24",
+    "arquivo_aprovado": "soc-redditHyperlinks-title.tsv"
+  }
+}

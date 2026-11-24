@@ -32,6 +32,8 @@ python -m src.cli --mapa data/mapas/m03_tres_chaves.txt --interactive --out out/
 Use o Python do ambiente virtual caso os comandos `python` acima apontem para outro interpretador.
 Abra `out/parte1/labirinto_interativo.html` diretamente no navegador. A interface permite selecionar mapa/algoritmo, importar resultados, avançar manualmente, controlar velocidade, selecionar camada e destacar posições que contêm estados-armadilha. Consulte o tooltip e os CSVs para distinguir estados na mesma casa.
 
+O caderno complementar `out/parte1/entregas_parte1.html` reúne as figuras, graus, rankings, multiplicidade, métricas por camada, comparação de modelagens, classificação DFS, ciclos negativos e links dos arquivos. Ele abre diretamente no navegador e usa os resultados exportados; a animação e as métricas globais continuam no labirinto interativo. A geração completa também atualiza esse caderno. Para atualizar apenas a página a partir das saídas existentes, execute `python -m src.entregas --out out/parte1`. Mantenha a página junto dos demais arquivos do projeto para que as figuras e os links funcionem.
+
 O manual técnico fica em `docs/manual_tecnico_parte1.pdf`, gerado a partir dos resultados por `src/relatorio.py`. Estados não incluem ALVO nas métricas; passos não incluem a ligação virtual. Dijkstra recusa pesos negativos. A geração completa substitui suas tabelas de soluções e classificação DFS, mantendo uma linha por mapa/algoritmo/modo.
 
 ## Estrutura
@@ -47,13 +49,27 @@ O manual técnico fica em `docs/manual_tecnico_parte1.pdf`, gerado a partir dos 
 
 ## Parte 2
 
-Leitura e construção do grafo do TSV implementadas em `src/parte2/dados.py`. Uso e contrato para os algoritmos em [docs/DATASET_PARTE2.md](docs/DATASET_PARTE2.md). O dataset real não está disponível nesta cópia; a infraestrutura de experimentos e amostragem já existe, mas a obtenção reproduzível dos dados, os experimentos finais, as análises e as figuras continuam pendentes. A conclusão da Parte 1 não implica conclusão do projeto interdisciplinar.
+A preparação do dataset aprovado está em `src/parte2/dados.py`, `obter_dataset.py` e `preparar.py`. Obtenção, regras e uso estão em [docs/DATASET_PARTE2.md](docs/DATASET_PARTE2.md).
+
+```powershell
+python -m src.parte2.preparar
+```
+
+Esse comando baixa o TSV oficial se necessário, confere o hash, valida os registros, constrói o grafo e exporta `resumo_dataset.json`, `arestas_dataset.csv`, `base_avd.csv` e `registros_invalidos.json`. Também gera `docs/preparacao_dataset_parte2.pdf` e atualiza a página da Parte 2. O TSV grande não é versionado; o script e o manifesto `data/dataset_parte2/origem_dataset.json` permitem reproduzir a obtenção.
+
+O arquivo real foi conferido: 54.075 vértices e 571.927 arcos válidos, sem linhas rejeitadas nas verificações implementadas. Os atributos completos continuam no TSV e na API. Os relatórios de BFS/DFS, Dijkstra e dos dois casos pequenos de Bellman-Ford já estão integrados. A documentação/verificação dos recortes dos experimentos, os registros detalhados das buscas, a execução nos três tamanhos, as análises e as figuras finais são as próximas tarefas das demais etapas.
 
 ## Conferência antes da entrega
 
 O grupo precisa revisar o código, os mapas próprios, o texto e as respostas; preencher nomes e contribuição efetiva em `docs/CONTRIBUICOES.md` e inserir a matriz final no relatório. A declaração oficial deve ser preenchida e assinada por todos, com exportação em `docs/DECLARACAO_IA.pdf`. Esses dados pessoais não são inferidos pelo gerador.
 
 DECLARAÇÃO DE IA: https://docs.google.com/document/d/1sCr8p8y-t-Wttt3G8kXXsjhVLVZ4CMPh/edit?usp=sharing&ouid=112702963052965676955&rtpof=true&sd=true
+
+## Páginas de resultados
+
+Abra `out/parte1/entregas_parte1.html` ou `out/parte2/entregas_parte2.html` no navegador e use os botões Parte 1 / Parte 2. A página da Parte 2 apresenta os relatórios existentes, com filtros, tempos individuais, caminhos de Dijkstra, ciclos de Bellman-Ford e os metadados das sessões. Ela informa os diferentes tamanhos dos grafos e os campos que não foram registrados; não substitui a análise AVD ou a validação dos casos contra o dataset.
+
+Atualize ambas as páginas a partir das saídas existentes com `python -m src.entregas`. Para atualizar somente a Parte 2, use `python -m src.entregas --parte 2`. Estilos e tabelas são compartilhados em `src/templates/` e incorporados ao HTML final, que funciona sem servidor. Preserve as pastas do projeto para manter os links dos arquivos e das figuras.
 
 ## Amostragem para escalabilidade da Parte 2
 
