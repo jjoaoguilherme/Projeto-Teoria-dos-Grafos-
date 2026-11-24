@@ -1,0 +1,26 @@
+{
+  "medicoes_validas": true,
+  "consolidado_consistente": true,
+  "arquivos": {
+    "bfs_dfs_report.json": {
+      "valido": true,
+      "experimentos": 6,
+      "erros": []
+    },
+    "dijkstra_report.json": {
+      "valido": true,
+      "experimentos": 5,
+      "erros": []
+    },
+    "bellman_ford_report.json": {
+      "valido": true,
+      "experimentos": 2,
+      "erros": []
+    },
+    "parte2_report.json": {
+      "valido": true,
+      "experimentos": 13,
+      "erros": []
+    }
+  }
+}

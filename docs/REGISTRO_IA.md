@@ -121,3 +121,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: `src/parte2/amostragem.py`, `tests/test_amostragem.py` e instruções no README.
 - Etapas: selecionar proporções de vértices com semente local fixa; construir amostras aninhadas por subgrafos induzidos; preservar direção e pesos; permitir fontes/destinos obrigatórios; registrar método, arredondamento, vértices selecionados e tamanhos reais.
 - Verificação: 73 testes aprovados na suíte completa, incluindo sete novos testes de reprodução, preservação dos arcos, cópia independente, gerador aleatório, parâmetros, arredondamento e integração com o medidor.
+
+## Verificação dos experimentos da Parte 2 em 24/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da conferência automatizada das medições e da consistência do relatório consolidado.
+- Arquivos: `src/parte2/verificar_experimentos.py`, `tests/test_verificar_experimentos.py` e `out/parte2/verificacao_experimentos.json`.
+- Etapas: conferir pelo menos cinco repetições, tempos finitos não negativos, média, unidade, tamanhos e status; comparar o consolidado com os relatórios BFS/DFS, Dijkstra e Bellman-Ford, incluindo a multiplicidade dos registros.
+- Verificação: cinco novos testes aprovados; 13 experimentos conferidos e consolidação consistente. A execução da suíte completa encontrou quatro erros de importação pela ausência de pytest no interpretador disponível.
