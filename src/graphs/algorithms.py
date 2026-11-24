@@ -75,7 +75,7 @@ def bellman_ford(vertices, arestas, inicio):
         custo_ciclo = sum(peso for _, _, peso in arestas_ciclo)
 
         # Propaga a influência dos ciclos negativos aos seus descendentes.
-        fila = deque(alterados)
+        fila = deque(dict.fromkeys(alterados))
         while fila:
             origem = fila.popleft()
             for destino in adjacencia[origem]:
