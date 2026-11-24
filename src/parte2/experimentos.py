@@ -9,7 +9,8 @@ import platform
 import subprocess
 import time
 
-from src.graphs.algorithms import BFS, DFS, bellman_ford, djikstra
+from src.graphs.algorithms import BFS, DFS, bellman_ford, djikstra, reconstruir_caminho
+from src.parte2.dados import carregar_dataset
 
 ALGORITMOS = {'BFS': BFS, 'DFS': DFS, 'DIJKSTRA': djikstra,
               'BELLMAN_FORD': bellman_ford}
@@ -103,7 +104,7 @@ def exportar_relatorio(experimentos, caminho='out/parte2/parte2_report.json',
 def executar_bfs_dfs_dataset(caminho, fontes, repeticoes=5,
                              destino='out/parte2/bfs_dfs_report.json'):
     """Mede BFS/DFS nas fontes indicadas; não executa os demais casos da Parte 2.
-    
+
     """
     from src.parte2.dados import carregar_dataset
 
@@ -126,15 +127,121 @@ def executar_bfs_dfs_dataset(caminho, fontes, repeticoes=5,
             print(f'  Média: {medicao["tempo_medio_segundos"]:.4f}s', flush=True)
     return exportar_relatorio(experimentos, destino, ambiente, demonstracao=False)
 
+def executar_dijkstra(caminho, repeticoes=5):
+    dados = carregar_dataset(caminho)
+
+    vertices = dados["grafo"].vertices
+    arestas = dados["grafo"].arestas
+
+    arestas_transformadas = [
+        (origem, destino, 2 - peso)
+        for origem, destino, peso in arestas
+    ]
+
+    pares = [
+        ("xboxone", "battlefield_4"),
+        ("fitnesscirclejerk", "leangains"),
+        ("jleague", "soccer"),
+        ("bestof", "confession"),
+        ("subredditdrama", "nfl")
+    ]
+
+    experimentos = []
+
+    for origem, destino in pares:
+        resultado = djikstra(
+            vertices, arestas_transformadas, origem
+        )
+
+        medicao = medir_algoritmo(
+            "DIJKSTRA",
+            vertices,
+            arestas_transformadas,
+            origem,
+            repeticoes,
+            identificacao={"destino": destino}
+        )
+
+        medicao["custo"] = resultado["distancias"][destino]
+        medicao["caminho"] = reconstruir_caminho(resultado, destino)
+
+        experimentos.append(medicao)
+
+    return experimentos
+
+def executar_bellman_ford(casos, repeticoes=5):
+    experimentos = []
+
+    for caso in casos:
+        vertices_recorte = caso["vertices"]
+        arestas_recorte = caso["arestas"]
+        origem = caso["origem"]
+
+        resultado = bellman_ford(
+            vertices_recorte,
+            arestas_recorte,
+            origem
+        )
+
+        medicao = medir_algoritmo(
+            "BELLMAN_FORD",
+            vertices_recorte,
+            arestas_recorte,
+            origem,
+            repeticoes,
+            identificacao={"caso": caso["nome"]}
+        )
+
+        medicao["tem_ciclo_negativo"] = resultado["tem_ciclo_negativo"]
+        medicao["ciclo_negativo"] = resultado["ciclo_negativo"]
+        medicao["arestas_ciclo"] = resultado["arestas_ciclo"]
+        medicao["custo_ciclo"] = resultado["custo_ciclo"]
+
+        experimentos.append(medicao)
+
+        print(f'Caso: {caso["nome"]}', flush=True)
+        print(f'Ciclo negativo: {resultado["tem_ciclo_negativo"]}')
+        if resultado["tem_ciclo_negativo"]:
+            print("Ciclo:", resultado["ciclo_negativo"])
+            print("Custo do ciclo:", resultado["custo_ciclo"])
+        print(f'Tempo médio: {medicao["tempo_medio_segundos"]:.4f}s')
+
+    return experimentos
+
+casos_bellman_ford = [
+    {
+        "nome": "sem_ciclo_negativo",
+        "vertices": ["subredditdrama", "nfl"],
+        "arestas": [
+            ("subredditdrama", "nfl", -1)
+        ],
+        "origem": "subredditdrama"
+    },
+    {
+        "nome": "com_ciclo_negativo",
+        "vertices": ["2007scape", "runescape"],
+        "arestas": [
+            ("2007scape", "runescape", -1),
+            ("runescape", "2007scape", -1)
+        ],
+        "origem": "2007scape"
+    }
+]
+
 def main():
-    """Permite executar a demonstração ou as seis medições BFS/DFS no Reddit."""
+    """Permite executar a demonstração, BFS/DFS ou Dijkstra no Reddit."""
+    # [IA] ChatGPT – revisão e correção dos argumentos e despacho da CLI.
     import argparse
     parser = argparse.ArgumentParser(description='Infraestrutura de medições da Parte 2.')
     modo = parser.add_mutually_exclusive_group(required=True)
     modo.add_argument('--demonstracao', action='store_true')
     modo.add_argument('--bfs-dfs', action='store_true',
                       help='Executa BFS e DFS em três fontes do dataset real.')
-    parser.add_argument('--arquivo', help='Caminho do arquivo TSV, para --bfs-dfs.')
+    modo.add_argument('--dijkstra', action='store_true',
+                      help='Executa os casos de Dijkstra.')
+    modo.add_argument('--bellman-ford', action='store_true',
+                  help='Executa os casos de Bellman-Ford.')
+    parser.add_argument('--arquivo', help='Caminho do arquivo TSV.')
     parser.add_argument('--fontes', nargs=3,
                         metavar=('FONTE1', 'FONTE2', 'FONTE3'),
                         help='Três subreddits de origem para --bfs-dfs.')
@@ -143,8 +250,12 @@ def main():
     args = parser.parse_args()
     if args.bfs_dfs and not args.arquivo:
         parser.error('--bfs-dfs exige --arquivo.')
-    if args.demonstracao and (args.arquivo or args.fontes):
-        parser.error('--arquivo e --fontes são opções exclusivas de --bfs-dfs.')
+    if args.dijkstra and not args.arquivo:
+        parser.error('--dijkstra exige --arquivo.')
+    if args.demonstracao and args.arquivo:
+        parser.error('--arquivo não se aplica à demonstração.')
+    if args.fontes and not args.bfs_dfs:
+        parser.error('--fontes é opção exclusiva de --bfs-dfs.')
     if args.repeticoes < 5:
         parser.error('É necessário executar pelo menos cinco repetições.')
     try:
@@ -156,6 +267,22 @@ def main():
                 args.arquivo, fontes, args.repeticoes,
                 args.out or 'out/parte2/bfs_dfs_report.json')
             print(f'Medições BFS/DFS salvas em {destino}')
+        elif args.dijkstra:
+            experimentos = executar_dijkstra(args.arquivo, args.repeticoes)
+            destino = exportar_relatorio(
+                experimentos, args.out or 'out/parte2/dijkstra_report.json')
+            print(f'Medições Dijkstra salvas em {destino}')
+        elif args.bellman_ford:
+            experimentos = executar_bellman_ford(
+                casos_bellman_ford, args.repeticoes
+            )
+
+            destino = exportar_relatorio(
+                experimentos,
+                args.out or 'out/parte2/bellman_ford_report.json'
+            )
+
+            print(f'Medições Bellman-Ford salvas em {destino}')
         else:
             vertices = ['A', 'B', 'C', 'D']
             arestas = [('A', 'B', 4), ('A', 'C', 3), ('C', 'B', 2),

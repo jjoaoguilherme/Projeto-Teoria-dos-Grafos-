@@ -1,0 +1,192 @@
+{
+  "versao_formato": 1,
+  "gerado_em_utc": "2026-11-24T07:28:57.031754+00:00",
+  "demonstracao": false,
+  "ambiente": {
+    "python": "3.12.10",
+    "implementacao_python": "CPython",
+    "sistema": "Windows",
+    "versao_sistema": "11",
+    "arquitetura": "AMD64",
+    "processador": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "commit": "f5bb82ce788b32f58691c93b5e6bc97cb264994b",
+    "diretorio_com_alteracoes": true,
+    "relogio": "time.perf_counter",
+    "resolucao_relogio_segundos": 1e-07
+  },
+  "metodo": {
+    "relogio": "time.perf_counter",
+    "unidade": "segundos",
+    "escopo": "chamada completa do algoritmo, incluindo validações internas",
+    "fora_da_medicao": [
+      "leitura",
+      "construção do grafo",
+      "exportação",
+      "impressão"
+    ],
+    "aquecimento": "nenhum",
+    "ordem": "sequencial; mesma entrada em cada repetição"
+  },
+  "experimentos": [
+    {
+      "algoritmo": "DIJKSTRA",
+      "tarefa": "caminhos_a_partir_da_origem",
+      "origem": "xboxone",
+      "identificacao": {
+        "destino": "battlefield_4"
+      },
+      "vertices": 54075,
+      "arestas": 571927,
+      "repeticoes": 5,
+      "unidade": "segundos",
+      "tempos_segundos": [
+        0.7232511000001978,
+        0.9550984999987122,
+        1.1611587999977928,
+        0.6745986999994784,
+        1.9772637999994913
+      ],
+      "tempo_medio_segundos": 1.0982741799991345,
+      "status_execucoes": [
+        "OK",
+        "OK",
+        "OK",
+        "OK",
+        "OK"
+      ],
+      "custo": 1,
+      "caminho": [
+        "xboxone",
+        "battlefield_4"
+      ]
+    },
+    {
+      "algoritmo": "DIJKSTRA",
+      "tarefa": "caminhos_a_partir_da_origem",
+      "origem": "fitnesscirclejerk",
+      "identificacao": {
+        "destino": "leangains"
+      },
+      "vertices": 54075,
+      "arestas": 571927,
+      "repeticoes": 5,
+      "unidade": "segundos",
+      "tempos_segundos": [
+        1.3950244000006933,
+        1.235667500001,
+        1.766060900001321,
+        1.302042999999685,
+        1.2754801000010048
+      ],
+      "tempo_medio_segundos": 1.3948551800007407,
+      "status_execucoes": [
+        "OK",
+        "OK",
+        "OK",
+        "OK",
+        "OK"
+      ],
+      "custo": 1,
+      "caminho": [
+        "fitnesscirclejerk",
+        "leangains"
+      ]
+    },
+    {
+      "algoritmo": "DIJKSTRA",
+      "tarefa": "caminhos_a_partir_da_origem",
+      "origem": "jleague",
+      "identificacao": {
+        "destino": "soccer"
+      },
+      "vertices": 54075,
+      "arestas": 571927,
+      "repeticoes": 5,
+      "unidade": "segundos",
+      "tempos_segundos": [
+        1.144494100000884,
+        1.0765367999993032,
+        1.5691795000020647,
+        1.157308699999703,
+        1.0913041999992856
+      ],
+      "tempo_medio_segundos": 1.207764660000248,
+      "status_execucoes": [
+        "OK",
+        "OK",
+        "OK",
+        "OK",
+        "OK"
+      ],
+      "custo": 1,
+      "caminho": [
+        "jleague",
+        "soccer"
+      ]
+    },
+    {
+      "algoritmo": "DIJKSTRA",
+      "tarefa": "caminhos_a_partir_da_origem",
+      "origem": "bestof",
+      "identificacao": {
+        "destino": "confession"
+      },
+      "vertices": 54075,
+      "arestas": 571927,
+      "repeticoes": 5,
+      "unidade": "segundos",
+      "tempos_segundos": [
+        0.9648672000002989,
+        1.1367998999994597,
+        1.5393960999972478,
+        1.0604561000000103,
+        0.9792259999994712
+      ],
+      "tempo_medio_segundos": 1.1361490599992976,
+      "status_execucoes": [
+        "OK",
+        "OK",
+        "OK",
+        "OK",
+        "OK"
+      ],
+      "custo": 1,
+      "caminho": [
+        "bestof",
+        "confession"
+      ]
+    },
+    {
+      "algoritmo": "DIJKSTRA",
+      "tarefa": "caminhos_a_partir_da_origem",
+      "origem": "subredditdrama",
+      "identificacao": {
+        "destino": "nfl"
+      },
+      "vertices": 54075,
+      "arestas": 571927,
+      "repeticoes": 5,
+      "unidade": "segundos",
+      "tempos_segundos": [
+        1.1691510000018752,
+        1.1509336000017356,
+        1.6788967000029515,
+        1.017991799999436,
+        1.0398939999977301
+      ],
+      "tempo_medio_segundos": 1.2113734200007458,
+      "status_execucoes": [
+        "OK",
+        "OK",
+        "OK",
+        "OK",
+        "OK"
+      ],
+      "custo": 1,
+      "caminho": [
+        "subredditdrama",
+        "nfl"
+      ]
+    }
+  ]
+}

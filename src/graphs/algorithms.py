@@ -244,6 +244,9 @@ def DFS(vertices, arestas, inicio):
 
 
 def djikstra(vertices, arestas, inicio):
+    import heapq
+    from itertools import count
+
     vertices = list(dict.fromkeys(vertices))
     arestas = list(arestas)
     conjunto_vertices = set(vertices)
@@ -272,34 +275,39 @@ def djikstra(vertices, arestas, inicio):
     visitados = set()
     ordem_visita = []
 
-    while len(visitados) < len(vertices):
+    ordem_vertices = {v: i for i, v in enumerate(vertices)}
+    contador = count()
+    fila = [(0, ordem_vertices[inicio], next(contador), inicio)]
 
-        atual = None
-        menor_distancia = float('inf')
+    while fila:
+        distancia_atual, _, _, atual = heapq.heappop(fila)
 
-        # Seleciona o vértice não visitado com menor distância.
-        for v in vertices:
-            if v not in visitados:
-                if distancias[v] < menor_distancia:
-                    menor_distancia = distancias[v]
-                    atual = v
+        if atual in visitados:
+            continue
 
-        # Encerra caso não existam mais vértices alcançáveis.
-        if atual is None:
-            break
+        if distancia_atual > distancias[atual]:
+            continue
 
         visitados.add(atual)
         ordem_visita.append(atual)
 
-        # Relaxamento das arestas.
         for vizinho, peso in adjacencia[atual]:
             if vizinho not in visitados:
-
-                novo_custo = distancias[atual] + peso
+                novo_custo = distancia_atual + peso
 
                 if novo_custo < distancias[vizinho]:
                     distancias[vizinho] = novo_custo
                     predecessores[vizinho] = atual
+
+                    heapq.heappush(
+                        fila,
+                        (
+                            novo_custo,
+                            ordem_vertices[vizinho],
+                            next(contador),
+                            vizinho
+                        )
+                    )
 
     return {
         'inicio': inicio,
@@ -307,8 +315,6 @@ def djikstra(vertices, arestas, inicio):
         'predecessores': predecessores,
         'ordem_visita': ordem_visita,
     }
-
-
 if __name__ == '__main__':
     # Exemplo original do usuário; não executa ao importar o módulo.
     vertices = ['A', 'B', 'C', 'D']
