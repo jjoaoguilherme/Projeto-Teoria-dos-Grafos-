@@ -45,4 +45,7 @@ def gerar_parte1(pasta='out/parte1', mapa_extra=None):
     atualizar_html(pasta,dados_mapas,raiz/'out/parte1/labirinto_interativo.html')
     from .relatorio import gerar_relatorio
     gerar_relatorio(pasta, raiz/'docs/manual_tecnico_parte1.pdf')
+    from .entregas import gerar_painel_entregas, gerar_painel_parte2
+    gerar_painel_entregas(pasta, raiz)
+    gerar_painel_parte2(pasta.parent / 'parte2', raiz, pasta)
     return resumos

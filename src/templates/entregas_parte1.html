@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resultados da Parte 1</title>
+<style>/* ESTILOS_ENTREGA */</style>
+</head>
+<body>
+<header class="page-header"><div class="page-tabs" aria-label="Entregas"><a class="button active" href="entregas_parte1.html" aria-current="page">Parte 1</a><a class="button" id="part2-link" href="../parte2/entregas_parte2.html">Parte 2</a></div><a class="button primary" id="open-maze" href="labirinto_interativo.html">Abrir labirinto interativo ↗</a></header>
+<nav aria-label="Seções da entrega"><div class="nav-inner"><a href="#figuras">01 · Figuras</a><a href="#estados">02 · Estados e camadas</a><a href="#modelagens">03 · Modelagens</a><a href="#dfs">04 · DFS</a><a href="#ciclos">05 · Bônus e ciclos</a><a href="#arquivos">06 · Arquivos</a></div></nav>
+<main>
+<div class="intro">A animação, a comparação dos algoritmos e as métricas globais estão no <a href="labirinto_interativo.html" id="intro-maze">labirinto interativo</a>. Este caderno reúne os demais resultados já exportados.</div>
+<div class="intro" id="load-error" role="alert" hidden></div>
+<noscript><p class="card">Ative o JavaScript do navegador para consultar as tabelas e as figuras desta página.</p></noscript>
+<section id="figuras"><div class="section-title"><div><span class="index">01 / FIGURAS</span><h2>Os grafos em imagens</h2><p>As cinco figuras da Parte 1. Clique em uma imagem para ampliá-la ou abra o PNG original.</p></div></div><div class="gallery" id="gallery"></div></section>
+<section id="estados"><div class="section-title"><div><span class="index">02 / ESTADOS E CAMADAS</span><h2>Uma posição, diferentes estados</h2><p>Graus, rankings, multiplicidade e estrutura das camadas de cada mapa.</p></div></div>
+<div class="card"><div class="toolbar"><label>Mapa e regra<select id="map-select"></select></label></div><div class="metrics" id="detail-metrics"></div><p class="note">Graus, becos e camadas excluem ALVO e seus arcos. Uma saída G com grau de saída zero não é contada como beco. Nos rankings, o desempate usa a ordem lexicográfica dos rótulos.</p><div class="links" id="map-files"></div>
+<h3 class="subhead">Consulta dos estados e das casas</h3><p class="note">Rótulo do estado: <code>(linha,coluna)|chaves|{bônus consumidos}</code>. As coordenadas começam em zero. Multiplicidade é a quantidade de estados que ocupam uma mesma casa.</p>
+<div class="toolbar"><label>Mostrar<select id="detail-kind"><option value="graus">Graus por estado</option><option value="multiplicidade">Multiplicidade por casa</option><option value="becos">Estados sem saída (becos)</option><option value="arestas">Arestas dirigidas exportadas</option></select></label><label>Pesquisar<input id="detail-search" type="search" placeholder="Ex.: (1,1) ou |ab|" autocomplete="off"></label></div>
+<div id="detail-table"></div><p class="note" id="edge-note" hidden>As arestas exportadas incluem a ligação virtual de cada saída G com ALVO, com peso zero.</p>
+<h3 class="subhead">Métricas por camada de chaves</h3><p class="note">Cada camada reúne estados com as mesmas chaves, inclusive quando os bônus consumidos são diferentes. Os arcos desta tabela ligam estados dentro da mesma camada.</p><div id="layer-table"></div>
+<div class="two-col"><div><h3 class="subhead">Arcos entre camadas</h3><div id="transition-table"></div></div><div><h3 class="subhead">Casas de mudança de camada</h3><div id="key-table"></div></div></div><p class="note">Fonte: <a href="camadas.json">camadas.json</a> e <a href="metricas_global.json">metricas_global.json</a>.</p>
+</div></section>
+<section id="modelagens"><div class="section-title"><div><span class="index">03 / MODELAGENS</span><h2>Três formas de representar as portas</h2><p>Resultados exportados da comparação por BFS nos mapas m02, m03 e m04.</p></div><a class="button" href="comparacao_modelagem.csv" download>Baixar CSV ↓</a></div>
+<div class="card"><div class="legend"><span>Chão: portas sempre atravessáveis</span><span>Parede: portas sempre bloqueadas</span><span>Estados: portas dependem das chaves</span></div><div id="model-table"></div><p class="note">“Sem caminho” significa que a busca não encontrou uma rota nesse modelo. “Válido” considera as regras de coleta de chaves.</p></div></section>
+<section id="dfs"><div class="section-title"><div><span class="index">04 / BUSCA EM PROFUNDIDADE</span><h2>Classificação das arestas</h2><p>Contagens por mapa e consulta da classificação individual dos arcos da DFS.</p></div><a class="button" href="dfs_classificacao.csv" download>Baixar resumo CSV ↓</a></div>
+<div class="card"><dl class="two-col dfs-legend" aria-label="Tipos de arestas da DFS"><div><dt>Árvore</dt><dd>Descobre um estado que ainda não foi visitado.</dd></div><div><dt>Retorno</dt><dd>Volta a um estado ainda em exploração, indicando um ciclo.</dd></div><div><dt>Avanço</dt><dd>Vai a um descendente já explorado, sem ser a aresta que o descobriu.</dd></div><div><dt>Cruzamento</dt><dd>Liga estados sem relação de antecessor e descendente na árvore da DFS.</dd></div></dl><div id="dfs-summary"></div><p class="note">A DFS inclui o nó virtual ALVO e seus arcos. A ordem de exploração dos vizinhos é Norte, Leste, Sul e Oeste.</p><div class="toolbar"><label>Mapa<select id="dfs-map"></select></label><label>Tipo de aresta<select id="dfs-kind"><option value="">Todos</option><option value="arvore">Árvore</option><option value="retorno">Retorno</option><option value="avanco">Avanço</option><option value="cruzamento">Cruzamento</option></select></label><label>Pesquisar estado<input id="dfs-search" type="search" placeholder="Origem ou destino" autocomplete="off"></label></div><p id="dfs-cycle" class="note"></p><div id="dfs-table"></div></div></section>
+<section id="ciclos"><div class="section-title"><div><span class="index">05 / BÔNUS E CICLOS</span><h2>Registros dos casos m05 e m06</h2><p>Sequências e custos registrados pelo programa. A prova e a discussão estão no manual técnico.</p></div></div><div class="two-col"><article class="card"><span class="tag">m05 · Bônus</span><h3>Ciclo no grafo de posições</h3><div id="bonus-data"></div><div class="links"><a href="comparacao_bonus_m05.json">Abrir resultado JSON ↗</a></div></article><article class="card"><span class="tag">m06 · Fonte</span><h3>Ciclo negativo no grafo de estados</h3><div id="cycle-data"></div><div class="links"><a href="ciclo_negativo_m06.json">Abrir ciclo JSON ↗</a></div></article></div><p class="note" id="manual-note"></p></section>
+<section id="arquivos"><div class="section-title"><div><span class="index">06 / ARQUIVOS DA ENTREGA</span><h2>Documentos e saídas originais</h2><p>Os arquivos usados nas consultas, organizados por assunto. Os arquivos de cada mapa estão disponíveis na seção de estados e camadas.</p></div></div><div class="file-groups" id="file-groups"></div><p class="note">Os documentos são as versões existentes no projeto; a revisão do grupo e o preenchimento da matriz de contribuição continuam sob responsabilidade dos integrantes.</p></section>
+<footer class="footer"><span>Parte 1 · Labirintos com chaves e portas</span><span>Consulta local · Resultados exportados, sem executar novas buscas no navegador.</span></footer>
+</main>
+<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="dialog-top"><h2 id="figure-title"></h2><button type="button" class="button" id="close-figure">Fechar ×</button></div><img id="figure-full" alt=""></dialog>
+<script id="delivery-data" type="application/json"><!-- DADOS_ENTREGA --></script>
+<script>
+'use strict';
+try {
+const data=JSON.parse(document.getElementById('delivery-data').textContent);
+/* CODIGO_COMPARTILHADO */
+const friendly=k=>data.mapas[k].nome.replaceAll('_',' ')+(data.mapas[k].fonte_consumivel?' · fonte consumível':'');
+function options(select,keys){for(const key of keys){const option=el('option',friendly(key));option.value=key;select.append(option);}}
+const states=[{key:'estado',label:'Estado',code:true},{key:'grau_entrada',label:'Grau de entrada'},{key:'grau_saida',label:'Grau de saída'}];
+const position=value=>'('+value.join(',')+')';
+const layer=value=>value==='-'?'Sem chaves':value;
+const types={arvore:'Árvore',retorno:'Retorno',avanco:'Avanço',cruzamento:'Cruzamento'};
+function renderDetails(){const m=data.mapas[$('map-select').value],kind=$('detail-kind').value;let rows,columns,caption;
+ if(kind==='graus'){rows=m.graus;columns=states;caption='Graus por estado · '+friendly($('map-select').value);}
+ else if(kind==='multiplicidade'){rows=(m.multiplicidade.por_casa||[]).map(x=>({posicao:position(x.posicao),multiplicidade:x.multiplicidade}));columns=[{key:'posicao',label:'Casa (linha,coluna)',code:true},{key:'multiplicidade',label:'Quantidade de estados'}];caption='Multiplicidade por casa';}
+ else if(kind==='becos'){rows=(m.becos.estados||[]).map(estado=>({estado}));columns=[states[0]];caption='Becos · estados sem saída, excluindo G';}
+ else{rows=m.arestas;columns=[{key:'origem',label:'Origem',code:true},{key:'destino',label:'Destino',code:true},{key:'movimento',label:'Movimento'},{key:'casa_destino',label:'Símbolo de destino'},{key:'peso',label:'Peso'}];caption='Arestas dirigidas · inclui ALVO';}
+ $('edge-note').hidden=kind!=='arestas';table('detail-table',columns,filtered(rows,$('detail-search').value),caption);
+}
+function renderMap(){const m=data.mapas[$('map-select').value],host=$('detail-metrics');host.replaceChildren();
+ const summary=[['Maior grau de entrada',m.rankings.maior_grau_entrada?.grau,m.rankings.maior_grau_entrada?.estado],['Maior grau de saída',m.rankings.maior_grau_saida?.grau,m.rankings.maior_grau_saida?.estado],['Multiplicidade máxima',m.multiplicidade.maxima,(m.multiplicidade.quantidade_casas_maximas??'—')+' casa(s) com esse valor'],['Becos',m.becos.quantidade,'Estados sem saída; G excluído']];
+ for(const [label,value,detail] of summary){const card=el('div',undefined,'metric');card.append(el('span',label,'label'),el('strong',fmt(value)),el('code',detail??'Não disponível'));host.append(card);}
+ $('map-files').replaceChildren(...m.arquivos.map(a=>link(a,true)));renderDetails();const layers=m.camadas?.camadas||{},transitions=m.camadas?.arcos_entre_camadas||{};
+ table('layer-table',[{key:'camada',label:'Conjunto de chaves'},{key:'ordem',label:'Estados'},{key:'tamanho',label:'Arcos internos'},{key:'densidade',label:'Densidade dirigida'}],Object.entries(layers).map(([key,v])=>({camada:layer(key),...v})),'Subgrafos induzidos por camada');
+ table('transition-table',[{key:'origem',label:'Camada de origem',display:layer},{key:'destino',label:'Camada de destino',display:layer},{key:'quantidade',label:'Arcos'}],transitions.transicoes||[],'Transições entre conjuntos de chaves','Nenhum arco entre camadas neste mapa.');
+ table('key-table',[{key:'posicao',label:'Casa',code:true},{key:'chave',label:'Chave'},{key:'quantidade',label:'Arcos de mudança'}],(transitions.por_casa||[]).map(x=>({...x,posicao:position(x.posicao)})),'Transições agrupadas pela casa de destino','Nenhuma casa de mudança de camada neste mapa.');
+}
+function renderDFS(){const d=data.mapas[$('dfs-map').value].dfs,kind=$('dfs-kind').value;const rows=d.classificacao.map(([origem,destino,tipo])=>({origem,destino,tipo})).filter(r=>!kind||r.tipo===kind);$('dfs-cycle').textContent='Existência de ciclo informada pela DFS: '+(d.tem_ciclo?'sim.':'não.');
+ table('dfs-table',[{key:'origem',label:'Origem',code:true},{key:'destino',label:'Destino',code:true},{key:'tipo',label:'Classificação',display:v=>types[v]||v}],filtered(rows,$('dfs-search').value),'Classificação individual · '+friendly($('dfs-map').value));
+}
+if(data.parte2)document.getElementById('part2-link').href=data.parte2;
+if(data.labirinto)for(const id of ['open-maze','intro-maze'])$(id).href=data.labirinto.href;
+const dialog=$('figure-dialog');let figureTrigger;
+for(const f of data.figuras){const fig=el('figure',undefined,'card figure'),button=el('button');button.type='button';button.setAttribute('aria-label','Ampliar '+f.titulo);const img=el('img');img.src=f.href;img.alt=f.titulo+' — '+f.descricao;img.loading='lazy';button.append(img);button.onclick=()=>{figureTrigger=button;$('figure-title').textContent=f.titulo;$('figure-full').src=f.href;$('figure-full').alt=img.alt;dialog.showModal();};const cap=el('figcaption');cap.append(el('h3',f.titulo),el('p',f.descricao),link({nome:'Abrir PNG original ↗',href:f.href}));fig.append(button,cap);$('gallery').append(fig);}
+$('close-figure').onclick=()=>dialog.close();dialog.addEventListener('close',()=>figureTrigger?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+options($('map-select'),Object.keys(data.mapas));$('map-select').value=data.mapas.m02_uma_chave?'m02_uma_chave':Object.keys(data.mapas)[0];$('map-select').onchange=()=>{$('detail-search').value='';renderMap();};$('detail-kind').onchange=()=>{$('detail-search').value='';renderDetails();};$('detail-search').oninput=renderDetails;
+const approaches={G_pos_portas_chao:'Grafo de posições · portas como chão',G_pos_portas_parede:'Grafo de posições · portas como parede',G_est:'Grafo de estados · inventário de chaves'};
+table('model-table',[{key:'mapa',label:'Mapa'},{key:'abordagem',label:'Modelagem',display:v=>approaches[v]||v},{key:'passos',label:'Passos BFS',display:v=>v===''?'Sem caminho':v},{key:'caminho_valido',label:'Válido pelas regras?',display:v=>v==='True'?'Sim':'Não'},{key:'observacao',label:'Registro do programa'}],data.modelagens,'Comparação das três modelagens');
+table('dfs-summary',[{key:'mapa',label:'Mapa'},...['arvore','retorno','avanco','cruzamento'].map(key=>({key,label:types[key]}))],data.dfs_resumo,'Contagem por classe de aresta');options($('dfs-map'),Object.keys(data.mapas).filter(k=>data.mapas[k].dfs));$('dfs-map').value='m02_uma_chave';for(const id of ['dfs-map','dfs-kind'])$(id).onchange=renderDFS;$('dfs-search').oninput=renderDFS;
+const bonus=data.bonus;if(bonus){const box=el('div',undefined,'cycle');box.append(el('code',(bonus.G_pos.ciclo_negativo||[]).map(position).join(' → ')));$('bonus-data').append(box,el('p','Custo do ciclo em G_pos: '+fmt(bonus.G_pos.custo_ciclo)),el('p','Ciclo negativo em G_est: '+(bonus.G_est.tem_ciclo_negativo?'sim':'não')),el('p','Custo até a saída em G_est: '+fmt(bonus.G_est.custo)));}else $('bonus-data').append(el('p','Arquivo de comparação indisponível.'));
+const cycle=data.ciclo;if(cycle){const box=el('div',undefined,'cycle');box.append(el('code',cycle.estados.join(' → ')));$('cycle-data').append(box,el('p','Custo total do ciclo: '+fmt(cycle.custo)));const host=el('div');host.id='cycle-edges';$('cycle-data').append(host);table('cycle-edges',[{key:'origem',label:'Origem',code:true},{key:'destino',label:'Destino',code:true},{key:'peso',label:'Peso'}],cycle.arestas.map(([origem,destino,peso])=>({origem,destino,peso})),'Arestas do ciclo negativo');}else $('cycle-data').append(el('p','Arquivo de ciclo indisponível.'));
+const manual=data.documentos.find(x=>x.href.endsWith('.pdf'));if(manual){$('manual-note').append(document.createTextNode('Prova do m05 e discussão da correção do m06: '),link(manual));}
+for(const [group,files] of Object.entries({...data.arquivos,'Documentação':data.documentos})){const card=el('div',undefined,'card'),list=el('ul');card.append(el('h3',group));for(const file of files){const li=el('li');li.append(link(file));list.append(li);}card.append(list);$('file-groups').append(card);}
+renderMap();renderDFS();
+} catch (error) {
+ const notice=document.getElementById('load-error');
+ const raw=document.getElementById('delivery-data').textContent.trim();
+ notice.hidden=false;
+ if(raw.startsWith('<!--')){
+  notice.append(document.createTextNode('Este arquivo é o modelo da página e ainda não contém os mapas. '));
+  const ready=document.createElement('a');ready.href='../../out/parte1/entregas_parte1.html';ready.textContent='Abrir a página pronta com os dados';notice.append(ready);
+ }else{
+  notice.textContent='Não foi possível carregar as opções. Abra out/parte1/entregas_parte1.html no navegador e atualize a página. Se o problema continuar, gere a página novamente com python -m src.entregas --out out/parte1.';
+ }
+ console.error(error);
+}
+</script>
+</body>
+</html>
