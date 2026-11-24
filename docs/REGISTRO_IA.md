@@ -137,3 +137,11 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Arquivos: `src/parte2/visualizações.py`, `tests/test_graficos_desempenho.py`, README e figuras em `out/parte2/graficos/`.
 - Etapas: validar as medições, separar tarefas por quantidades de vértices/arcos e exportar PNG/SVG com médias, tempos individuais e desvio-padrão amostral, mantendo rótulos, unidades e fonte.
 - Verificação: três figuras geradas nos dois formatos e inspecionadas visualmente; suíte executada com pytest no ambiente virtual, com 122 testes e 89 subtestes aprovados.
+
+## Executor de escalabilidade em 24/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: implementação da conexão entre amostragem e medição dos quatro algoritmos, com escala configurável.
+- Arquivos: `src/parte2/escalabilidade.py`, `tests/test_escalabilidade.py` e README.
+- Etapas: carregar o CSV preparado; receber origem, proporções, semente e limite opcional; construir amostras; medir quatro algoritmos com pelo menos cinco repetições; registrar hash da entrada e transformação dos pesos de Dijkstra; exportar relatório separado.
+- Verificação: cinco novos testes aprovados, incluindo execução pela CLI com CSV temporário, 12 medições, transformação dos pesos e preservação da entrada; suíte completa com 127 testes e 89 subtestes aprovados.
