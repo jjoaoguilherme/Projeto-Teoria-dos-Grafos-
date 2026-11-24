@@ -83,6 +83,21 @@ executa novamente os algoritmos nem produz interpretação dos resultados.
 
 ## Amostragem para escalabilidade da Parte 2
 
+O executor `src/parte2/escalabilidade.py` conecta as amostras ao medidor dos
+quatro algoritmos. Recebe o CSV preparado `origem,destino,peso`, a origem e
+pelo menos três proporções explícitas. Exemplo de sintaxe:
+
+```powershell
+python -m src.parte2.escalabilidade --arquivo out/parte2/arestas_dataset.csv --origem subredditdrama --proporcoes 0.1 0.5 1.0 --out out/parte2/escalabilidade_report.json
+```
+
+`--limite-vertices N` define um recorte-base reproduzível de N vértices;
+as proporções serão relativas a esse recorte. Sem esse argumento, serão
+relativas à base inteira. `--semente` e `--repeticoes` controlam a seleção e
+as medições. Dijkstra recebe `2 - LINK_SENTIMENT`; os demais mantêm os pesos
+originais. O relatório registra o hash SHA-256 do CSV, o tamanho original,
+o limite, as amostras e a transformação. A preparação fica fora do relógio.
+
 `src/parte2/amostragem.py` prepara subgrafos induzidos por 10%, 50% e 100% dos vértices, com semente configurável (42 por padrão). As amostras são aninhadas, preservam direção, pesos, laços, arcos paralelos e a ordem original de inserção. As quantidades são arredondadas para cima; proporções que resultem no mesmo tamanho são recusadas. Não há alteração do grafo original.
 
 ```python
