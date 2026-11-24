@@ -99,25 +99,77 @@ def exportar_relatorio(experimentos, caminho='out/parte2/parte2_report.json',
     return destino
 
 
-def main():
-    """Exemplo pequeno, explicitamente separado dos experimentos finais."""
-    import argparse
-    parser = argparse.ArgumentParser(description='Demonstrar infraestrutura de medição.')
-    parser.add_argument('--demonstracao', action='store_true', required=True)
-    parser.add_argument('--repeticoes', type=int, default=5)
-    parser.add_argument('--out', default='out/parte2/demonstracao_report.json')
-    args = parser.parse_args()
-    vertices = ['A', 'B', 'C', 'D']
-    arestas = [('A', 'B', 4), ('A', 'C', 3), ('C', 'B', 2), ('B', 'D', 5), ('C', 'D', 6)]
+
+def executar_bfs_dfs_dataset(caminho, fontes, repeticoes=5,
+                             destino='out/parte2/bfs_dfs_report.json'):
+    """Mede BFS/DFS nas fontes indicadas; não executa os demais casos da Parte 2.
+    
+    """
+    from src.parte2.dados import carregar_dataset
+
+    dados = carregar_dataset(caminho)
+    grafo = dados['grafo']
+    vertices, arestas = grafo.vertices, grafo.arestas
+    desconhecidas = [fonte for fonte in fontes if fonte not in set(vertices)]
+    if desconhecidas:
+        raise ValueError('Fontes não encontradas no dataset: ' + ', '.join(desconhecidas))
     ambiente = registrar_ambiente()
+    experimentos = []
+    for nome in ('BFS', 'DFS'):
+        for fonte in fontes:
+            print(f'Executando {nome} a partir de {fonte} ({repeticoes} repetições)...', flush=True)
+            medicao = medir_algoritmo(nome, vertices, arestas, fonte, repeticoes,
+                                     identificacao={'dataset': str(caminho),
+                                                    'origem_tipo': 'subreddit',
+                                                    'caso': 'BFS_DFS_TRES_FONTES'})
+            experimentos.append(medicao)
+            print(f'  Média: {medicao["tempo_medio_segundos"]:.4f}s', flush=True)
+    return exportar_relatorio(experimentos, destino, ambiente, demonstracao=False)
+
+def main():
+    """Permite executar a demonstração ou as seis medições BFS/DFS no Reddit."""
+    import argparse
+    parser = argparse.ArgumentParser(description='Infraestrutura de medições da Parte 2.')
+    modo = parser.add_mutually_exclusive_group(required=True)
+    modo.add_argument('--demonstracao', action='store_true')
+    modo.add_argument('--bfs-dfs', action='store_true',
+                      help='Executa BFS e DFS em três fontes do dataset real.')
+    parser.add_argument('--arquivo', help='Caminho do arquivo TSV, para --bfs-dfs.')
+    parser.add_argument('--fontes', nargs=3,
+                        metavar=('FONTE1', 'FONTE2', 'FONTE3'),
+                        help='Três subreddits de origem para --bfs-dfs.')
+    parser.add_argument('--repeticoes', type=int, default=5)
+    parser.add_argument('--out', help='Caminho do JSON de saída.')
+    args = parser.parse_args()
+    if args.bfs_dfs and not args.arquivo:
+        parser.error('--bfs-dfs exige --arquivo.')
+    if args.demonstracao and (args.arquivo or args.fontes):
+        parser.error('--arquivo e --fontes são opções exclusivas de --bfs-dfs.')
+    if args.repeticoes < 5:
+        parser.error('É necessário executar pelo menos cinco repetições.')
     try:
-        experimentos = [medir_algoritmo(nome, vertices, arestas, 'A', args.repeticoes,
-                                       identificacao={'grafo': 'exemplo pequeno; não é o dataset'})
-                        for nome in ALGORITMOS]
-        destino = exportar_relatorio(experimentos, args.out, ambiente, demonstracao=True)
+        if args.bfs_dfs:
+            fontes = args.fontes or ['subredditdrama', 'bestof', 'titlegore']
+            if len(set(fontes)) != 3:
+                parser.error('Informe três fontes distintas.')
+            destino = executar_bfs_dfs_dataset(
+                args.arquivo, fontes, args.repeticoes,
+                args.out or 'out/parte2/bfs_dfs_report.json')
+            print(f'Medições BFS/DFS salvas em {destino}')
+        else:
+            vertices = ['A', 'B', 'C', 'D']
+            arestas = [('A', 'B', 4), ('A', 'C', 3), ('C', 'B', 2),
+                       ('B', 'D', 5), ('C', 'D', 6)]
+            ambiente = registrar_ambiente()
+            experimentos = [medir_algoritmo(nome, vertices, arestas, 'A', args.repeticoes,
+                                           identificacao={'grafo': 'exemplo pequeno; não é o dataset'})
+                            for nome in ALGORITMOS]
+            destino = exportar_relatorio(experimentos,
+                                        args.out or 'out/parte2/demonstracao_report.json',
+                                        ambiente, demonstracao=True)
+            print(f'Demonstração salva em {destino}')
     except (ValueError, OSError) as erro:
         parser.exit(1, f'Erro: {erro}\n')
-    print(f'Demonstração salva em {destino}')
 
 
 if __name__ == '__main__':
