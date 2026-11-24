@@ -77,3 +77,34 @@ def medir_escalabilidade(grafo, origem, proporcoes, repeticoes=5, semente=42,
             experimentos.append(medir_algoritmo(nome, vertices, entrada, origem,
                                                 repeticoes, identificacao=identificador))
     return experimentos
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--arquivo', default='out/parte2/arestas_dataset.csv')
+    parser.add_argument('--origem', required=True)
+    parser.add_argument('--proporcoes', type=float, nargs='+', required=True)
+    parser.add_argument('--limite-vertices', type=int)
+    parser.add_argument('--semente', type=int, default=42)
+    parser.add_argument('--repeticoes', type=int, default=5)
+    parser.add_argument('--out', default='out/parte2/escalabilidade_report.json')
+    args = parser.parse_args()
+    try:
+        caminho = Path(args.arquivo)
+        grafo = carregar_arestas_preparadas(caminho)
+        with caminho.open('rb') as arquivo:
+            assinatura = sha256()
+            for bloco in iter(lambda: arquivo.read(1024 * 1024), b''):
+                assinatura.update(bloco)
+        ambiente = registrar_ambiente()
+        experimentos = medir_escalabilidade(
+            grafo, args.origem, args.proporcoes, args.repeticoes, args.semente,
+            args.limite_vertices, {'arquivo': str(caminho), 'sha256': assinatura.hexdigest()})
+        destino = exportar_relatorio(experimentos, args.out, ambiente)
+    except (ValueError, OSError, csv.Error) as erro:
+        parser.exit(1, f'Erro: {erro}\n')
+    print(f'Relatório salvo em {destino}')
+
+
+if __name__ == '__main__':
+    main()
