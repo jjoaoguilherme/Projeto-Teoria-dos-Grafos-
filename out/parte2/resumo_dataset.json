@@ -1,0 +1,89 @@
+{
+  "arquivo": "data\\dataset_parte2\\soc-redditHyperlinks-title.tsv",
+  "colunas": [
+    "SOURCE_SUBREDDIT",
+    "TARGET_SUBREDDIT",
+    "POST_ID",
+    "TIMESTAMP",
+    "LINK_SENTIMENT",
+    "PROPERTIES"
+  ],
+  "contagens": {
+    "registros": 571927,
+    "validos": 571927,
+    "invalidos": 0,
+    "negativos": 61140,
+    "nao_negativos": 510787,
+    "lacos": 0,
+    "pares_repetidos": 337135
+  },
+  "vertices": 54075,
+  "arestas": 571927,
+  "pares_distintos": 234792,
+  "politica_invalidos": "erro",
+  "motivos_invalidos": {},
+  "linhas_invalidas_exemplo": [],
+  "atinge_20_mil_arestas": true,
+  "acima_500_mil_arestas": true,
+  "pesos": "LINK_SENTIMENT sem transformação (-1 ou 1)",
+  "politica_repeticoes": "Preservar cada registro como arco, inclusive paralelos e laços.",
+  "qualidade": {
+    "faltantes_por_coluna": {
+      "SOURCE_SUBREDDIT": 0,
+      "TARGET_SUBREDDIT": 0,
+      "POST_ID": 0,
+      "TIMESTAMP": 0,
+      "LINK_SENTIMENT": 0,
+      "PROPERTIES": 0
+    },
+    "espacos_externos_por_coluna": {
+      "SOURCE_SUBREDDIT": 0,
+      "TARGET_SUBREDDIT": 0,
+      "POST_ID": 0,
+      "TIMESTAMP": 0,
+      "LINK_SENTIMENT": 0,
+      "PROPERTIES": 0
+    },
+    "duplicatas_exatas": 0,
+    "datas_invalidas": 0,
+    "linhas_datas_invalidas_exemplo": [],
+    "properties": {
+      "dimensoes_encontradas": {
+        "86": 571927
+      },
+      "vetores_invalidos": 0,
+      "linhas_invalidas_exemplo": []
+    }
+  },
+  "colunas_base_avd": [
+    "linha_arquivo",
+    "SOURCE_SUBREDDIT",
+    "TARGET_SUBREDDIT",
+    "POST_ID",
+    "TIMESTAMP",
+    "LINK_SENTIMENT"
+  ],
+  "origem": {
+    "obtido_em_utc": "2026-11-24T12:07:53.606153+00:00",
+    "dataset": "Reddit Hyperlink Network — links nos títulos",
+    "arquivo": "soc-redditHyperlinks-title.tsv",
+    "fonte": "https://snap.stanford.edu/data/soc-RedditHyperlinks.html",
+    "url_download": "https://snap.stanford.edu/data/soc-redditHyperlinks-title.tsv",
+    "sha256": "b6ea49dcbc83f948b177b341cace8c37fb8f12fc1b0e18bbfd1ba4630b699893",
+    "tamanho_bytes": 368581209,
+    "colunas": [
+      "SOURCE_SUBREDDIT",
+      "TARGET_SUBREDDIT",
+      "POST_ID",
+      "TIMESTAMP",
+      "LINK_SENTIMENT",
+      "PROPERTIES"
+    ],
+    "aprovacao": {
+      "confirmada_pelo_usuario": true,
+      "confirmado_por": "João",
+      "data": "2026-11-24",
+      "arquivo_aprovado": "soc-redditHyperlinks-title.tsv"
+    }
+  }
+}
