@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "lazypalpatine",
+    "referencias_entrada": 0,
+    "referencias_saida": 70,
+    "vizinhos_entrada": 0,
+    "vizinhos_saida": 21,
+    "negativas_entrada": 0,
+    "negativas_saida": 18,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": null,
+    "proporcao_negativas_saida": 0.2571428571428571,
+    "grau_entrada": 0,
+    "grau_saida": 70,
+    "alcance_total": 23771,
+    "alcancaveis_incluindo_origem": 23772,
+    "proporcao_alcance": 0.43960128712505087,
+    "distancia_media_bfs": 3.089100164065458,
+    "maior_distancia_bfs": 17,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_11_100",
+    "N_h": 3178,
+    "n_h": 94,
+    "probabilidade_inclusao": 0.02957835116425425,
+    "peso_amostral": 33.808510638297875,
+    "peso_media_global": 0.0006252151759278386,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23186,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.1605023000156507,
+    "bfs_nao_negativas": 0.12360150000313297
+  }
+}

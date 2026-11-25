@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "mma",
+    "referencias_entrada": 508,
+    "referencias_saida": 227,
+    "vizinhos_entrada": 168,
+    "vizinhos_saida": 95,
+    "negativas_entrada": 110,
+    "negativas_saida": 18,
+    "ciclos_negativos_duas_arestas": 4,
+    "proporcao_negativas_entrada": 0.2165354330708661,
+    "proporcao_negativas_saida": 0.079295154185022,
+    "grau_entrada": 508,
+    "grau_saida": 227,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 2.9887668812318564,
+    "maior_distancia_bfs": 17,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_11_100",
+    "N_h": 3178,
+    "n_h": 94,
+    "probabilidade_inclusao": 0.02957835116425425,
+    "peso_amostral": 33.808510638297875,
+    "peso_media_global": 0.0006252151759278386,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.149031200009631,
+    "bfs_nao_negativas": 0.11960930001805536
+  }
+}

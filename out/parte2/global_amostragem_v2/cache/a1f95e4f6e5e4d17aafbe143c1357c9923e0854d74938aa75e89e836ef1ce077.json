@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "flying",
+    "referencias_entrada": 155,
+    "referencias_saida": 86,
+    "vizinhos_entrada": 56,
+    "vizinhos_saida": 49,
+    "negativas_entrada": 17,
+    "negativas_saida": 4,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": 0.1096774193548387,
+    "proporcao_negativas_saida": 0.0465116279069767,
+    "grau_entrada": 155,
+    "grau_saida": 86,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 3.3276115949345786,
+    "maior_distancia_bfs": 18,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_11_100",
+    "N_h": 3178,
+    "n_h": 94,
+    "probabilidade_inclusao": 0.02957835116425425,
+    "peso_amostral": 33.808510638297875,
+    "peso_media_global": 0.0006252151759278386,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.1340667000040412,
+    "bfs_nao_negativas": 0.11769650000496767
+  }
+}

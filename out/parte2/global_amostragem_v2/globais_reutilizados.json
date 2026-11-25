@@ -1,0 +1,14 @@
+{
+  "pasta": "C:\\Users\\josev\\Documents\\GitHub\\Projeto-Teoria-dos-Grafos-\\out\\parte2\\global_amostragem_v2\\globais",
+  "reutilizadas": true,
+  "sha256_base": "c2062888964435e2661be9433cf3eb70158e746f41b45ee85383f78a609eaf57",
+  "hashes_artefatos": {
+    "comunidades.csv": "ba2184bb12b219f5f77a216ddda392f59dc68cd097e2179869ec4a94516ff56e",
+    "mensal.csv": "58a7b8e206ed8e0ab9e85b235211995bb3d6ce147a186c328b0e9b79b19d0259",
+    "ciclos_negativos_duas_arestas.csv": "f36c5ae7e5266028d2a3a9d6b6711818c62fb8b73d1e809c6f1b28a9c35ec042",
+    "outliers_iqr.csv": "95b0e5c5d5ed2003202065f7b4ea5c83815870743e18b3d1a0fac988ce87a237",
+    "correlacoes_pearson.csv": "8af6b0735002ca7b8aa757c9000bda854928e59a8c05d34982fa1e6503e414d5",
+    "correlacoes_spearman.csv": "16c955fa39c7dd4b3ece3a18ee345b7fbda046958b664b130e1c4419bd815e59",
+    "resumo_global.json": "01d19555f968d084bb0c6fa0478c09e578abe6c798c04505392b448d6ad69a79"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "dagashikashi",
+    "referencias_entrada": 0,
+    "referencias_saida": 1,
+    "vizinhos_entrada": 0,
+    "vizinhos_saida": 1,
+    "negativas_entrada": 0,
+    "negativas_saida": 0,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": null,
+    "proporcao_negativas_saida": 0.0,
+    "grau_entrada": 0,
+    "grau_saida": 1,
+    "alcance_total": 23770,
+    "alcancaveis_incluindo_origem": 23771,
+    "proporcao_alcance": 0.4395827939490328,
+    "distancia_media_bfs": 4.552629364745478,
+    "maior_distancia_bfs": 19,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_1",
+    "N_h": 24674,
+    "n_h": 122,
+    "probabilidade_inclusao": 0.004944475966604523,
+    "peso_amostral": 202.24590163934425,
+    "peso_media_global": 0.0037400998916198662,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23185,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.13501369999721646,
+    "bfs_nao_negativas": 0.12736949999816716
+  }
+}

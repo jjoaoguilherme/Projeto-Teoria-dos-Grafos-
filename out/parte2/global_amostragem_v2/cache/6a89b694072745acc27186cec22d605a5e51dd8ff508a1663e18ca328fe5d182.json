@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "contwhilstrary",
+    "referencias_entrada": 0,
+    "referencias_saida": 3,
+    "vizinhos_entrada": 0,
+    "vizinhos_saida": 2,
+    "negativas_entrada": 0,
+    "negativas_saida": 1,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": null,
+    "proporcao_negativas_saida": 0.3333333333333333,
+    "grau_entrada": 0,
+    "grau_saida": 3,
+    "alcance_total": 23770,
+    "alcancaveis_incluindo_origem": 23771,
+    "proporcao_alcance": 0.4395827939490328,
+    "distancia_media_bfs": 4.381363062684056,
+    "maior_distancia_bfs": 19,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_2_10",
+    "N_h": 15570,
+    "n_h": 96,
+    "probabilidade_inclusao": 0.006165703275529865,
+    "peso_amostral": 162.1875,
+    "peso_media_global": 0.0029993065187239945,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23185,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.13487540002097376,
+    "bfs_nao_negativas": 0.19226569999591447
+  }
+}

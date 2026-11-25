@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "fire_snyper",
+    "referencias_entrada": 0,
+    "referencias_saida": 27,
+    "vizinhos_entrada": 0,
+    "vizinhos_saida": 20,
+    "negativas_entrada": 0,
+    "negativas_saida": 0,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": null,
+    "proporcao_negativas_saida": 0.0,
+    "grau_entrada": 0,
+    "grau_saida": 27,
+    "alcance_total": 23773,
+    "alcancaveis_incluindo_origem": 23774,
+    "proporcao_alcance": 0.43963827347708695,
+    "distancia_media_bfs": 3.72716947797922,
+    "maior_distancia_bfs": 18,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_11_100",
+    "N_h": 3178,
+    "n_h": 94,
+    "probabilidade_inclusao": 0.02957835116425425,
+    "peso_amostral": 33.808510638297875,
+    "peso_media_global": 0.0006252151759278386,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23188,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.19262349998462014,
+    "bfs_nao_negativas": 0.12932480001472868
+  }
+}

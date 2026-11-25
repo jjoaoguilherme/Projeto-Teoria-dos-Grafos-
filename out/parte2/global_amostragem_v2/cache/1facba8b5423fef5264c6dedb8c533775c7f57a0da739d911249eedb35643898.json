@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "petitpain",
+    "referencias_entrada": 0,
+    "referencias_saida": 3,
+    "vizinhos_entrada": 0,
+    "vizinhos_saida": 2,
+    "negativas_entrada": 0,
+    "negativas_saida": 2,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": null,
+    "proporcao_negativas_saida": 0.6666666666666666,
+    "grau_entrada": 0,
+    "grau_saida": 3,
+    "alcance_total": 23771,
+    "alcancaveis_incluindo_origem": 23772,
+    "proporcao_alcance": 0.43960128712505087,
+    "distancia_media_bfs": 3.951916200412267,
+    "maior_distancia_bfs": 18,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_2_10",
+    "N_h": 15570,
+    "n_h": 96,
+    "probabilidade_inclusao": 0.006165703275529865,
+    "peso_amostral": 162.1875,
+    "peso_media_global": 0.0029993065187239945,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 1,
+    "perda_alcance_remocao_negativas": 23770
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.1331015000178013,
+    "bfs_nao_negativas": 0.07930429998668842
+  }
+}

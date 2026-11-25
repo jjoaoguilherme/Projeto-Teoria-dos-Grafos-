@@ -1,0 +1,86 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "subredditdrama",
+    "referencias_entrada": 2454,
+    "referencias_saida": 22971,
+    "vizinhos_entrada": 638,
+    "vizinhos_saida": 2659,
+    "negativas_entrada": 628,
+    "negativas_saida": 7550,
+    "ciclos_negativos_duas_arestas": 79,
+    "proporcao_negativas_entrada": 0.2559087204563977,
+    "proporcao_negativas_saida": 0.3286752862304645,
+    "grau_entrada": 2454,
+    "grau_saida": 22971,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 2.1854095670831755,
+    "maior_distancia_bfs": 17,
+    "finalidades": [
+      "bfs_dfs_obrigatoria",
+      "par_dijkstra"
+    ],
+    "amostra_analitica": false,
+    "estrato": "grau_acima_100",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585,
+    "tem_ciclo_dfs": true,
+    "classificacao_dfs": {
+      "arvore": 23769,
+      "retorno": 254216,
+      "avanco": 134513,
+      "cruzamento": 62666
+    }
+  },
+  "caminhos": [
+    {
+      "origem": "subredditdrama",
+      "destino": "nfl",
+      "bfs": {
+        "caminho": [
+          "subredditdrama",
+          "nfl"
+        ],
+        "arestas": [
+          {
+            "peso": -1,
+            "linha_tsv": 18,
+            "post_id": "1u58yq",
+            "timestamp": "2013-12-31 21:59:32",
+            "origem": "subredditdrama",
+            "destino": "nfl"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 1,
+        "custo_transformado": 3
+      },
+      "dijkstra": {
+        "caminho": [
+          "subredditdrama",
+          "nfl"
+        ],
+        "arestas": [
+          {
+            "peso": 1,
+            "linha_tsv": 5426,
+            "post_id": "1vn4yls",
+            "timestamp": "2014-01-19 19:31:09",
+            "origem": "subredditdrama",
+            "destino": "nfl"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 0,
+        "custo_transformado": 1
+      },
+      "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+    }
+  ],
+  "tempos_operacionais": {
+    "bfs": 0.13021249999292195,
+    "bfs_nao_negativas": 0.1174829000083264
+  }
+}

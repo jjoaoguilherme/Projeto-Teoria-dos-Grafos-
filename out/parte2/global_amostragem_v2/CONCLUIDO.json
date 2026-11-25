@@ -1,0 +1,11 @@
+{
+  "versao": 2,
+  "concluido": true,
+  "amostra_analitica": 384,
+  "origens_distintas": 388,
+  "comunidades_grau_zero_exatas": 10380,
+  "pares_documentados": 5,
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "escopo": "Métricas globais exatas separadas de estimativas amostrais. Sem conclusões acadêmicas.",
+  "compatibilidade": "Não alimentar os gráficos/textos antigos com premissas fixas de 19 fontes."
+}

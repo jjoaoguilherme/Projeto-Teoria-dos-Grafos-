@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "redditbomb",
+    "referencias_entrada": 3,
+    "referencias_saida": 4,
+    "vizinhos_entrada": 3,
+    "vizinhos_saida": 2,
+    "negativas_entrada": 1,
+    "negativas_saida": 0,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": 0.3333333333333333,
+    "proporcao_negativas_saida": 0.0,
+    "grau_entrada": 3,
+    "grau_saida": 4,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 3.492364003534015,
+    "maior_distancia_bfs": 18,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_2_10",
+    "N_h": 15570,
+    "n_h": 96,
+    "probabilidade_inclusao": 0.006165703275529865,
+    "peso_amostral": 162.1875,
+    "peso_media_global": 0.0029993065187239945,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.198635100008687,
+    "bfs_nao_negativas": 0.1198832000081893
+  }
+}

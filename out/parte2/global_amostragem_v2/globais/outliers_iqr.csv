@@ -1,0 +1,5 @@
+variavel,q1,q3,limite_superior,candidatos,tratamento
+referencias_saida,1.0,3.0,6.0,8001,Mantidos; alto grau não é automaticamente erro.
+referencias_entrada,0.0,2.0,5.0,6766,Mantidos; alto grau não é automaticamente erro.
+vizinhos_saida,1.0,2.0,3.5,9054,Mantidos; alto grau não é automaticamente erro.
+vizinhos_entrada,0.0,1.0,2.5,9164,Mantidos; alto grau não é automaticamente erro.

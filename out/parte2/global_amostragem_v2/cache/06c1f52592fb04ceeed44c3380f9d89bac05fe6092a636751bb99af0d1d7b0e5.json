@@ -1,0 +1,76 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "xboxone",
+    "referencias_entrada": 721,
+    "referencias_saida": 376,
+    "vizinhos_entrada": 228,
+    "vizinhos_saida": 136,
+    "negativas_entrada": 62,
+    "negativas_saida": 8,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": 0.0859916782246879,
+    "proporcao_negativas_saida": 0.0212765957446808,
+    "grau_entrada": 721,
+    "grau_saida": 376,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 3.34868946947705,
+    "maior_distancia_bfs": 18,
+    "finalidades": [
+      "par_dijkstra"
+    ],
+    "amostra_analitica": false,
+    "estrato": "grau_acima_100"
+  },
+  "caminhos": [
+    {
+      "origem": "xboxone",
+      "destino": "battlefield_4",
+      "bfs": {
+        "caminho": [
+          "xboxone",
+          "battlefield_4"
+        ],
+        "arestas": [
+          {
+            "peso": 1,
+            "linha_tsv": 3,
+            "post_id": "1u4tmfs",
+            "timestamp": "2013-12-31 17:59:11",
+            "origem": "xboxone",
+            "destino": "battlefield_4"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 0,
+        "custo_transformado": 1
+      },
+      "dijkstra": {
+        "caminho": [
+          "xboxone",
+          "battlefield_4"
+        ],
+        "arestas": [
+          {
+            "peso": 1,
+            "linha_tsv": 3,
+            "post_id": "1u4tmfs",
+            "timestamp": "2013-12-31 17:59:11",
+            "origem": "xboxone",
+            "destino": "battlefield_4"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 0,
+        "custo_transformado": 1
+      },
+      "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+    }
+  ],
+  "tempos_operacionais": {
+    "bfs": 0.1338537000119686,
+    "bfs_nao_negativas": 0.0
+  }
+}

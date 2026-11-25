@@ -1,0 +1,93 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "bestof",
+    "referencias_entrada": 1013,
+    "referencias_saida": 21170,
+    "vizinhos_entrada": 394,
+    "vizinhos_saida": 3111,
+    "negativas_entrada": 173,
+    "negativas_saida": 3464,
+    "ciclos_negativos_duas_arestas": 35,
+    "proporcao_negativas_entrada": 0.1707798617966436,
+    "proporcao_negativas_saida": 0.1636277751535191,
+    "grau_entrada": 1013,
+    "grau_saida": 21170,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 2.1493542008498463,
+    "maior_distancia_bfs": 16,
+    "finalidades": [
+      "amostra_analitica",
+      "bfs_dfs_obrigatoria",
+      "par_dijkstra"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_acima_100",
+    "N_h": 273,
+    "n_h": 72,
+    "probabilidade_inclusao": 0.26373626373626374,
+    "peso_amostral": 3.7916666666666665,
+    "peso_media_global": 7.011866235167207e-05,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585,
+    "tem_ciclo_dfs": true,
+    "classificacao_dfs": {
+      "arvore": 23769,
+      "retorno": 245441,
+      "avanco": 145015,
+      "cruzamento": 60939
+    }
+  },
+  "caminhos": [
+    {
+      "origem": "bestof",
+      "destino": "confession",
+      "bfs": {
+        "caminho": [
+          "bestof",
+          "confession"
+        ],
+        "arestas": [
+          {
+            "peso": 1,
+            "linha_tsv": 11,
+            "post_id": "1u56b3s",
+            "timestamp": "2013-12-31 21:41:46",
+            "origem": "bestof",
+            "destino": "confession"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 0,
+        "custo_transformado": 1
+      },
+      "dijkstra": {
+        "caminho": [
+          "bestof",
+          "confession"
+        ],
+        "arestas": [
+          {
+            "peso": 1,
+            "linha_tsv": 11,
+            "post_id": "1u56b3s",
+            "timestamp": "2013-12-31 21:41:46",
+            "origem": "bestof",
+            "destino": "confession"
+          }
+        ],
+        "saltos": 1,
+        "negativas": 0,
+        "custo_transformado": 1
+      },
+      "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+    }
+  ],
+  "tempos_operacionais": {
+    "bfs": 0.13981429999694228,
+    "bfs_nao_negativas": 0.13842589998967014
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "metodo": "máximo observado em até 3 fontes por estrato; fator operacional 1,5",
+  "tempos_por_estrato": {
+    "grau_0": [],
+    "grau_1": [
+      0.3426198000088334,
+      0.2860682999889832,
+      0.29585100000258535
+    ],
+    "grau_2_10": [
+      0.2674795999773778,
+      0.2816913000133354,
+      0.29506039997795597
+    ],
+    "grau_11_100": [
+      0.2760837999812793,
+      0.29379749996587634,
+      0.27608619997045025
+    ],
+    "grau_acima_100": [
+      0.27504499998758547,
+      0.32152210001368076,
+      0.2878187999885995
+    ]
+  },
+  "estimativa_bfs_total_segundos": 181.33795529510826,
+  "estimativa_restante_conservadora_segundos": 181.33795529510826,
+  "inclui": "BFS completa e comparação sem negativas se habilitada; piloto reutilizado no cache.",
+  "nao_inclui": "Leitura, exportação e até 3 DFS/5 Dijkstra das origens obrigatórias.",
+  "aviso": "Estimativa operacional, não intervalo de confiança nem benchmark."
+}

@@ -1,0 +1,217 @@
+[
+  {
+    "origem": "bestof",
+    "destino": "confession",
+    "bfs": {
+      "caminho": [
+        "bestof",
+        "confession"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 11,
+          "post_id": "1u56b3s",
+          "timestamp": "2013-12-31 21:41:46",
+          "origem": "bestof",
+          "destino": "confession"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "dijkstra": {
+      "caminho": [
+        "bestof",
+        "confession"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 11,
+          "post_id": "1u56b3s",
+          "timestamp": "2013-12-31 21:41:46",
+          "origem": "bestof",
+          "destino": "confession"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+  },
+  {
+    "origem": "fitnesscirclejerk",
+    "destino": "leangains",
+    "bfs": {
+      "caminho": [
+        "fitnesscirclejerk",
+        "leangains"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 5,
+          "post_id": "1u50xfs",
+          "timestamp": "2013-12-31 19:01:56",
+          "origem": "fitnesscirclejerk",
+          "destino": "leangains"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "dijkstra": {
+      "caminho": [
+        "fitnesscirclejerk",
+        "leangains"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 5,
+          "post_id": "1u50xfs",
+          "timestamp": "2013-12-31 19:01:56",
+          "origem": "fitnesscirclejerk",
+          "destino": "leangains"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+  },
+  {
+    "origem": "jleague",
+    "destino": "soccer",
+    "bfs": {
+      "caminho": [
+        "jleague",
+        "soccer"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 8,
+          "post_id": "1u53hzs",
+          "timestamp": "2013-12-31 18:29:48",
+          "origem": "jleague",
+          "destino": "soccer"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "dijkstra": {
+      "caminho": [
+        "jleague",
+        "soccer"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 8,
+          "post_id": "1u53hzs",
+          "timestamp": "2013-12-31 18:29:48",
+          "origem": "jleague",
+          "destino": "soccer"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+  },
+  {
+    "origem": "subredditdrama",
+    "destino": "nfl",
+    "bfs": {
+      "caminho": [
+        "subredditdrama",
+        "nfl"
+      ],
+      "arestas": [
+        {
+          "peso": -1,
+          "linha_tsv": 18,
+          "post_id": "1u58yq",
+          "timestamp": "2013-12-31 21:59:32",
+          "origem": "subredditdrama",
+          "destino": "nfl"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 1,
+      "custo_transformado": 3
+    },
+    "dijkstra": {
+      "caminho": [
+        "subredditdrama",
+        "nfl"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 5426,
+          "post_id": "1vn4yls",
+          "timestamp": "2014-01-19 19:31:09",
+          "origem": "subredditdrama",
+          "destino": "nfl"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+  },
+  {
+    "origem": "xboxone",
+    "destino": "battlefield_4",
+    "bfs": {
+      "caminho": [
+        "xboxone",
+        "battlefield_4"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 3,
+          "post_id": "1u4tmfs",
+          "timestamp": "2013-12-31 17:59:11",
+          "origem": "xboxone",
+          "destino": "battlefield_4"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "dijkstra": {
+      "caminho": [
+        "xboxone",
+        "battlefield_4"
+      ],
+      "arestas": [
+        {
+          "peso": 1,
+          "linha_tsv": 3,
+          "post_id": "1u4tmfs",
+          "timestamp": "2013-12-31 17:59:11",
+          "origem": "xboxone",
+          "destino": "battlefield_4"
+        }
+      ],
+      "saltos": 1,
+      "negativas": 0,
+      "custo_transformado": 1
+    },
+    "escopo": "Par predefinido; não compõe estimativa da amostra analítica."
+  }
+]

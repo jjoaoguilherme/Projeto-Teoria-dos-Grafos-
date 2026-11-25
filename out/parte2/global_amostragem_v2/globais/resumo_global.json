@@ -1,0 +1,36 @@
+{
+  "vertices": 54075,
+  "referencias": 571927,
+  "pares_distintos": 234792,
+  "referencias_negativas": 61140,
+  "proporcao_negativas": 0.10690175494424987,
+  "densidade_suporte_simples_sem_lacos": 8.029680598483293e-05,
+  "lacos": 0,
+  "repeticoes_pares": 337135,
+  "duplicatas_exatas_sem_numero_linha": 0,
+  "faltantes": {
+    "linha_arquivo": 0,
+    "SOURCE_SUBREDDIT": 0,
+    "TARGET_SUBREDDIT": 0,
+    "POST_ID": 0,
+    "TIMESTAMP": 0,
+    "LINK_SENTIMENT": 0
+  },
+  "data_minima": "2013-12-31 16:20:20",
+  "data_maxima": "2017-04-30 16:47:50",
+  "registros_por_ano": {
+    "2013": 27,
+    "2014": 128345,
+    "2015": 175096,
+    "2016": 194287,
+    "2017": 74172
+  },
+  "pares_com_ciclo_negativo_duas_arestas": 647,
+  "comunidades_em_ciclo_negativo_duas_arestas": 504,
+  "top_1pct_share_referencias_saida": 0.5579313443848603,
+  "cobertura": "Arquivo inteiro desde o primeiro registro; sem filtro temporal; rede agregada.",
+  "ciclos": "Contagem de pares distintos com -1 em ambas as direções; não enumera ciclos maiores.",
+  "properties": "86 atributos textuais não constam do CSV derivado; não foram analisados.",
+  "ausencia": "Sem vazios nas colunas verificadas; mecanismo de ausência fora da coleta é desconhecido.",
+  "sha256_base": "c2062888964435e2661be9433cf3eb70158e746f41b45ee85383f78a609eaf57"
+}

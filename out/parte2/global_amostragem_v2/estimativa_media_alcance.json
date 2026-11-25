@@ -1,0 +1,46 @@
+{
+  "definida": true,
+  "estimando": "Média, por comunidade, da proporção de outras comunidades alcançáveis",
+  "media_ponderada": 0.3137581708018784,
+  "erro_padrao_desenho_estimado": 0.007455777886366422,
+  "intervalo_conservador_chebyshev": [
+    0.19990585202634722,
+    0.42761048957740955
+  ],
+  "cobertura_minima_desenho": 0.95,
+  "margem_conservadora": 0.11385231877553117,
+  "formula": "soma_h (N_h/N)*media_h; grau zero contribui exatamente 0",
+  "estratos": [
+    {
+      "estrato": "grau_0",
+      "media": 0.0,
+      "erro_padrao": 0.0,
+      "exato": true
+    },
+    {
+      "estrato": "grau_1",
+      "media": 0.3603152813660939,
+      "erro_padrao": 0.015325042609131636,
+      "exato": false
+    },
+    {
+      "estrato": "grau_2_10",
+      "media": 0.4212637620051534,
+      "erro_padrao": 0.00898353467868755,
+      "exato": false
+    },
+    {
+      "estrato": "grau_11_100",
+      "media": 0.43957649839975005,
+      "erro_padrao": 7.130071427683024e-06,
+      "exato": false
+    },
+    {
+      "estrato": "grau_acima_100",
+      "media": 0.43957123571402157,
+      "erro_padrao": 3.145543755961894e-06,
+      "exato": false
+    }
+  ],
+  "aviso": "O erro padrão estimado pode ser zero em amostras homogêneas; não prova ausência de variabilidade populacional."
+}

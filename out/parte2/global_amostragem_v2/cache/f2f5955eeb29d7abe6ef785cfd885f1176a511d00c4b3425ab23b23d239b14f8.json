@@ -1,0 +1,40 @@
+{
+  "assinatura": "43d50ffbe671a29b1fc591cddc73014a1e2fa624b27bbad62d0a19cb5f679736",
+  "resultado": {
+    "origem": "bicycling",
+    "referencias_entrada": 594,
+    "referencias_saida": 288,
+    "vizinhos_entrada": 182,
+    "vizinhos_saida": 154,
+    "negativas_entrada": 38,
+    "negativas_saida": 17,
+    "ciclos_negativos_duas_arestas": 0,
+    "proporcao_negativas_entrada": 0.0639730639730639,
+    "proporcao_negativas_saida": 0.0590277777777777,
+    "grau_entrada": 594,
+    "grau_saida": 288,
+    "alcance_total": 23769,
+    "alcancaveis_incluindo_origem": 23770,
+    "proporcao_alcance": 0.4395643007730148,
+    "distancia_media_bfs": 2.986537086120577,
+    "maior_distancia_bfs": 17,
+    "finalidades": [
+      "amostra_analitica"
+    ],
+    "amostra_analitica": true,
+    "estrato": "grau_acima_100",
+    "N_h": 273,
+    "n_h": 72,
+    "probabilidade_inclusao": 0.26373626373626374,
+    "peso_amostral": 3.7916666666666665,
+    "peso_media_global": 7.011866235167207e-05,
+    "tipo_selecao": "amostra_analitica",
+    "alcance_so_nao_negativas": 23184,
+    "perda_alcance_remocao_negativas": 585
+  },
+  "caminhos": [],
+  "tempos_operacionais": {
+    "bfs": 0.1537817000062205,
+    "bfs_nao_negativas": 0.13550869998289272
+  }
+}

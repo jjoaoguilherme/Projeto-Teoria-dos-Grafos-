@@ -1,0 +1,3923 @@
+{
+  "versao": 2,
+  "metodo": "SRS sem reposição em cada estrato; grau zero conhecido exatamente",
+  "semente": 42,
+  "N": 54075,
+  "erro_global_planejado": 0.05,
+  "erro_estrato_planejado": 0.1,
+  "confianca_referencia_normal": 0.95,
+  "z": 1.9599639845400536,
+  "limite_variancia_media_global": 0.000648117524528259,
+  "margem_global_planejada_normal": 0.04989706185183172,
+  "estratos": [
+    {
+      "estrato": "grau_0",
+      "N_h": 10380,
+      "n_h": 0,
+      "censo_estrutural": true,
+      "avaliados_exatamente_sem_bfs": 10380,
+      "probabilidade_inclusao_amostra": 0.0,
+      "margem_planejada_normal": 0.0
+    },
+    {
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "censo_estrutural": false,
+      "avaliados_exatamente_sem_bfs": 0,
+      "probabilidade_inclusao_amostra": 0.004944475966604523,
+      "margem_planejada_normal": 0.08850557712456637
+    },
+    {
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "censo_estrutural": false,
+      "avaliados_exatamente_sem_bfs": 0,
+      "probabilidade_inclusao_amostra": 0.006165703275529865,
+      "margem_planejada_normal": 0.09971337493115194
+    },
+    {
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "censo_estrutural": false,
+      "avaliados_exatamente_sem_bfs": 0,
+      "probabilidade_inclusao_amostra": 0.02957835116425425,
+      "margem_planejada_normal": 0.09958702204353752
+    },
+    {
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "censo_estrutural": false,
+      "avaliados_exatamente_sem_bfs": 0,
+      "probabilidade_inclusao_amostra": 0.26373626373626374,
+      "margem_planejada_normal": 0.09928083561729344
+    }
+  ],
+  "amostra": [
+    {
+      "origem": "2d_love",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "3dvisions",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "45north",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "actors",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "alprazolam",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "angievaronalegal",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "askphilosophy",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "autisticconversation",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "automator",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "backpackingdogs",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "badrobot",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bettercirclejerksaul",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "blenderelite",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "boomco",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bryncity",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "budgetlaptops",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "butte",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cameheretosaythis",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "capemay",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "chuckecheeses",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "citizenweather",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "collapseskills",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "comiccodes",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ctfc",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dagashikashi",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "darklyfunny",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dentalhygiene",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "denvervolunteers",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "depressingfridgepoems",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dermatologyddx",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "digitalcomicsales",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "divit",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dogefood",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dolls",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "doomtown",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dota2lore",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "drugart",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "drunkenksp",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "edinburgh_university",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "emulators",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "falconsocialclub",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "farcraft1",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ffxivdadjokes",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "filmemacher",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fnafbootlegs",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "folk_music",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "franktonia",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gaeltacht",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gamescores",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "googledidthemath",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "halo2mccsuperbounces",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hermosillo",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "herorats",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hypercrud",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "immigrazione",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "infidelity",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ipdr",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "islandviewrtc",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "itgetsbetter",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "jimmyeatworld",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "justdontgetit",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "legitchecker",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lillybestgirl",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lilyhammer",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lobsterroll",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "madeinchina",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "marcmaron",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "meme",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mhoirnuacht",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "modafinshop",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "musclegear",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mygift",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "newsoku_l",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nightglider",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nightlypick",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nonaustrianeconomics",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "omegaprincessclub",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "omnisyntheism",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "orzhovmtg",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "phonegifs",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "plasticbagporn",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "portraitphotos",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "premeduk",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pridestrong",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "projectskyhook",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ps3homebrew",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "radicalmentalhealth",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "rcigarsproblems",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redditknightsrcs",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "repairmen",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "residentevil4",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "retails",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "rsmcmod",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "saunika",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "selfaware",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "sfw_wtf",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "shirtposts",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "shittytheoryofreddit",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "shittyworldbuilding",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "silphroadok",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "simplify3d",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "smoleague",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "soliditydevelopment",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "star_wars_last_jedi",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "stlouisbbq",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "strategist14",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tackexchange",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tcob",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "the_pulisic",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "thescienceofdeduction",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tianeptine",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "toiletbowlmasterrace",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "trinityhighschool",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "trippyapps",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "twins",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "unboxinggifs",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "urm0m",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "vape_sales",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "vrbohosts",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "wowraiding",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "wtf_florida",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "zootopiacirclejerk",
+      "estrato": "grau_1",
+      "N_h": 24674,
+      "n_h": 122,
+      "probabilidade_inclusao": 0.004944475966604523,
+      "peso_amostral": 202.24590163934425,
+      "peso_media_global": 0.0037400998916198662,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "4b4t",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "allcoins",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "allofthebutts",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ancap_dk",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "askaparapsychologist",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "astroneer",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "boardwalkempire",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bsd",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "btfoposts",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cabinpressure",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "charlestonwv",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cinematicreality",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "civex",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "coatswithoutshirts",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "conlangscirclejerk",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "constantine",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "contwhilstrary",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "crowfall",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cyclonenation",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "derbycounty",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "derfla_bookmarks",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dostajebilo",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "drunk_ja",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "electroswing",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "euro2016",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "eurovision",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "explainlikeimscp",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "faeria",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fastfordscoc",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fcs",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "flexibility",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "freestylerap",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "greenbay",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "greenmangaming",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "happycryingdads",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hl3confirm",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hoboken",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "holokauston",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "huskers",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hydrology",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "icenia",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "instructionsunclear",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "j2ee",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lifservers",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "linguisticshumor",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "linux_filmmaking",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lionarena",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lomejorde",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "makeyourchoice",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "metafcj",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "meteors",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mia_khalifa",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mlpdrawingschool",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "motorola",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ncis",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nrxn",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nude_beach",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "oldskoolrave",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "olyjobs",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "our_politics",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "overmoderation",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "overwatchnews",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "petitpain",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pipreddit",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pittsburghleft",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "playarkservers",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pokemongochi",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "politicalphilosophy",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "probiotics",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "qthruster",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redditbomb",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redditbunker",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redditdragoons",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redpandas",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "renssiesdev",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "roleplayponies",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "rupaulsdragracedrama",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "serversmash",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "sheffield",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "standit",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "subseatechnology",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tallmadge",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "techjobs",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "telegramgroups",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "telltale",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "thatpeelingfeeling",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "thedonaldmemedump",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "thewaterlew",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "trezor",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "twitaaa",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "umsl",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "urbandesign",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "volcanology",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "wearethe37percent",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "woodbuffalonhl",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "zfs",
+      "estrato": "grau_2_10",
+      "N_h": 15570,
+      "n_h": 96,
+      "probabilidade_inclusao": 0.006165703275529865,
+      "peso_amostral": 162.1875,
+      "peso_media_global": 0.0029993065187239945,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "accounting",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "albania",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "antiques",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "antisemitismwatch",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "applinks",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ar15",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "austin",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "badtattoos",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "beauteenz",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bettereveryloop",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bombing",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "britishtv",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "buffalobills",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cadenmorandairy",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "calamariraceteam",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "campingandhiking",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "casualnintendo",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ccj888",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "chile",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "climbing",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "college",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "comedybestof",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "damnthatsinteresting",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "destiny",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "djiphantom",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "dnd",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "doyouknowkimchi",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "eatcheapandhealthy",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "evex",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fashionreps",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fighters",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fire_snyper",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fivenightsatfreddys",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "flying",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "frozen",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "futanari",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gamecollecting",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gradschool",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gundeals",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "happyfunplayground",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hipsterracism",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "instagram",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "intrepidusgaming",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "itaglia",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "kumocrew",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "lazypalpatine",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "leathercraft",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "libertarianleft",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "libertarianmeme",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "math",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "metalgearsolid",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "miami",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mma",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "monitors",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "murderedbywords",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "museumofreddit",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "myriadcoin",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "naegold",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "nufc",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pissoffreddit",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "praxacceptance",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "progressive",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pub204",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pussypassdenied",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pwned",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "radiocontrol",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "reddevils",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "redditactivism",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "riddles",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "romania_ss",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "russmartinshow",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "sanantonio",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "shadowcash",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "slowcooking",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "socialismfacts",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "subaru",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "suomi",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "sysadminjobs",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "taaofficial",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "thecasualplates",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "throwawaylibrary",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "toontown",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "trueatheism",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "uofm",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "utaustin",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "volkswagen",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "washingtonforsanders",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "wearethemusicmakers",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "web_design",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "weed",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "whatsinthisthing",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "wisconsin",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "worldbuilding",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "yms",
+      "estrato": "grau_11_100",
+      "N_h": 3178,
+      "n_h": 94,
+      "probabilidade_inclusao": 0.02957835116425425,
+      "peso_amostral": 33.808510638297875,
+      "peso_media_global": 0.0006252151759278386,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "againstkarmawhores",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "anime",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "apostrophepatrol",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "asablackman",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "aww",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bestof",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "bicycling",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "blackfellas",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "boston",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "brasil",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "brasilonreddit",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cars",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "catholicism",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ccj2",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "christianity",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "circlebroke",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "civcraft",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "collapse",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "commentgore",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "conspiracy",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "cringe",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "de",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "downvotesmcgoats",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "drama",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "electronic_cigarette",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "enough_sanders_spam",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "excgaration",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "explainmydownvotes",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "firstworldanarchists",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fitnesscirclejerk",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "fullcommunism",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "gulag",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "guns",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "hockey",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "islam",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "italy",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "justneckbeardthings",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "justunsubbed",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "kappa",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "karmaconspiracy",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "kotakuinaction",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "libertarian",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "magictcg",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mensrights",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "mildlyinteresting",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "minecraft",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "moviescirclejerk",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "murica",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "music",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "oculus",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "overwatch",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pokemon",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "pokemongo",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "ps4",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "psychonaut",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "sandersforpresident",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "shirtredditsays",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "smashbros",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "socialism",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "stevenuniverse",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "subredditcancer",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "switcharoo",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tf2",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "titleporn",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "todayilearned",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tothetuneof",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "tumblrinaction",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "unitedkingdom",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "upliftingnews",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "videos",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "worldpolitics",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    },
+    {
+      "origem": "worstof",
+      "estrato": "grau_acima_100",
+      "N_h": 273,
+      "n_h": 72,
+      "probabilidade_inclusao": 0.26373626373626374,
+      "peso_amostral": 3.7916666666666665,
+      "peso_media_global": 7.011866235167207e-05,
+      "tipo_selecao": "amostra_analitica"
+    }
+  ],
+  "n_amostra": 384,
+  "inclusao": "Todas as comunidades do arquivo, inclusive apenas destinatárias; nenhuma seleção temporal.",
+  "quantis_grau_saida": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "0.75": 2.0,
+    "0.9": 6.0,
+    "0.95": 13.0,
+    "0.99": 59.26000000000204
+  },
+  "limitacoes": [
+    "Alocação desproporcional: médias não ponderadas não estimam a média global.",
+    "Metas normais de planejamento não garantem cobertura nem precisão de correlações/distâncias.",
+    "Semente, limites e alocação definidos sem usar os resultados de alcance.",
+    "Sem inferência para o Reddit além do arquivo; o grafo é tratado como população finita fixa.",
+    "Grau zero é censo estrutural separado, não amostra fictícia de buscas executadas.",
+    "Não são produzidas correlações amostrais com pretensão de inferência populacional."
+  ],
+  "total_origens_distintas_execucao": 388,
+  "n_obrigatorias": 3,
+  "n_origens_pares": 5,
+  "comparacao_nao_negativas": true
+}
