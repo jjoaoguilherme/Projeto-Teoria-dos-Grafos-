@@ -6,6 +6,8 @@
 
 from __future__ import annotations
 
+from matplotlib.lines import Line2D
+
 import argparse
 import json
 from pathlib import Path
@@ -62,15 +64,26 @@ def figura_1(comunidades, saida):
     """Exploratória: distribuição EXATA das comunidades pelos estratos."""
     estratos = faixa(comunidades["vizinhos_saida"])
     contagens = pd.Series(estratos).value_counts().reindex(ESTRATOS, fill_value=0)
+
     fig, ax = plt.subplots(figsize=(9.2, 5.0))
-    barras = ax.bar(ROTULOS, contagens.values, color=AZUL, width=.66)
+
+    barras = ax.bar(ROTULOS, contagens.values,color=AZUL, width=.66,label="Comunidades por faixa de grau de saída")
+
     ax.set(title="Comunidades por número de destinos distintos",
            xlabel="Destinos distintos por comunidade (grau de saída simples)",
            ylabel="Quantidade de comunidades")
+    
     ax.set_ylim(0, contagens.max()*1.16)
     ax.grid(axis="y", color="#e4e8eb", zorder=0)
     ax.set_axisbelow(True)
+
     rotulo_barras(ax, barras)
+
+    ax.legend(
+        loc="upper right",
+        frameon=False,
+        fontsize=9)
+
     exportar(fig, saida/"01_exploratoria_distribuicao_estratos")
 
 
@@ -127,47 +140,125 @@ def figura_3(amostra, saida):
     faltantes = [c for c in colunas if c not in amostra.columns]
     if faltantes:
         raise ValueError(f"Amostra sem colunas necessárias à figura 3: {faltantes}")
+
     d = amostra[colunas].copy()
+
     for coluna in ("proporcao_negativas_saida", "proporcao_alcance"):
         d[coluna] = pd.to_numeric(d[coluna], errors="coerce")
+
     if d[["proporcao_negativas_saida", "proporcao_alcance"]].isna().any().any():
-        raise ValueError("Há valores indefinidos na amostra para a figura 3; revisar antes de desenhar.")
-    if (d[["proporcao_negativas_saida", "proporcao_alcance"]].lt(0) |
-        d[["proporcao_negativas_saida", "proporcao_alcance"]].gt(1)).any().any():
-        raise ValueError("As proporções de sentimento e alcance devem estar em [0, 1].")
+        raise ValueError(
+            "Há valores indefinidos na amostra para a figura 3; revisar antes de desenhar."
+        )
+
+    if (
+        d[["proporcao_negativas_saida", "proporcao_alcance"]].lt(0)
+        | d[["proporcao_negativas_saida", "proporcao_alcance"]].gt(1)
+    ).any().any():
+        raise ValueError(
+            "As proporções de sentimento e alcance devem estar em [0, 1]."
+        )
+
     estratos = ESTRATOS[1:]
     if set(d["estrato"]) != set(estratos):
         raise ValueError("Estratos inesperados ou ausentes na amostra analítica.")
+
     if d["origem"].duplicated().any():
         raise ValueError("A amostra contém origens repetidas.")
 
-    nomes = ["1 destino distinto", "2 a 10 destinos", "11 a 100 destinos", "Mais de 100 destinos"]
+    nomes = [
+        "1 destino distinto",
+        "2 a 10 destinos",
+        "11 a 100 destinos",
+        "Mais de 100 destinos"
+    ]
+
     fig, axs = plt.subplots(2, 2, figsize=(11, 7.6), sharex=True, sharey=True)
+
     for ax, estrato, nome in zip(axs.flat, estratos, nomes):
         parte = d.loc[d["estrato"].eq(estrato)].copy()
+
         # Percentuais exibidos com resolução de 0,1 p.p. para tornar as sobreposições visíveis.
         parte["negativas_pct"] = (100 * parte["proporcao_negativas_saida"]).round(1)
         parte["alcance_pct"] = (100 * parte["proporcao_alcance"]).round(1)
-        pontos = (parte.groupby(["negativas_pct", "alcance_pct"], as_index=False)
-                   .size().rename(columns={"size": "origens_no_ponto"}))
+
+        pontos = (
+            parte.groupby(["negativas_pct", "alcance_pct"], as_index=False)
+            .size()
+            .rename(columns={"size": "origens_no_ponto"})
+        )
+
         tamanhos = 24 + 44 * np.sqrt(pontos["origens_no_ponto"].to_numpy())
-        ax.scatter(pontos["negativas_pct"], pontos["alcance_pct"], s=tamanhos,
-                   facecolor=AZUL, edgecolor="white", linewidth=.7, alpha=.72)
-        ax.set(title=f"{nome}  (n={len(parte)})", xlim=(-3, 103), ylim=(-3, 49))
+
+        ax.scatter(
+            pontos["negativas_pct"],
+            pontos["alcance_pct"],
+            s=tamanhos,
+            facecolor=AZUL,
+            edgecolor="white",
+            linewidth=.7,
+            alpha=.72
+        )
+
+        ax.set(
+            title=f"{nome} (n={len(parte)})",
+            xlim=(-3, 103),
+            ylim=(-3, 49)
+        )
         ax.grid(alpha=.25, color="#aeb9c1")
         ax.set_axisbelow(True)
         ax.set_xticks([0, 25, 50, 75, 100])
         ax.set_yticks([0, 10, 20, 30, 40])
 
-    fig.suptitle("Sentimento negativo e alcançabilidade por faixa de conectividade",
-                 fontweight="bold", fontsize=14, y=.985)
+    # Título geral e eixos
+    fig.suptitle(
+        "Sentimento negativo e alcançabilidade por faixa de conectividade",
+        fontweight="bold",
+        fontsize=14,
+        y=.985
+    )
     fig.supxlabel("Referências negativas de saída (%)", y=.075)
     fig.supylabel("Outras comunidades alcançáveis (%)", x=.032)
-    fig.text(.5, .02,
-             "384 origens amostradas; bolhas maiores = mais origens sobrepostas. "
-             "Percentuais exibidos a 0,1 p.p.; análise descritiva.",
-             ha="center", fontsize=8.4, color="#555")
-    exportar(fig, saida/"03_exploratoria_sentimento_alcance_estrato")
+
+    # Legenda de tamanho das bolhas
+    exemplos = [1, 2, 4, 8]
+    handles = [
+        plt.scatter(
+            [], [], 
+            s=24 + 44 * np.sqrt(v),
+            facecolor=AZUL,
+            edgecolor="white",
+            linewidth=.7,
+            alpha=.72
+        )
+        for v in exemplos
+    ]
+
+    fig.legend(
+        handles,
+        [f"{v} origem{'ens' if v > 1 else ''}" for v in exemplos],
+        title="Sobreposição no ponto",
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.035),
+        ncol=4,
+        frameon=False,
+        fontsize=8.5,
+        title_fontsize=9
+    )
+
+    fig.text(
+        .5, .008,
+        "384 origens amostradas; bolhas maiores indicam mais origens sobrepostas no mesmo par de percentuais. "
+        "Percentuais exibidos com arredondamento de 0,1 ponto percentual; análise descritiva, sem inferência causal.",
+        ha="center",
+        fontsize=8.2,
+        color="#555"
+    )
+
+    fig.subplots_adjust(bottom=0.19, top=0.90, wspace=0.16, hspace=0.22)
+
+    exportar(fig, saida / "03_exploratoria_sentimento_alcance_estrato")
+
 
 
 def figura_4(comunidades, saida):
@@ -175,25 +266,62 @@ def figura_4(comunidades, saida):
     d = comunidades.copy()
     d["estrato"] = faixa(d["vizinhos_saida"])
     d["em_ciclo"] = d["em_ciclo_negativo_duas_arestas"].astype(str).str.lower().eq("true")
+
     tab = d.groupby("estrato")["em_ciclo"].agg(["sum", "count"]).reindex(ESTRATOS)
     pct = (100 * tab["sum"] / tab["count"]).to_numpy(dtype=float)
 
     fig, ax = plt.subplots(figsize=(10.3, 5.2))
     y = np.arange(len(ROTULOS))[::-1]
+
     ax.hlines(y, 0, pct, color="#c9d9d5", lw=3.5, zorder=1)
-    ax.scatter(pct, y, s=110, color=TEAL, edgecolor="white", linewidth=1.2, zorder=3)
+
+    ax.scatter(
+        pct, y,
+        s=110,
+        color=TEAL,
+        edgecolor="white",
+        linewidth=1.2,
+        zorder=3,
+        label="Participação em ciclo negativo recíproco"
+    )
+
     for yy, value in zip(y, pct):
-        ax.annotate(f"{value:.2f}%".replace(".", ","), (value, yy),
-                    xytext=(9, 0), textcoords="offset points", va="center", fontsize=10)
+        ax.annotate(
+            f"{value:.2f}%".replace(".", ","),
+            (value, yy),
+            xytext=(9, 0),
+            textcoords="offset points",
+            va="center",
+            fontsize=10
+        )
+
     ax.set_yticks(y, ROTULOS)
-    ax.set(xlim=(-2, 67), ylim=(-.65, 4.65),
-           title="Comunidades em ciclos negativos de duas arestas",
-           xlabel="Comunidades do estrato que participam do ciclo (%)",
-           ylabel="Destinos distintos por comunidade")
+    ax.set(
+        xlim=(-2, 67),
+        ylim=(-.65, 4.65),
+        title="Comunidades em ciclos negativos de duas arestas",
+        xlabel="Comunidades do estrato que participam do ciclo (%)",
+        ylabel="Destinos distintos por comunidade"
+    )
+
     ax.grid(axis="x", color="#e4e8eb", alpha=.85)
     ax.set_axisbelow(True)
-    fig.text(.5, .01, "Censo das 54.075 comunidades; ciclos de duas arestas negativas recíprocas.",
-             ha="center", fontsize=9, color="#555")
+
+    # Legenda da figura
+    ax.legend(
+        loc="upper right",
+        frameon=False,
+        fontsize=9
+    )
+
+    fig.text(
+        .5, .01,
+        "Censo das 54.075 comunidades; ciclos de duas arestas negativas recíprocas.",
+        ha="center",
+        fontsize=9,
+        color="#555"
+    )
+
     exportar(fig, saida / "04_exploratoria_ciclos_lollipop")
 
 
