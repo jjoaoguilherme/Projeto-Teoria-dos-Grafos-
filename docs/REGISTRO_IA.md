@@ -162,3 +162,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Etapas: piloto; recorte de 2.000 vértices, semente 42 e origem subredditdrama; amostras de 200, 1.000 e 2.000 vértices; cinco execuções dos quatro algoritmos; registro de hashes, ambiente, arcos e alcance; consolidação de 25 experimentos e exportação de gráficos e tabela.
 - Ajuste técnico: deduplicação da fila de propagação dos ciclos negativos em Bellman-Ford; medições refeitas após o ajuste. Conferência paralela por agentes de verificação e complexidades.
 - Verificação: 60 execuções de escalabilidade concluídas, relatórios consistentes e gráficos inspecionados; suíte com 135 testes e 95 subtestes aprovados.
+
+## Organização da seção de desempenho em 25/11/2026
+
+- Ferramenta: Codex.
+- Finalidade: redação assistida da seção de desempenho e escalabilidade, incluindo a discussão dos resultados.
+- Arquivos: `docs/DESEMPENHO_E_ESCALABILIDADE.md` e `docs/desempenho_escalabilidade.pdf`.
+- Conteúdo produzido: ambiente, método, recorte, amostras, tempos e desvios, referências de complexidade, links dos resultados e discussão dos resultados.
+- Verificação: números conferidos com `escalabilidade_report.json` e `comparacao_complexidades.csv`; tempos convertidos de segundos para milissegundos.
+- PDF com quatro páginas renderizadas e inspecionadas quanto a tabelas, gráfico e paginação.
