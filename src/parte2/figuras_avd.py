@@ -6,7 +6,6 @@
 
 from __future__ import annotations
 
-from matplotlib.lines import Line2D
 
 import argparse
 import json
