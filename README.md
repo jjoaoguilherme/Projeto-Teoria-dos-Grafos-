@@ -32,7 +32,7 @@ python -m src.cli --mapa data/mapas/m03_tres_chaves.txt --interactive --out out/
 Use o Python do ambiente virtual caso os comandos `python` acima apontem para outro interpretador.
 Abra `out/parte1/labirinto_interativo.html` diretamente no navegador. A interface permite selecionar mapa/algoritmo, importar resultados, avançar manualmente, controlar velocidade, selecionar camada e destacar posições que contêm estados-armadilha. Consulte o tooltip e os CSVs para distinguir estados na mesma casa.
 
-O caderno complementar `out/parte1/entregas_parte1.html` reúne as figuras, graus, rankings, multiplicidade, métricas por camada, comparação de modelagens, classificação DFS, ciclos negativos e links dos arquivos. Ele abre diretamente no navegador e usa os resultados exportados; a animação e as métricas globais continuam no labirinto interativo. A geração completa também atualiza esse caderno. Para atualizar apenas a página a partir das saídas existentes, execute `python -m src.entregas --out out/parte1`. Mantenha a página junto dos demais arquivos do projeto para que as figuras e os links funcionem.
+A interface local reúne as entregas das duas partes e executa os algoritmos pelo Python. Veja a seção Interface integrada abaixo. O HTML obrigatório do labirinto continua disponível para consulta independente.
 
 O manual técnico fica em `docs/manual_tecnico_parte1.pdf`, gerado a partir dos resultados por `src/relatorio.py`. Estados não incluem ALVO nas métricas; passos não incluem a ligação virtual. Dijkstra recusa pesos negativos. A geração completa substitui suas tabelas de soluções e classificação DFS, mantendo uma linha por mapa/algoritmo/modo.
 
@@ -55,7 +55,7 @@ A preparação do dataset aprovado está em `src/parte2/dados.py`, `obter_datase
 python -m src.parte2.preparar
 ```
 
-Esse comando baixa o TSV oficial se necessário, confere o hash, valida os registros, constrói o grafo e exporta `resumo_dataset.json`, `arestas_dataset.csv`, `base_avd.csv` e `registros_invalidos.json`. Também gera `docs/preparacao_dataset_parte2.pdf` e atualiza a página da Parte 2. O TSV grande não é versionado; o script e o manifesto `data/dataset_parte2/origem_dataset.json` permitem reproduzir a obtenção.
+Esse comando baixa o TSV oficial se necessário, confere o hash, valida os registros, constrói o grafo e exporta `resumo_dataset.json`, `arestas_dataset.csv`, `base_avd.csv` e `registros_invalidos.json`. Também gera `docs/preparacao_dataset_parte2.pdf` e disponibiliza os arquivos para consulta na interface local. O TSV grande não é versionado; o script e o manifesto `data/dataset_parte2/origem_dataset.json` permitem reproduzir a obtenção.
 
 
 O arquivo real foi conferido: 54.075 vértices e 571.927 arcos válidos, sem linhas rejeitadas nas verificações implementadas. Os atributos completos continuam no TSV e na API.
@@ -85,7 +85,6 @@ O relatório BFS/DFS inclui a ordem real de visita, as camadas BFS (agrupamento 
 python -m src.parte2.experimentos --registrar-percursos --arquivo out/parte2/arestas_dataset.csv
 python -m src.parte2.consolidar
 python -m src.parte2.verificar_experimentos
-python -m src.entregas --parte 2
 ```
 
 A procedência dos dois casos Bellman-Ford está documentada em [docs/BELLMAN_FORD.md](docs/BELLMAN_FORD.md).
@@ -166,11 +165,47 @@ O grupo precisa revisar o código, os mapas próprios, o texto e as respostas; p
 
 DECLARAÇÃO DE IA: https://docs.google.com/document/d/1sCr8p8y-t-Wttt3G8kXXsjhVLVZ4CMPh/edit?usp=sharing&ouid=112702963052965676955&rtpof=true&sd=true
 
-## Páginas de resultados
+## Interface integrada
 
-Abra `out/parte1/entregas_parte1.html` ou `out/parte2/entregas_parte2.html` no navegador e use os botões Parte 1 / Parte 2. A página da Parte 2 apresenta os relatórios existentes, com filtros, tempos individuais, caminhos de Dijkstra, ciclos de Bellman-Ford e os metadados das sessões. Ela informa os diferentes tamanhos dos grafos, apresenta ordem de visita, camadas e ciclos quando registrados, e indica campos ausentes; não substitui a análise AVD ou a validação dos casos contra o dataset.
+Na raiz do projeto, execute:
 
-Atualize ambas as páginas a partir das saídas existentes com `python -m src.entregas`. Para atualizar somente a Parte 2, use `python -m src.entregas --parte 2`. Estilos e tabelas são compartilhados em `src/templates/` e incorporados ao HTML final, que funciona sem servidor. Preserve as pastas do projeto para manter os links dos arquivos e das figuras.
+```powershell
+.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python -m src.interface
+```
+
+Abra **http://127.0.0.1:8765**. Para outra porta, use `--porta 8766`.
+O servidor atende somente neste computador; para encerrá-lo, pressione Ctrl+C no terminal.
+
+- **Labirintos:** seleção dos dez mapas, importação de TXT ou grade de mapa surpresa,
+  quatro algoritmos, fonte consumível, animação com avanço manual e velocidade,
+  posição/chaves/consumidos/custo, camadas e armadilhas.
+- **Rede do Reddit:** consulta por origem/destino, quatro algoritmos, recortes
+  induzidos de 200/1.000/2.000 vértices ou base completa. Os recortes preservam
+  origem/destino e usam semente 42. Dijkstra usa `2 - LINK_SENTIMENT`.
+- **Visualizações:** figuras da Parte 1, desempenho, escalabilidade e AVD.
+- **Entregas e documentos:** download, consulta paginada e filtrada de CSV/TSV,
+  exploração de JSON, acesso a PDFs, mapas, dados e referências. A ordenação
+  nas tabelas aplica-se à página visível. Os caches podem ser incluídos no catálogo.
+- **Gerar e verificar:** geração completa da Parte 1, métricas, preparação do
+  dataset, benchmarks de cinco repetições, escalabilidade, consolidação,
+  verificação, gráficos, planejamento/piloto/execução da amostragem AVD e testes.
+
+Consultas individuais salvam resultados em `out/interface/<id>/` sem substituir
+as entregas oficiais. As ações de geração e benchmark atualizam suas saídas
+oficiais; a interface exige marcar essa opção antes de habilitá-las.
+A nova amostragem usa `out/interface/estudo_avd/` e preserva o cache anterior.
+Execute planejamento, piloto e estudo nessa ordem; então gere as figuras AVD.
+
+Há uma execução por vez, log e cancelamento. Processos são interrompidos após
+uma hora. Cancelar uma geração não desfaz arquivos que ela já escreveu.
+Bellman-Ford na base completa pode ser demorado. Uma consulta individual não é
+um benchmark: os benchmarks continuam nos executores já existentes.
+
+`out/parte1/labirinto_interativo.html` foi preservado por ser a entrega obrigatória;
+ele abre sem servidor com os resultados exportados. As páginas complementares
+antigas foram substituídas pelo painel local; não é mais necessário gerar HTMLs
+separados para consultar as entregas. O painel lê os arquivos atuais ao atualizar.
 
 ## Gráficos de desempenho da Parte 2
 

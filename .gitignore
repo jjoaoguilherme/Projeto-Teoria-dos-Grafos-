@@ -10,3 +10,6 @@ tmp/
 data/dataset_parte2/*.tsv
 
 data/dataset_parte2/*.part
+
+# Consultas e caches locais do painel; entregas oficiais permanecem versionadas.
+out/interface/

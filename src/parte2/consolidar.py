@@ -3,21 +3,22 @@ import argparse
 import json
 from pathlib import Path
 
-from .verificar_experimentos import verificar_relatorio
+from .verificar_experimentos import (
+    RELATORIO_CONSOLIDADO, RELATORIO_ESCALABILIDADE,
+    listar_relatorios_origem, verificar_relatorio,
+)
 
 
 def consolidar_relatorios(pasta='out/parte2'):
     pasta = Path(pasta)
-    nomes = ['bfs_dfs_report.json', 'dijkstra_report.json', 'bellman_ford_report.json']
-    if (pasta / 'escalabilidade_report.json').exists():
-        nomes.append('escalabilidade_report.json')
+    nomes = listar_relatorios_origem(pasta)
     experimentos, sessoes = [], []
     for nome in nomes:
         dados = json.loads((pasta / nome).read_text(encoding='utf-8-sig'))
         verificacao = verificar_relatorio(dados)
         if not verificacao['valido']:
             raise ValueError(f'{nome}: ' + '; '.join(verificacao['erros']))
-        if nome == 'escalabilidade_report.json':
+        if nome == RELATORIO_ESCALABILIDADE:
             from .graficos_escalabilidade import preparar_escalabilidade
             preparar_escalabilidade(dados)
         sessao = {k: v for k, v in dados.items() if k != 'experimentos'}
@@ -27,7 +28,7 @@ def consolidar_relatorios(pasta='out/parte2'):
         experimentos.extend(dados['experimentos'])
     consolidado = {'versao_formato': 1, 'demonstracao': False,
                    'experimentos': experimentos, 'sessoes': sessoes}
-    destino = pasta / 'parte2_report.json'
+    destino = pasta / RELATORIO_CONSOLIDADO
     destino.write_text(json.dumps(consolidado, ensure_ascii=False, indent=2,
                                   allow_nan=False) + '\n', encoding='utf-8')
     return destino

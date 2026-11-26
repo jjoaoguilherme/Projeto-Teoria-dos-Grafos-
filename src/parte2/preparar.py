@@ -23,8 +23,6 @@ def preparar_dataset(arquivo=DESTINO, pasta='out/parte2'):
     from .relatorio_dados import gerar_relatorio_dados
     raiz = Path(__file__).resolve().parents[2]
     gerar_relatorio_dados(relatorio, raiz / 'docs/preparacao_dataset_parte2.pdf')
-    from ..entregas import gerar_painel_parte2
-    gerar_painel_parte2(pasta, raiz)
     print(f'Base pronta: {relatorio["vertices"]} vértices e {relatorio["arestas"]} arcos.', flush=True)
     print(f'Saídas em {Path(pasta)}; relatório em docs/preparacao_dataset_parte2.pdf.', flush=True)
     return relatorio

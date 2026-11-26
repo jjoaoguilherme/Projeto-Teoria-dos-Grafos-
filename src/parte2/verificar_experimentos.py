@@ -8,6 +8,19 @@ from pathlib import Path
 from .experimentos import ALGORITMOS
 
 
+RELATORIOS_BASE = ('bfs_dfs_report.json', 'dijkstra_report.json', 'bellman_ford_report.json')
+RELATORIO_ESCALABILIDADE = 'escalabilidade_report.json'
+RELATORIO_CONSOLIDADO = 'parte2_report.json'
+
+
+def listar_relatorios_origem(pasta):
+    """Mantém a ordem das sessões e inclui a escalabilidade quando disponível."""
+    nomes = list(RELATORIOS_BASE)
+    if (Path(pasta) / RELATORIO_ESCALABILIDADE).exists():
+        nomes.append(RELATORIO_ESCALABILIDADE)
+    return nomes
+
+
 def verificar_relatorio(dados):
     """Confere estrutura, repetições, unidade, tempos e média de cada tarefa."""
     erros = []
@@ -52,16 +65,13 @@ def verificar_relatorio(dados):
 def verificar_pasta(pasta='out/parte2'):
     """Compara o consolidado com as origens, incluindo escalabilidade se existir."""
     pasta = Path(pasta)
-    nomes = ['bfs_dfs_report.json', 'dijkstra_report.json', 'bellman_ford_report.json',
-             'parte2_report.json']
-    if (pasta / 'escalabilidade_report.json').exists():
-        nomes.insert(-1, 'escalabilidade_report.json')
+    nomes = listar_relatorios_origem(pasta) + [RELATORIO_CONSOLIDADO]
     resultados, carregados = {}, {}
     for nome in nomes:
         try:
             dados = json.loads((pasta / nome).read_text(encoding='utf-8-sig'))
             resultados[nome] = verificar_relatorio(dados)
-            if nome == 'escalabilidade_report.json' and resultados[nome]['valido']:
+            if nome == RELATORIO_ESCALABILIDADE and resultados[nome]['valido']:
                 # Importação local: o módulo de gráficos reutiliza verificar_relatorio.
                 from .graficos_escalabilidade import preparar_escalabilidade
                 preparar_escalabilidade(dados)
@@ -88,9 +98,7 @@ def main():
     destino = Path(args.out)
     # Não permite que a verificação sobrescreva os relatórios examinados.
     protegidos = {(Path(args.pasta) / n).resolve() for n in
-                  ['bfs_dfs_report.json', 'dijkstra_report.json',
-                   'bellman_ford_report.json', 'escalabilidade_report.json',
-                   'parte2_report.json']}
+                  (*RELATORIOS_BASE, RELATORIO_ESCALABILIDADE, RELATORIO_CONSOLIDADO)}
     if destino.resolve() in protegidos:
         parser.error('A saída deve ser diferente dos relatórios de entrada.')
     resultado = verificar_pasta(args.pasta)
