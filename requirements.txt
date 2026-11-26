@@ -1,7 +1,10 @@
-# Dependências iniciais. Ajustar conforme as escolhas de IO e visualização.
+# Testes
 pytest>=8.0
-matplotlib>=3.8
-# pandas, plotly, pyvis e streamlit são opcionais; adicionar quando necessários.
-# Não adicionar bibliotecas de algoritmos de grafos à implementação.
 
+# Análise e visualização de dados
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+
+# Geração dos relatórios PDF
 reportlab>=4.0
