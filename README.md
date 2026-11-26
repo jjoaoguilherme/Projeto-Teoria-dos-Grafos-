@@ -245,3 +245,7 @@ exportar_relatorio(experimentos)
 ```
 
 Os metadados incluem semente, método, proporções solicitadas/reais, tamanhos originais/obtidos e vértices selecionados/obrigatórios. A reprodução exige os mesmos dados, ordem de entrada e runtime. A amostragem ocorre fora da medição do algoritmo. A lista de obrigatórios condiciona a seleção e deve caber na menor amostra.
+
+
+## Slides
+https://canva.link/gr8kd4akjyiq0ez
