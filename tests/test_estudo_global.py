@@ -1,4 +1,4 @@
-# [IA] ChatGPT – invariantes das tabelas e testemunhas de caminhos.
+# [IA] ChatGPT – ajuda na utilização e entendimento de pandas e ferramentas de amostragem, integração e exportação do estudo global e conceitual dessa etapa do projeto.
 import pandas as pd
 import pytest
 from src.parte2.estudo_global import preparar_tabelas, documentar_caminho, selecionar_fontes

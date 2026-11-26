@@ -1,4 +1,4 @@
-"""[IA] ChatGPT – desenho amostral e integração de resultados reais das funções."""
+"""[IA] ChatGPT – apoio na implementação de pandas, entendimento do que comporta  desenho amostral, as ferramentas de integração, exportação do estudo global e conceitual dessa etapa do projeto."""
 import json
 from pathlib import Path
 import pandas as pd
