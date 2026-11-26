@@ -33,6 +33,11 @@ def test_execucao_mapa_exporta_e_anima(tmp_path, texto, algoritmo, consumivel, s
 
 @pytest.mark.parametrize('algoritmo', interface.ALGORITMOS)
 def test_dataset_reutiliza_algoritmos(tmp_path, monkeypatch, algoritmo):
+    if algoritmo == 'DIJKSTRA':
+        from src.graphs import algorithms
+        def recusar_original(*args, **kwargs):
+            raise AssertionError('Reddit deve usar a versão com heap')
+        monkeypatch.setattr(algorithms, 'djikstra', recusar_original)
     monkeypatch.setattr(interface, 'RAIZ', tmp_path)
     base = tmp_path/'out/parte2'
     base.mkdir(parents=True)

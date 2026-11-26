@@ -10,7 +10,7 @@ import platform
 import subprocess
 import time
 
-from src.graphs.algorithms import BFS, DFS, bellman_ford, djikstra, reconstruir_caminho
+from src.graphs.algorithms import BFS, DFS, bellman_ford, djikstra_heap as djikstra, reconstruir_caminho
 from src.parte2.dados import carregar_dataset
 
 ALGORITMOS = {'BFS': BFS, 'DFS': DFS, 'DIJKSTRA': djikstra,

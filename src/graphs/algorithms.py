@@ -248,6 +248,72 @@ def DFS(vertices, arestas, inicio):
 
 
 def djikstra(vertices, arestas, inicio):
+    vertices = list(dict.fromkeys(vertices))
+    arestas = list(arestas)
+    conjunto_vertices = set(vertices)
+
+    if inicio not in conjunto_vertices:
+        raise ValueError("O vértice inicial não pertence ao grafo.")
+
+    adjacencia = {v: [] for v in vertices}
+
+    for origem, destino, peso in arestas:
+        if origem not in conjunto_vertices or destino not in conjunto_vertices:
+            raise ValueError("Aresta com vértice que não pertence ao grafo.")
+
+        if not float('-inf') < peso < float('inf'):
+            raise ValueError("Os pesos devem ser números finitos.")
+
+        if peso < 0:
+            raise ValueError("Dijkstra não aceita pesos negativos.")
+
+        adjacencia[origem].append((destino, peso))
+
+    distancias = {v: float('inf') for v in vertices}
+    predecessores = {v: None for v in vertices}
+    distancias[inicio] = 0
+
+    visitados = set()
+    ordem_visita = []
+
+    while len(visitados) < len(vertices):
+
+        atual = None
+        menor_distancia = float('inf')
+
+        # Seleciona o vértice não visitado com menor distância.
+        for v in vertices:
+            if v not in visitados:
+                if distancias[v] < menor_distancia:
+                    menor_distancia = distancias[v]
+                    atual = v
+
+        # Encerra caso não existam mais vértices alcançáveis.
+        if atual is None:
+            break
+
+        visitados.add(atual)
+        ordem_visita.append(atual)
+
+        # Relaxamento das arestas.
+        for vizinho, peso in adjacencia[atual]:
+            if vizinho not in visitados:
+
+                novo_custo = distancias[atual] + peso
+
+                if novo_custo < distancias[vizinho]:
+                    distancias[vizinho] = novo_custo
+                    predecessores[vizinho] = atual
+
+    return {
+        'inicio': inicio,
+        'distancias': distancias,
+        'predecessores': predecessores,
+        'ordem_visita': ordem_visita,
+    }
+
+
+def djikstra_heap(vertices, arestas, inicio):
     import heapq
     from itertools import count
 

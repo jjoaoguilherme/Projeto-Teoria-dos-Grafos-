@@ -116,7 +116,7 @@ def executar_trabalho(dados, pasta):
     elif acao == 'dataset':
         from src.parte2.escalabilidade import carregar_arestas_preparadas
         from src.graphs.graph import Grafo
-        from src.graphs.algorithms import BFS, DFS, djikstra, bellman_ford, reconstruir_caminho
+        from src.graphs.algorithms import BFS, DFS, djikstra_heap as djikstra, bellman_ford, reconstruir_caminho
         from random import Random
         algoritmo = dados.get('algoritmo', 'BFS')
         if algoritmo not in ALGORITMOS:

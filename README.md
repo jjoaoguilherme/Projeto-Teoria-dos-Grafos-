@@ -280,3 +280,12 @@ exportar_relatorio(experimentos)
 ```
 
 Os metadados incluem semente, método, proporções solicitadas/reais, tamanhos originais/obtidos e vértices selecionados/obrigatórios. A reprodução exige os mesmos dados, ordem de entrada e runtime. A amostragem ocorre fora da medição do algoritmo. A lista de obrigatórios condiciona a seleção e deve caber na menor amostra.
+
+## Versões de Dijkstra
+
+As duas implementações ficam em `src/graphs/algorithms.py`:
+
+- `djikstra`: versão original, com seleção linear do próximo vértice. Usada nos labirintos (Parte 1), inclusive pela CLI e interface. Custo O(V² + E).
+- `djikstra_heap`: versão otimizada com `heapq`. Usada no dataset Reddit (Parte 2), incluindo consultas, benchmarks, escalabilidade, estudo AVD e interface. Custo O(V + E + E log(E + 1)).
+
+Ambas mantêm o mesmo contrato de retorno e recusam pesos negativos. No Reddit, continua sendo aplicada a transformação `2 - LINK_SENTIMENT` antes do Dijkstra. As medições históricas da Parte 2 permanecem referentes à versão com heap.

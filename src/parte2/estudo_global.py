@@ -15,7 +15,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.graphs.algorithms import BFS, DFS, djikstra, reconstruir_caminho
+from src.graphs.algorithms import BFS, DFS, djikstra_heap as djikstra, reconstruir_caminho
 
 FONTES = ['subredditdrama', 'bestof', 'titlegore']
 PARES = [('xboxone', 'battlefield_4'), ('fitnesscirclejerk', 'leangains'),
