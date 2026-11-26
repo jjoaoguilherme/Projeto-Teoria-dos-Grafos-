@@ -216,7 +216,7 @@ def figura_3(amostra, saida):
         fontsize=14,
         y=.985
     )
-    fig.supxlabel("Referências negativas de saída (%)", y=.075)
+    fig.supxlabel("Referências negativas de saída (%)", y=.12)
     fig.supylabel("Outras comunidades alcançáveis (%)", x=.032)
 
     # Legenda de tamanho das bolhas
@@ -235,7 +235,7 @@ def figura_3(amostra, saida):
 
     fig.legend(
         handles,
-        [f"{v} origem{'ens' if v > 1 else ''}" for v in exemplos],
+        [f"{v} {'origem' if v == 1 else 'origens'}" for v in exemplos],
         title="Sobreposição no ponto",
         loc="lower center",
         bbox_to_anchor=(0.5, 0.035),
@@ -254,7 +254,7 @@ def figura_3(amostra, saida):
         color="#555"
     )
 
-    fig.subplots_adjust(bottom=0.19, top=0.90, wspace=0.16, hspace=0.22)
+    fig.subplots_adjust(bottom=0.23, top=0.90, wspace=0.16, hspace=0.22)
 
     exportar(fig, saida / "03_exploratoria_sentimento_alcance_estrato")
 
