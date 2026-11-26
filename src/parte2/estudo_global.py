@@ -11,7 +11,6 @@ import platform
 from src.graphs import algorithms
 from src.parte2.amostragem_fontes import planejar, registrar_papeis, resumir_bfs, estimar_media_alcance
 from collections import Counter
-from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd

@@ -101,9 +101,9 @@ O Dijkstra precisa receber a versão não negativa dos pesos, definida na etapa 
 
 ```powershell
 python -m pytest tests/test_dataset_parte2.py tests/test_preparacao_dataset.py -q
-python -m src.entregas --parte 2
+python -m src.interface
 ```
 
-A página `out/parte2/entregas_parte2.html` apresenta a preparação dos dados e links dos arquivos, além dos resultados de experimentos já existentes. Os relatórios de tempo dos colegas são preservados; preparar os dados não refaz nem substitui suas medições.
+A interface local em `http://127.0.0.1:8765` apresenta a preparação dos dados e os arquivos na biblioteca de entregas, além dos resultados dos experimentos na seção Rede do Reddit. Os relatórios de tempo dos colegas são preservados; preparar os dados não refaz nem substitui suas medições.
 
 Para explicar a sua parte: **baixei o arquivo aprovado, conferi os campos, transformei comunidades em vértices e referências em arcos, preservei os pesos e entreguei a base validada para os algoritmos e para AVD.**
