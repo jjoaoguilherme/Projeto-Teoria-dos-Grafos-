@@ -1,9 +1,10 @@
-"""Infraestrutura de medição; não define os casos finais do dataset.
+"""Infraestrutura de medição e casos obrigatórios do dataset Reddit.
 
 [IA] Codex – implementação de medições, ambiente e exportação de experimentos.
 """
 from datetime import datetime, timezone
 import json
+from math import isfinite
 from pathlib import Path
 import platform
 import subprocess
@@ -101,15 +102,35 @@ def exportar_relatorio(experimentos, caminho='out/parte2/parte2_report.json',
 
 
 
+# [IA] ChatGPT – reutilização da base preparada e registro de resultados das buscas.
+def carregar_grafo_experimento(caminho):
+    caminho = Path(caminho)
+    if caminho.is_dir():
+        caminho = caminho / 'soc-redditHyperlinks-title.tsv'
+    if caminho.suffix.lower() == '.csv':
+        from .escalabilidade import carregar_arestas_preparadas
+        return carregar_arestas_preparadas(caminho)
+    return carregar_dataset(caminho)['grafo']
+
+
+def detalhes_busca(nome, resultado):
+    detalhes = {'ordem_visita': resultado['ordem_visita']}
+    if nome == 'BFS':
+        camadas = {}
+        for vertice in resultado['ordem_visita']:
+            distancia = resultado['distancias'][vertice]
+            camadas.setdefault(str(distancia), []).append(vertice)
+        detalhes['camadas'] = camadas
+    elif nome == 'DFS':
+        detalhes['tem_ciclo'] = resultado['tem_ciclo']
+    return detalhes
+
+
 def executar_bfs_dfs_dataset(caminho, fontes, repeticoes=5,
-                             destino='out/parte2/bfs_dfs_report.json'):
-    """Mede BFS/DFS nas fontes indicadas; não executa os demais casos da Parte 2.
-
-    """
-    from src.parte2.dados import carregar_dataset
-
-    dados = carregar_dataset(caminho)
-    grafo = dados['grafo']
+                             destino='out/parte2/bfs_dfs_report.json', grafo=None):
+    """Mede BFS/DFS e registra ordem, camadas e ciclos fora do relógio."""
+    if grafo is None:
+        grafo = carregar_grafo_experimento(caminho)
     vertices, arestas = grafo.vertices, grafo.arestas
     desconhecidas = [fonte for fonte in fontes if fonte not in set(vertices)]
     if desconhecidas:
@@ -123,15 +144,18 @@ def executar_bfs_dfs_dataset(caminho, fontes, repeticoes=5,
                                      identificacao={'dataset': str(caminho),
                                                     'origem_tipo': 'subreddit',
                                                     'caso': 'BFS_DFS_TRES_FONTES'})
+            resultado = ALGORITMOS[nome](vertices, arestas, fonte)
+            medicao.update(detalhes_busca(nome, resultado))
+            medicao['registro_percurso'] = {'metodo': 'execução adicional fora da medição'}
             experimentos.append(medicao)
             print(f'  Média: {medicao["tempo_medio_segundos"]:.4f}s', flush=True)
     return exportar_relatorio(experimentos, destino, ambiente, demonstracao=False)
 
-def executar_dijkstra(caminho, repeticoes=5):
-    dados = carregar_dataset(caminho)
-
-    vertices = dados["grafo"].vertices
-    arestas = dados["grafo"].arestas
+def executar_dijkstra(caminho, repeticoes=5, grafo=None):
+    if grafo is None:
+        grafo = carregar_grafo_experimento(caminho)
+    vertices = grafo.vertices
+    arestas = grafo.arestas
 
     arestas_transformadas = [
         (origem, destino, 2 - peso)
@@ -159,17 +183,19 @@ def executar_dijkstra(caminho, repeticoes=5):
             arestas_transformadas,
             origem,
             repeticoes,
-            identificacao={"destino": destino}
+            identificacao={"destino": destino, "dataset": str(caminho),
+                           "pesos": "2 - LINK_SENTIMENT"}
         )
 
-        medicao["custo"] = resultado["distancias"][destino]
+        medicao["custo"] = (resultado["distancias"][destino]
+                            if isfinite(resultado["distancias"][destino]) else None)
         medicao["caminho"] = reconstruir_caminho(resultado, destino)
 
         experimentos.append(medicao)
 
     return experimentos
 
-def executar_bellman_ford(casos, repeticoes=5):
+def executar_bellman_ford(casos, repeticoes=5, procedencias=None):
     experimentos = []
 
     for caso in casos:
@@ -192,6 +218,8 @@ def executar_bellman_ford(casos, repeticoes=5):
             identificacao={"caso": caso["nome"]}
         )
 
+        if procedencias is not None:
+            medicao['identificacao']['procedencia'] = procedencias[caso['nome']]
         medicao["tem_ciclo_negativo"] = resultado["tem_ciclo_negativo"]
         medicao["ciclo_negativo"] = resultado["ciclo_negativo"]
         medicao["arestas_ciclo"] = resultado["arestas_ciclo"]
@@ -228,6 +256,52 @@ casos_bellman_ford = [
     }
 ]
 
+# [IA] ChatGPT – comprovação da existência dos arcos reais, sem fabricar pesos.
+def verificar_casos_bellman_ford(grafo, caminho):
+    from .obter_dataset import calcular_sha256
+    procurados = {tuple(a) for caso in casos_bellman_ford for a in caso['arestas']}
+    encontrados = procurados.intersection(grafo.arestas)
+    if encontrados != procurados:
+        raise ValueError('O dataset não contém todos os arcos dos casos de Bellman-Ford.')
+    caminho = Path(caminho)
+    if caminho.is_dir():
+        caminho = caminho / 'soc-redditHyperlinks-title.tsv'
+    assinatura = calcular_sha256(caminho)
+    return {caso['nome']: {
+        'arquivo_verificado': str(caminho), 'sha256': assinatura,
+        'metodo': 'recorte por seleção de arcos originais; não induzido',
+        'arestas_selecionadas': caso['arestas'],
+        'referencia_documental': 'docs/BELLMAN_FORD.md',
+    } for caso in casos_bellman_ford}
+
+
+def registrar_percursos_existentes(caminho, destino):
+    """Complementa relatórios antigos sem substituir seus tempos históricos."""
+    from .obter_dataset import calcular_sha256
+    destino = Path(destino)
+    caminho = Path(caminho)
+    if caminho.is_dir():
+        caminho /= 'soc-redditHyperlinks-title.tsv'
+    dados = json.loads(destino.read_text(encoding='utf-8-sig'))
+    grafo = carregar_grafo_experimento(caminho)
+    vertices, arestas = grafo.vertices, grafo.arestas
+    assinatura = calcular_sha256(caminho)
+    meta = {'metodo': 'execução adicional independente; tempos originais preservados',
+            'arquivo': str(caminho), 'sha256': assinatura,
+            'gerado_em_utc': datetime.now(timezone.utc).isoformat()}
+    for item in dados['experimentos']:
+        if item['algoritmo'] not in ('BFS', 'DFS'):
+            raise ValueError('Use o relatório específico de BFS/DFS.')
+        if (item['vertices'], item['arestas']) != (len(vertices), len(arestas)):
+            raise ValueError('A base não tem o tamanho registrado no relatório.')
+        resultado = ALGORITMOS[item['algoritmo']](vertices, arestas, item['origem'])
+        item.update(detalhes_busca(item['algoritmo'], resultado))
+        item['registro_percurso'] = meta
+    destino.write_text(json.dumps(dados, ensure_ascii=False, indent=2, allow_nan=False) + '\n',
+                       encoding='utf-8')
+    return destino
+
+
 def main():
     """Permite executar a demonstração, BFS/DFS ou Dijkstra no Reddit."""
     # [IA] ChatGPT – revisão e correção dos argumentos e despacho da CLI.
@@ -235,21 +309,23 @@ def main():
     parser = argparse.ArgumentParser(description='Infraestrutura de medições da Parte 2.')
     modo = parser.add_mutually_exclusive_group(required=True)
     modo.add_argument('--demonstracao', action='store_true')
+    modo.add_argument('--registrar-percursos', action='store_true',
+                      help='Completa ordem/camadas/ciclos sem alterar tempos já medidos.')
     modo.add_argument('--bfs-dfs', action='store_true',
                       help='Executa BFS e DFS em três fontes do dataset real.')
     modo.add_argument('--dijkstra', action='store_true',
                       help='Executa os casos de Dijkstra.')
     modo.add_argument('--bellman-ford', action='store_true',
                   help='Executa os casos de Bellman-Ford.')
-    parser.add_argument('--arquivo', help='Caminho do arquivo TSV.')
+    parser.add_argument('--arquivo', help='Caminho do TSV original ou CSV preparado.')
     parser.add_argument('--fontes', nargs=3,
                         metavar=('FONTE1', 'FONTE2', 'FONTE3'),
                         help='Três subreddits de origem para --bfs-dfs.')
     parser.add_argument('--repeticoes', type=int, default=5)
     parser.add_argument('--out', help='Caminho do JSON de saída.')
     args = parser.parse_args()
-    if args.bfs_dfs and not args.arquivo:
-        parser.error('--bfs-dfs exige --arquivo.')
+    if (args.bfs_dfs or args.registrar_percursos) and not args.arquivo:
+        parser.error('O modo escolhido exige --arquivo.')
     if args.dijkstra and not args.arquivo:
         parser.error('--dijkstra exige --arquivo.')
     if args.demonstracao and args.arquivo:
@@ -259,7 +335,10 @@ def main():
     if args.repeticoes < 5:
         parser.error('É necessário executar pelo menos cinco repetições.')
     try:
-        if args.bfs_dfs:
+        if args.registrar_percursos:
+            print(registrar_percursos_existentes(
+                args.arquivo, args.out or 'out/parte2/bfs_dfs_report.json'))
+        elif args.bfs_dfs:
             fontes = args.fontes or ['subredditdrama', 'bestof', 'titlegore']
             if len(set(fontes)) != 3:
                 parser.error('Informe três fontes distintas.')
@@ -273,8 +352,11 @@ def main():
                 experimentos, args.out or 'out/parte2/dijkstra_report.json')
             print(f'Medições Dijkstra salvas em {destino}')
         elif args.bellman_ford:
+            caminho = args.arquivo or 'out/parte2/arestas_dataset.csv'
+            grafo = carregar_grafo_experimento(caminho)
+            procedencias = verificar_casos_bellman_ford(grafo, caminho)
             experimentos = executar_bellman_ford(
-                casos_bellman_ford, args.repeticoes
+                casos_bellman_ford, args.repeticoes, procedencias
             )
 
             destino = exportar_relatorio(

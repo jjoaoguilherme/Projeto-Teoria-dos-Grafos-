@@ -62,6 +62,34 @@ O arquivo real foi conferido: 54.075 vértices e 571.927 arcos válidos, sem lin
 
 Os experimentos de BFS, DFS, Dijkstra e Bellman-Ford, as medições de desempenho e escalabilidade, a amostragem estratificada, as visualizações de AVD e a discussão acadêmica já possuem resultados registrados no repositório.
 
+### CLI da Parte 2
+
+Consulte um par no dataset local (a pasta deve conter o TSV oficial):
+
+```powershell
+python -m src.cli --dataset data/dataset_parte2/ --alg DIJKSTRA --source xboxone --target battlefield_4 --out out/parte2/
+```
+
+Também é possível usar o CSV preparado, que preserva os arcos originais e evita reler os atributos do TSV:
+
+```powershell
+python -m src.cli --dataset out/parte2/arestas_dataset.csv --alg BFS --source subredditdrama --out out/parte2/
+python -m src.cli --dataset out/parte2/arestas_dataset.csv --benchmark --out out/parte2/reproducao_benchmark/
+```
+
+O benchmark executa os seis casos BFS/DFS, cinco pares Dijkstra, dois casos Bellman-Ford e doze medições de escalabilidade (três tamanhos, quatro algoritmos), com no mínimo cinco repetições e recorte-base padrão de 2.000 vértices para escalabilidade. A pasta separada evita sobrescrever as medições versionadas. Use `--limite-vertices` para modificar o recorte; a opção deve ser documentada. Bellman-Ford no grafo completo pode demorar muito.
+
+O relatório BFS/DFS inclui a ordem real de visita, as camadas BFS (agrupamento por distância em saltos) e a detecção de ciclos DFS. Os percursos dos relatórios históricos foram acrescentados em execução independente sobre o CSV preparado com hash registrado, sem alterar tempos originais:
+
+```powershell
+python -m src.parte2.experimentos --registrar-percursos --arquivo out/parte2/arestas_dataset.csv
+python -m src.parte2.consolidar
+python -m src.parte2.verificar_experimentos
+python -m src.entregas --parte 2
+```
+
+A procedência dos dois casos Bellman-Ford está documentada em [docs/BELLMAN_FORD.md](docs/BELLMAN_FORD.md).
+
 ## Análise e Visualização de Dados (AVD) — Parte 2
 
 A análise considera toda a rede de referências entre comunidades do Reddit, composta por 54.075 vértices e 571.927 arestas, sem recorte temporal.
@@ -140,7 +168,7 @@ DECLARAÇÃO DE IA: https://docs.google.com/document/d/1sCr8p8y-t-Wttt3G8kXXsjhV
 
 ## Páginas de resultados
 
-Abra `out/parte1/entregas_parte1.html` ou `out/parte2/entregas_parte2.html` no navegador e use os botões Parte 1 / Parte 2. A página da Parte 2 apresenta os relatórios existentes, com filtros, tempos individuais, caminhos de Dijkstra, ciclos de Bellman-Ford e os metadados das sessões. Ela informa os diferentes tamanhos dos grafos e os campos que não foram registrados; não substitui a análise AVD ou a validação dos casos contra o dataset.
+Abra `out/parte1/entregas_parte1.html` ou `out/parte2/entregas_parte2.html` no navegador e use os botões Parte 1 / Parte 2. A página da Parte 2 apresenta os relatórios existentes, com filtros, tempos individuais, caminhos de Dijkstra, ciclos de Bellman-Ford e os metadados das sessões. Ela informa os diferentes tamanhos dos grafos, apresenta ordem de visita, camadas e ciclos quando registrados, e indica campos ausentes; não substitui a análise AVD ou a validação dos casos contra o dataset.
 
 Atualize ambas as páginas a partir das saídas existentes com `python -m src.entregas`. Para atualizar somente a Parte 2, use `python -m src.entregas --parte 2`. Estilos e tabelas são compartilhados em `src/templates/` e incorporados ao HTML final, que funciona sem servidor. Preserve as pastas do projeto para manter os links dos arquivos e das figuras.
 

@@ -33,7 +33,27 @@
       "tarefa": "caminhos_a_partir_da_origem",
       "origem": "subredditdrama",
       "identificacao": {
-        "caso": "sem_ciclo_negativo"
+        "caso": "sem_ciclo_negativo",
+        "procedencia": {
+          "arquivo_verificado": "out/parte2/arestas_dataset.csv",
+          "sha256": "da208719abac41d4e4f44a5b286b08d18b6e23da69662409087a9199271b71a1",
+          "metodo": "recorte por seleção de arcos originais; não induzido",
+          "arestas_selecionadas": [
+            [
+              "subredditdrama",
+              "nfl",
+              -1
+            ]
+          ],
+          "referencia_documental": "docs/BELLMAN_FORD.md",
+          "verificacao_em_utc": "2026-11-26T11:32:44.447759+00:00",
+          "observacao": "Verificação posterior; tempos originais preservados.",
+          "base_metadados": "out/parte2/base_avd.csv",
+          "sha256_base_metadados": "5f24ded6b26d17ce4f81d6396a7f12159fe9d1ad152da5c76b7184175fb6bd09",
+          "linhas_tsv": [
+            18
+          ]
+        }
       },
       "vertices": 2,
       "arestas": 1,
@@ -64,7 +84,33 @@
       "tarefa": "caminhos_a_partir_da_origem",
       "origem": "2007scape",
       "identificacao": {
-        "caso": "com_ciclo_negativo"
+        "caso": "com_ciclo_negativo",
+        "procedencia": {
+          "arquivo_verificado": "out/parte2/arestas_dataset.csv",
+          "sha256": "da208719abac41d4e4f44a5b286b08d18b6e23da69662409087a9199271b71a1",
+          "metodo": "recorte por seleção de arcos originais; não induzido",
+          "arestas_selecionadas": [
+            [
+              "2007scape",
+              "runescape",
+              -1
+            ],
+            [
+              "runescape",
+              "2007scape",
+              -1
+            ]
+          ],
+          "referencia_documental": "docs/BELLMAN_FORD.md",
+          "verificacao_em_utc": "2026-11-26T11:32:44.465001+00:00",
+          "observacao": "Verificação posterior; tempos originais preservados.",
+          "base_metadados": "out/parte2/base_avd.csv",
+          "sha256_base_metadados": "5f24ded6b26d17ce4f81d6396a7f12159fe9d1ad152da5c76b7184175fb6bd09",
+          "linhas_tsv": [
+            301317,
+            353054
+          ]
+        }
       },
       "vertices": 2,
       "arestas": 2,

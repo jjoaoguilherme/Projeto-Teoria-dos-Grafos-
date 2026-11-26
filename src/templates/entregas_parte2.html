@@ -65,10 +65,11 @@ function renderResults(){const report=selected(),all=report.dados.experimentos,a
  table('results-table',[{key:'algoritmo',label:'Algoritmo',display:x=>algNames[x]||x},{key:'origem',label:'Origem'},{key:'destino_caso',label:'Destino / caso'},{key:'vertices',label:'Vértices'},{key:'arestas',label:'Arcos'},{key:'repeticoes',label:'Repetições'},{key:'tempo_medio_segundos',label:'Tempo médio (s)',display:seconds},{key:'status',label:'Status das execuções'}],visibleRows,'Resultados · '+report.nome);
  const picker=$('case-select');picker.replaceChildren();for(let i=0;i<visibleRows.length;i++){const r=visibleRows[i],option=el('option',(algNames[r.algoritmo]||r.algoritmo)+' · '+r.origem+' · '+caseLabel(r));option.value=String(i);picker.append(option);}picker.disabled=!visibleRows.length;renderCase();
 }
+// [IA] ChatGPT – apresentação dos percursos, camadas, ciclos e procedência registrados.
 function renderCase(){const r=visibleRows[Number($('case-select').value)];$('case-content').hidden=!r;$('case-empty').hidden=!!r;if(!r)return;
  $('case-title').textContent=(algNames[r.algoritmo]||r.algoritmo)+' · '+r.origem;
  $('case-status').textContent=status(r);$('case-status').className='pill'+(r.tem_ciclo_negativo?' cycle-status':'');
- $('case-scope').textContent=fmt(r.vertices)+' vértices · '+fmt(r.arestas)+' arcos · '+caseLabel(r)+(r.algoritmo==='BELLMAN_FORD'?' · Caso pequeno definido no código de experimentos.':'');
+ $('case-scope').textContent=fmt(r.vertices)+' vértices · '+fmt(r.arestas)+' arcos · '+caseLabel(r)+(r.algoritmo==='BELLMAN_FORD'&&r.identificacao?.caso!=='ESCALABILIDADE'?' · Caso pequeno definido no código de experimentos.':'');
  $('case-cards').replaceChildren(metric('Tempo médio',seconds(r.tempo_medio_segundos)+' s'),metric('Repetições',r.repeticoes),metric('Custo registrado',r.custo!==undefined?r.custo:r.custo_ciclo!==null&&r.custo_ciclo!==undefined?r.custo_ciclo:'Não registrado',r.custo!==undefined?'Escala de pesos do experimento':r.custo_ciclo!==null&&r.custo_ciclo!==undefined?'Custo do ciclo negativo':'O JSON não informa esse custo'));
  const box=$('case-result');box.replaceChildren();
  if(r.algoritmo==='DIJKSTRA'){
@@ -77,9 +78,15 @@ function renderCase(){const r=visibleRows[Number($('case-select').value)];$('cas
  }else if(r.algoritmo==='BELLMAN_FORD'){
   if(typeof r.tem_ciclo_negativo==='boolean')box.append(el('p','Ciclo negativo detectado: '+(r.tem_ciclo_negativo?'sim.':'não.')));
   if(Array.isArray(r.ciclo_negativo)&&r.ciclo_negativo.length){box.append(el('h3','Sequência do ciclo negativo','subhead'),chain(r.ciclo_negativo));const target=el('div');target.id='cycle-table';box.append(target);table('cycle-table',[{key:'origem',label:'Origem'},{key:'destino',label:'Destino'},{key:'peso',label:'Peso'}],(r.arestas_ciclo||[]).map(([origem,destino,peso])=>({origem,destino,peso})),'Arestas do ciclo');}
-  box.append(el('p','Os casos disponíveis têm dois vértices. O relatório não documenta a verificação desses recortes contra o TSV original.','note'));
+  if(r.identificacao?.procedencia){const meta=el('details');meta.append(el('summary','Procedência dos arcos selecionados'),el('pre',JSON.stringify(r.identificacao.procedencia,null,2)));box.append(meta);}else if(r.identificacao?.caso!=='ESCALABILIDADE')box.append(el('p','Procedência não registrada neste caso.','note'));
  }else{
-  box.append(el('p','Este registro contém os tempos e o status das execuções. A ordem de visita, as camadas e a classificação dos arcos não foram incluídas neste JSON.','callout'));
+  if(Array.isArray(r.ordem_visita)){
+    box.append(el('h3','Ordem de visita','subhead'),el('p',fmt(r.ordem_visita.length)+' vértices visitados.'));
+    const ordem=el('details');ordem.append(el('summary','Primeiros 100 vértices (ordem completa no JSON)'),el('pre',r.ordem_visita.slice(0,100).join(' → ')));box.append(ordem);
+  }else box.append(el('p','Ordem de visita não registrada.','note'));
+  if(r.camadas){box.append(el('h3','Camadas BFS','subhead'));const lista=el('ul');for(const [nivel,vertices] of Object.entries(r.camadas))lista.append(el('li','Distância '+nivel+': '+fmt(vertices.length)+' vértices'));box.append(lista);}
+  if(typeof r.tem_ciclo==='boolean')box.append(el('p','Ciclo alcançável detectado pela DFS: '+(r.tem_ciclo?'sim.':'não.')));
+  if(r.registro_percurso?.metodo)box.append(el('p',r.registro_percurso.metodo,'note'));
  }
  table('repetition-table',[{key:'repeticao',label:'Repetição'},{key:'tempo',label:'Tempo (s)',display:seconds},{key:'status',label:'Status'}],(r.tempos_segundos||[]).map((tempo,i)=>({repeticao:i+1,tempo,status:r.status_execucoes?.[i]||'Não registrado'})),'Medições individuais · '+(algNames[r.algoritmo]||r.algoritmo));
 }

@@ -137,9 +137,12 @@ def BFS(vertices, arestas, inicio):
     distancias[inicio] = 0
 
     fila = deque([inicio])
+    # [IA] ChatGPT – registro da ordem real de retirada da fila.
+    ordem_visita = []
 
     while fila:
         atual = fila.popleft()
+        ordem_visita.append(atual)
 
         for vizinho in adjacencia[atual]:
             if distancias[vizinho] == float('inf'):
@@ -149,7 +152,8 @@ def BFS(vertices, arestas, inicio):
     return {
         'inicio': inicio,
         'distancias': distancias,
-        'predecessores': predecessores
+        'predecessores': predecessores,
+        'ordem_visita': ordem_visita
         
     }
 

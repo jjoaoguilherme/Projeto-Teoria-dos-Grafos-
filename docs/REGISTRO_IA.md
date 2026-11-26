@@ -171,3 +171,12 @@ Registrar também os usos anteriores desta conversa, inclusive o exemplo complet
 - Conteúdo produzido: ambiente, método, recorte, amostras, tempos e desvios, referências de complexidade, links dos resultados e discussão dos resultados.
 - Verificação: números conferidos com `escalabilidade_report.json` e `comparacao_complexidades.csv`; tempos convertidos de segundos para milissegundos.
 - PDF com quatro páginas renderizadas e inspecionadas quanto a tabelas, gráfico e paginação.
+
+
+## Atualização final — integração e revisão
+
+- Ferramenta: ChatGPT.
+- Arquivos: `src/cli.py`, `src/parte2/cli.py`, `src/parte2/experimentos.py`, `src/main.py`, `src/graphs/algorithms.py`, `src/relatorio.py`, `src/templates/entregas_parte2.html`, documentação e testes de integração.
+- Finalidade: conectar executores existentes à CLI; registrar ordem BFS/DFS, camadas BFS e ciclos DFS; conferir a procedência de arestas dos casos Bellman-Ford nos CSVs preparados; corrigir a descrição da complexidade de Dijkstra; atualizar os relatórios e painel com esses registros.
+- Os tempos históricos foram preservados. Os registros de percurso e a verificação de procedência foram obtidos posteriormente na base preparada e identificados separadamente.
+- Revisão e declaração oficial assinada: responsabilidade do grupo.

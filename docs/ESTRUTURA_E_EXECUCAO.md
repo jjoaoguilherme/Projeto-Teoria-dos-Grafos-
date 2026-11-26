@@ -4,7 +4,7 @@ Projeto 2026.2: labirintos com chaves e portas (Parte 1) e comparação de algor
 
 ## Estado atual
 
-Etapa 1 concluída: leitura e validação de mapas em `src/graphs/io.py`, com 25 testes aprovados em `tests/test_io.py`, incluindo os oito mapas fornecidos. Modelagem, algoritmos, CLI e visualizações ainda não estão implementados; os demais arquivos de teste são pontos de partida.
+As duas partes reutilizam os algoritmos de grafo em `src/graphs/algorithms.py`. A CLI direciona as consultas de mapas e de dataset aos respectivos executores; os testes e visualizações estão disponíveis nas pastas correspondentes.
 
 Comece por [ROADMAP.md](ROADMAP.md). Os documentos originais estão em `docs/referencias/`.
 
@@ -45,7 +45,8 @@ python -m src.cli --mapa data/mapas/m05_bonus.txt --alg BELLMAN_FORD --out out/p
 python -m src.cli --mapa data/mapas/m06_fonte.txt --alg BELLMAN_FORD --fonte-consumivel --out out/parte1/
 python -m src.cli --mapa data/mapas/m04_esteiras.txt --armadilhas --out out/parte1/
 python -m src.cli --mapa data/mapas/m03_tres_chaves.txt --interactive --out out/parte1/
-python -m src.cli --dataset data/dataset_parte2/ --benchmark --out out/parte2/
+python -m src.cli --dataset data/dataset_parte2/ --alg DIJKSTRA --source xboxone --target battlefield_4 --out out/parte2/
+python -m src.cli --dataset data/dataset_parte2/ --benchmark --out out/parte2/reproducao_benchmark/
 ```
 
 Para testar a etapa 1: `python -m pytest tests/test_io.py -q`. A aprovação destes testes verifica a entrada dos mapas, não a corretude dos algoritmos futuros.

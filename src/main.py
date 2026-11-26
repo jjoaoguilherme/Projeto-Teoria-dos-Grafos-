@@ -347,8 +347,10 @@ def demonstrar_mapa(nome_mapa):
 
 
 def main():
+    # [IA] ChatGPT – indicação da ajuda da CLI da Parte 2.
     parser = argparse.ArgumentParser(
-        description='Algoritmos de grafos em labirintos com estados.'
+        description='Algoritmos de grafos em labirintos com estados.',
+        epilog='Parte 2: python -m src.cli --dataset CAMINHO --help'
     )
 
     parser.add_argument(
