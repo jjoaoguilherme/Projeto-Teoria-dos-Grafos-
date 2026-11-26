@@ -57,7 +57,80 @@ python -m src.parte2.preparar
 
 Esse comando baixa o TSV oficial se necessário, confere o hash, valida os registros, constrói o grafo e exporta `resumo_dataset.json`, `arestas_dataset.csv`, `base_avd.csv` e `registros_invalidos.json`. Também gera `docs/preparacao_dataset_parte2.pdf` e atualiza a página da Parte 2. O TSV grande não é versionado; o script e o manifesto `data/dataset_parte2/origem_dataset.json` permitem reproduzir a obtenção.
 
-O arquivo real foi conferido: 54.075 vértices e 571.927 arcos válidos, sem linhas rejeitadas nas verificações implementadas. Os atributos completos continuam no TSV e na API. Os relatórios de BFS/DFS, Dijkstra e dos dois casos pequenos de Bellman-Ford já estão integrados. A documentação/verificação dos recortes dos experimentos, os registros detalhados das buscas, a execução nos três tamanhos, as análises e as figuras finais são as próximas tarefas das demais etapas.
+
+O arquivo real foi conferido: 54.075 vértices e 571.927 arcos válidos, sem linhas rejeitadas nas verificações implementadas. Os atributos completos continuam no TSV e na API.
+
+Os experimentos de BFS, DFS, Dijkstra e Bellman-Ford, as medições de desempenho e escalabilidade, a amostragem estratificada, as visualizações de AVD e a discussão acadêmica já possuem resultados registrados no repositório.
+
+## Análise e Visualização de Dados (AVD) — Parte 2
+
+A análise considera toda a rede de referências entre comunidades do Reddit, composta por 54.075 vértices e 571.927 arestas, sem recorte temporal.
+
+As métricas estruturais globais consideram todo o dataset. Para a análise de alcançabilidade, foi utilizada uma amostragem estratificada de 384 origens, com semente 42. As 10.380 comunidades sem conexões de saída foram tratadas separadamente por censo estrutural.
+
+### Preparação dos dados
+
+Caso a base preparada ainda não esteja disponível, execute:
+
+```powershell
+python -m src.parte2.preparar
+```
+
+### Reprodução da análise
+
+O módulo `estudo_global.py` possui três modos de execução: planejamento, piloto e execução completa.
+
+**1. Planejamento da amostragem:**
+
+```powershell
+python -m src.parte2.estudo_global --modo planejar --comparar-nao-negativas --out out/parte2/reproducao_avd
+```
+
+**2. Execução do piloto:**
+
+```powershell
+python -m src.parte2.estudo_global --modo piloto --comparar-nao-negativas --out out/parte2/reproducao_avd
+```
+
+**3. Execução completa:**
+
+```powershell
+python -m src.parte2.estudo_global --modo executar --comparar-nao-negativas --out out/parte2/reproducao_avd
+```
+
+O piloto estima o custo computacional da análise. O limite padrão é de 900 segundos para a estimativa operacional, podendo ser ajustado conscientemente por meio de `--limite-segundos`.
+
+O parâmetro `--comparar-nao-negativas` habilita a comparação de alcançabilidade entre o grafo original e sua versão sem arestas negativas, necessária para a sexta visualização.
+
+Os comandos utilizam uma pasta separada para preservar os resultados originais versionados.
+
+### Geração das visualizações
+
+Para regenerar as seis visualizações utilizando os resultados já existentes no repositório:
+
+```powershell
+python -m src.parte2.figuras_avd
+```
+
+As figuras são exportadas nos formatos PNG e SVG em `out/parte2/figuras_avd/`.
+
+Para gerar as figuras a partir de uma nova execução da análise:
+
+```powershell
+python -m src.parte2.figuras_avd --base out/parte2/reproducao_avd --out out/parte2/reproducao_avd/figuras
+```
+
+### Visualizações exploratórias
+
+1. Distribuição das comunidades por grau de saída.
+2. Concentração cumulativa das referências de saída.
+3. Sentimento negativo e alcançabilidade por faixa de conectividade.
+4. Participação em ciclos negativos de duas arestas.
+
+### Visualizações explanatórias
+
+5. Distribuição da alcançabilidade por faixa de grau.
+6. Alcançabilidade antes e depois da remoção de referências negativas.
 
 ## Conferência antes da entrega
 
