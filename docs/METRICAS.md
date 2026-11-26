@@ -49,7 +49,7 @@ python -m unittest discover -s tests -p test_metricas.py -v
 python -m unittest discover -s tests -v
 ```
 
-Os testes de métricas conferem contas manuais de grafos pequenos, limites da densidade, exclusão de ALVO, inventário, casas inalcançáveis, exportação incremental e execução da CLI. Camadas, graus por estado, rankings e multiplicidade estão descritos abaixo. A análise completa de armadilhas continua pendente.
+Os testes de métricas conferem contas manuais de grafos pequenos, limites da densidade, exclusão de ALVO, inventário, casas inalcançáveis, exportação incremental e execução da CLI. Camadas, graus por estado, rankings, multiplicidade e estados-armadilha estão descritos abaixo. Os testes de entrega também verificam a proporção de armadilhas do mapa próprio e a presença das figuras obrigatórias.
 
 
 ## Origem única dos indicadores
@@ -75,10 +75,31 @@ O comando `--metricas` agora gera o bloco completo para todos os mapas:
 
 `calcular_detalhes_estados` percorre uma vez os arcos reais para contar graus e ligações internas/entre camadas. O ranking informa o estado vencedor e seu grau; empates são resolvidos em ordem lexicográfica do rótulo completo, sem converter as coordenadas para números. A saída é determinística e não depende da ordem de exploração.
 
-Becos são estados com saída zero fora de G. Não são a análise completa de estados-armadilha, que continua pendente. A multiplicidade contém cada casa não parede, com zero para casas sem estados alcançáveis, além do máximo, quantidade de casas que o atingem e suas posições. Isso fornece os dados para o heatmap de m08; a figura e sua interpretação no relatório continuam pendentes.
+Becos são estados com saída zero fora de G. Estados-armadilha são mais gerais: podem ter arcos de saída, mas não possuem caminho até ALVO. A multiplicidade contém cada casa não parede, com zero para casas sem estados alcançáveis, além do máximo, quantidade de casas que o atingem e suas posições. Esses dados são usados no heatmap de m08, já exportado em `out/parte1/heatmap_m08.png`. O manual `docs/manual_tecnico_parte1.pdf` inclui a figura e a explicação da multiplicidade.
 
 Em `camadas.json`, a camada sem chaves se chama `-`. Cada camada informa ordem, tamanho e densidade, considerando apenas arcos com as duas pontas na camada. `arcos_entre_camadas` informa o total, contagens por par de camadas e as posições e chaves das casas de destino responsáveis pela transição. ALVO não pertence a nenhuma camada. A fórmula de densidade é compartilhada com as métricas globais.
 
 `calcular_pacote_metricas` reúne os cálculos reutilizando os estados existentes; `calcular_pacote_mapa` lê e constrói os estados quando a entrada é um arquivo. A resolução comum reutiliza esse pacote nas exportações. CSVs e camadas são gravados separadamente para não duplicar os graus dentro dos relatórios globais. A variante de fonte consumível mantém o sufixo `_fonte_consumivel` nos três arquivos, sem apagar a execução normal.
 
 A geração pode ser repetida para um mapa sem apagar os dados dos demais. Os resultados detalhados ficam nos arquivos exportados; os indicadores já existentes do HTML continuam lendo o mesmo resumo global.
+
+## Estados-armadilha e geração das figuras
+
+A função `estados_armadilha`, em `src/graphs/analises.py`, executa BFS a partir de ALVO no grafo transposto. Os estados reais que essa busca não alcança são armadilhas: foram alcançados desde o início durante a construção do grafo, mas não conseguem chegar à saída no grafo original.
+
+Para exportar as armadilhas de um mapa:
+
+```powershell
+python -m src.cli --mapa data/mapas/m04_esteiras.txt --alg BFS --armadilhas --out out/parte1
+python -m src.cli --mapa data/mapas/m07_impossivel.txt --alg BFS --armadilhas --out out/parte1
+```
+
+Esses comandos geram `armadilhas_m04.csv` e `armadilhas_m07.csv`, respectivamente, com uma coluna `estado`. O comando `--metricas` sozinho não exporta esses CSVs nem gera figuras.
+
+Para regenerar as entregas completas da Parte 1, incluindo métricas, armadilhas obrigatórias, figuras, HTML interativo e manual técnico:
+
+```powershell
+python -m src.cli --parte1-completa --out out/parte1
+```
+
+A função `gerar_figuras`, em `src/viz.py`, desenha o heatmap a partir de `multiplicidade.por_casa` em `metricas_global.json`. A escala de cores representa a quantidade de estados por casa; paredes não recebem valor de multiplicidade. A geração completa atualiza os arquivos de saída existentes.
